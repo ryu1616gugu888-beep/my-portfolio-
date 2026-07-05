@@ -7,6 +7,10 @@
 <meta name="description" content="神奈川県藤沢市の木村レンタカー。学生の日帰り旅行に人気の2day乗り放題プラン5,500円〜。返却は藤沢市内のガソリンスタンドならどこでもOK。">
 <link rel="icon" href="https://placehold.co/64x64/2d8a6e/ffffff?text=KR">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = {
@@ -20,7 +24,7 @@
           },
         },
         fontFamily: {
-          sans: ['"Hiragino Kaku Gothic ProN"', '"Noto Sans JP"', 'sans-serif'],
+          sans: ['"Zen Kaku Gothic New"', '"Hiragino Kaku Gothic ProN"', '"Noto Sans JP"', 'sans-serif'],
         },
       },
     },
@@ -28,7 +32,7 @@
 </script>
 <style>
   html { scroll-padding-top: 84px; }
-  body { font-family: 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif; }
+  body { font-family: 'Zen Kaku Gothic New', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif; }
   summary::-webkit-details-marker { display: none; }
   details[open] .faq-icon { transform: rotate(45deg); }
 </style>
@@ -52,10 +56,12 @@
       <a href="#faq" class="hover:text-green transition">よくある質問</a>
       <a href="#access" class="hover:text-green transition">アクセス</a>
     </nav>
-    <a href="tel:0466001234" class="hidden md:inline-flex items-center gap-3 bg-green hover:bg-green-dark transition text-white px-[1.875rem] py-[1.125rem] text-sm font-bold">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.57.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.57 1 1 0 01-.25 1.01l-2.2 2.21z"/></svg>
-      0466-00-1234
-    </a>
+    <div class="hidden md:flex items-center gap-3">
+      <a href="tel:0466001234" class="text-gray-500 hover:text-green transition text-sm">📞 0466-00-1234</a>
+      <a href="#contact-form" class="inline-flex items-center gap-3 bg-green hover:bg-green-dark transition text-white px-[1.875rem] py-[1.125rem] text-sm font-bold">
+        お問い合わせ
+      </a>
+    </div>
     <button id="menuBtn" class="lg:hidden text-gray-700" aria-label="menu">
       <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
     </button>
@@ -68,6 +74,7 @@
     <a href="#simulator" class="py-[1.125rem] border-b border-gray-100">シミュレーター</a>
     <a href="#faq" class="py-[1.125rem] border-b border-gray-100">よくある質問</a>
     <a href="#access" class="py-[1.125rem] border-b border-gray-100">アクセス</a>
+    <a href="#contact-form" class="py-[1.125rem] border-b border-gray-100">お問い合わせ</a>
     <a href="tel:0466001234" class="py-6 bg-green text-white font-bold">📞 0466-00-1234</a>
   </nav>
 </header>
@@ -87,9 +94,9 @@
         <a href="#simulator" class="inline-flex items-center justify-center gap-[1.125rem] bg-green hover:bg-green-dark transition text-white px-12 py-6 text-base font-bold shadow-lg shadow-green/20">
           無料お見積もりはこちら
         </a>
-        <a href="tel:0466001234" class="inline-flex items-center justify-center gap-[1.125rem] border-2 border-green text-green hover:bg-green hover:text-white transition px-12 py-6 text-base font-bold">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.57.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.57 1 1 0 01-.25 1.01l-2.2 2.21z"/></svg>
-          電話で相談する
+        <a href="#contact-form" class="inline-flex items-center justify-center gap-[1.125rem] border-2 border-green text-green hover:bg-green hover:text-white transition px-12 py-6 text-base font-bold">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          お問い合わせフォームへ
         </a>
       </div>
     </div>
@@ -100,6 +107,19 @@
         <p class="text-xs text-gray-500">2day乗り放題プラン</p>
         <p class="text-2xl md:text-3xl font-bold text-green">¥5,500<span class="text-sm text-gray-500">〜</span></p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 写真バナー：旅の始まり ===================== -->
+<section class="relative h-72 md:h-[28rem] overflow-hidden">
+  <!-- Photo by Kyle Miller from Pexels (Pexels License) -->
+  <img src="https://images.pexels.com/photos/20272827/pexels-photo-20272827.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="夕暮れのドライブ" class="w-full h-full object-cover">
+  <div class="absolute inset-0 bg-gradient-to-r from-green-dark/90 via-green-dark/50 to-green-dark/10"></div>
+  <div class="absolute inset-0 flex items-center px-9">
+    <div class="max-w-4xl mx-auto w-full" data-aos="fade-up" data-aos-duration="400">
+      <p class="text-white/80 tracking-widest text-xs md:text-sm mb-3 font-bold">YOUR JOURNEY STARTS HERE</p>
+      <h2 class="text-2xl md:text-4xl font-black text-white leading-snug">旅の思い出は、<br class="md:hidden">ここから始まる。</h2>
     </div>
   </div>
 </section>
@@ -141,11 +161,14 @@
 </section>
 
 <!-- ===================== 3. 当店が選ばれる5つの理由 ===================== -->
-<section id="reasons" class="bg-green/5 py-[7.5rem] md:py-[10.5rem] px-9">
-  <div class="max-w-6xl mx-auto">
+<section id="reasons" class="relative py-[7.5rem] md:py-[10.5rem] px-9 overflow-hidden">
+  <!-- Photo by Lucas Oliveira from Pexels (Pexels License) -->
+  <img src="https://images.pexels.com/photos/10667837/pexels-photo-10667837.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="ドライブ中の車内からの景色" class="absolute inset-0 w-full h-full object-cover">
+  <div class="absolute inset-0 bg-green-dark/90"></div>
+  <div class="relative max-w-6xl mx-auto">
     <div class="text-center mb-24" data-aos="fade-up" data-aos-duration="350">
-      <p class="text-green font-bold tracking-widest text-sm mb-[1.125rem]">WHY CHOSEN</p>
-      <h2 class="text-2xl md:text-4xl font-bold">当店が選ばれる5つの理由</h2>
+      <p class="text-yellow-300 font-bold tracking-widest text-sm mb-[1.125rem]">WHY CHOSEN</p>
+      <h2 class="text-2xl md:text-4xl font-bold text-white">当店が選ばれる5つの理由</h2>
     </div>
     <div class="grid sm:grid-cols-2 md:grid-cols-5 gap-9">
       <div class="bg-white p-9 text-center shadow-sm" data-aos="fade-up" data-aos-duration="350" data-aos-delay="0">
@@ -385,10 +408,89 @@
       </div>
 
       <div class="text-center mt-12">
-        <a href="#reservation" class="inline-flex items-center justify-center gap-[1.125rem] bg-green hover:bg-green-dark transition text-white px-[3.75rem] py-6 text-base md:text-lg font-bold shadow-lg shadow-green/20">
-          無料相談はこちら
+        <a href="#contact-form" class="inline-flex items-center justify-center gap-[1.125rem] bg-green hover:bg-green-dark transition text-white px-[3.75rem] py-6 text-base md:text-lg font-bold shadow-lg shadow-green/20">
+          無料相談・お問い合わせはこちら
         </a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== お問い合わせフォーム ===================== -->
+<section id="contact-form" class="relative py-[7.5rem] md:py-[10.5rem] px-9 overflow-hidden">
+  <!-- Photo by Bayram Musayev from Pexels (Pexels License) -->
+  <img src="https://images.pexels.com/photos/15377956/pexels-photo-15377956.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="ドライブを楽しむ様子" class="absolute inset-0 w-full h-full object-cover">
+  <div class="absolute inset-0 bg-white/93"></div>
+  <div class="relative max-w-3xl mx-auto">
+    <div class="text-center mb-12" data-aos="fade-up" data-aos-duration="350">
+      <p class="text-green font-bold tracking-widest text-sm mb-[1.125rem]">CONTACT FORM</p>
+      <h2 class="text-2xl md:text-4xl font-bold mb-3">お問い合わせフォーム</h2>
+      <p class="text-gray-600">ご希望の日程・車種・ご質問など、お気軽にご入力ください。折り返しご連絡いたします。</p>
+    </div>
+
+    <!-- Formspreeの送信先URLは実際のフォームIDに差し替えてください（無料プランは月50件まで送信可能） -->
+    <form id="reservationForm" action="https://formspree.io/f/yourFormID" method="POST" class="bg-white border-2 border-green/20 shadow-xl p-7 md:p-12" data-aos="fade-up" data-aos-duration="400" novalidate>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <label for="name" class="block text-sm text-gray-700 mb-2 font-bold">お名前 <span class="text-green">*</span></label>
+          <input type="text" id="name" name="name" class="w-full bg-white border-2 border-gray-200 focus:border-green focus:outline-none px-4 py-3 text-gray-900 placeholder-gray-400 transition text-sm md:text-base" placeholder="山田 太郎">
+          <p id="err-name" class="text-xs text-red-500 mt-1 hidden"></p>
+        </div>
+        <div>
+          <label for="phone" class="block text-sm text-gray-700 mb-2 font-bold">電話番号 <span class="text-green">*</span></label>
+          <input type="tel" id="phone" name="phone" class="w-full bg-white border-2 border-gray-200 focus:border-green focus:outline-none px-4 py-3 text-gray-900 placeholder-gray-400 transition text-sm md:text-base" placeholder="090-1234-5678">
+          <p id="err-phone" class="text-xs text-red-500 mt-1 hidden"></p>
+        </div>
+        <div class="md:col-span-2">
+          <label for="email" class="block text-sm text-gray-700 mb-2 font-bold">メールアドレス <span class="text-green">*</span></label>
+          <input type="email" id="email" name="email" class="w-full bg-white border-2 border-gray-200 focus:border-green focus:outline-none px-4 py-3 text-gray-900 placeholder-gray-400 transition text-sm md:text-base" placeholder="example@mail.com">
+          <p id="err-email" class="text-xs text-red-500 mt-1 hidden"></p>
+        </div>
+        <div>
+          <label for="date" class="block text-sm text-gray-700 mb-2 font-bold">ご利用希望日 <span class="text-green">*</span></label>
+          <input type="date" id="date" name="date" class="w-full bg-white border-2 border-gray-200 focus:border-green focus:outline-none px-4 py-3 text-gray-900 transition text-sm md:text-base">
+          <p id="err-date" class="text-xs text-red-500 mt-1 hidden"></p>
+        </div>
+        <div>
+          <label for="duration" class="block text-sm text-gray-700 mb-2 font-bold">ご利用期間 <span class="text-green">*</span></label>
+          <select id="duration" name="duration" class="w-full bg-white border-2 border-gray-200 focus:border-green focus:outline-none px-4 py-3 text-gray-900 transition text-sm md:text-base">
+            <option value="">選択してください</option>
+            <option value="3hr">3時間</option>
+            <option value="24hr">24時間(1day)</option>
+            <option value="2day">2day</option>
+            <option value="5days">5days</option>
+          </select>
+          <p id="err-duration" class="text-xs text-red-500 mt-1 hidden"></p>
+        </div>
+        <div class="md:col-span-2">
+          <label for="car" class="block text-sm text-gray-700 mb-2 font-bold">希望する車種 <span class="text-green">*</span></label>
+          <select id="car" name="car" class="w-full bg-white border-2 border-gray-200 focus:border-green focus:outline-none px-4 py-3 text-gray-900 transition text-sm md:text-base">
+            <option value="">選択してください</option>
+            <option value="2人乗り">2人乗り</option>
+            <option value="4人乗り">4人乗り</option>
+            <option value="7人乗り">7人乗り</option>
+          </select>
+          <p id="err-car" class="text-xs text-red-500 mt-1 hidden"></p>
+        </div>
+        <div class="md:col-span-2">
+          <label for="message" class="block text-sm text-gray-700 mb-2 font-bold">ご質問・ご要望（任意）</label>
+          <textarea id="message" name="message" rows="3" class="w-full bg-white border-2 border-gray-200 focus:border-green focus:outline-none px-4 py-3 text-gray-900 placeholder-gray-400 transition text-sm md:text-base" placeholder="例：チャイルドシートの貸出はできますか？"></textarea>
+        </div>
+      </div>
+
+      <p id="formErrorGeneral" class="hidden text-sm text-red-500 mt-6 text-center">送信に失敗しました。お手数ですが、お電話にてご連絡ください。</p>
+
+      <button type="submit" id="submitBtn" class="w-full mt-8 inline-flex items-center justify-center gap-3 bg-green hover:bg-green-dark transition text-white px-10 py-4 text-base md:text-lg tracking-wide font-bold shadow-lg shadow-green/20">
+        送信する
+      </button>
+      <p class="text-center text-xs text-gray-500 mt-4">お急ぎの場合は <a href="tel:0466001234" class="text-green underline font-bold">お電話（0466-00-1234）</a> でも承っております</p>
+    </form>
+
+    <!-- サンクスメッセージ -->
+    <div id="formSuccess" class="hidden bg-white border-2 border-green shadow-xl p-10 text-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-green mx-auto mb-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      <h3 class="text-xl md:text-2xl font-bold mb-4">お問い合わせありがとうございます</h3>
+      <p class="text-gray-600 leading-relaxed">内容を確認の上、担当より折り返しご連絡いたします。<br>お急ぎの場合はお電話にてお問い合わせください。</p>
     </div>
   </div>
 </section>
@@ -511,19 +613,32 @@
   <div class="max-w-3xl mx-auto">
     <p class="tracking-widest text-xs md:text-sm mb-6 text-white/80">RESERVATION</p>
     <h2 class="text-2xl md:text-4xl font-bold mb-9">日帰り旅行のご予約はこちら</h2>
-    <p class="text-white/90 mb-[4.5rem] leading-relaxed">お電話またはWebにて、お気軽にご予約・お問い合わせください。</p>
-    <div class="flex flex-col sm:flex-row gap-6 justify-center">
+    <p class="text-white/90 mb-9 leading-relaxed">お電話またはWebにて、お気軽にご予約・お問い合わせください。</p>
+    <p class="inline-flex items-center gap-2 bg-white text-green px-6 py-3 tracking-wide text-sm md:text-base font-bold mb-[4.5rem]">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-green flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      24時間いつでもオンライン予約できます
+    </p>
+    <div class="flex flex-col sm:flex-row gap-6 justify-center mb-[4.5rem]">
       <a href="tel:0466001234" class="inline-flex items-center justify-center gap-[1.125rem] bg-white hover:bg-gray-100 transition text-green px-[3.75rem] py-[1.875rem] text-lg font-bold">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.57.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.57 1 1 0 01-.25 1.01l-2.2 2.21z"/></svg>
         電話で予約する
       </a>
-      <!-- Web予約：実際のご予約システムのURLに差し替えてください -->
-      <a href="#" class="inline-flex items-center justify-center gap-[1.125rem] border-2 border-white text-white hover:bg-white hover:text-green transition px-[3.75rem] py-[1.875rem] text-lg font-bold">
+      <a href="#online-booking" class="inline-flex items-center justify-center gap-[1.125rem] border-2 border-white text-white hover:bg-white hover:text-green transition px-[3.75rem] py-[1.875rem] text-lg font-bold">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
         Web予約はこちら
       </a>
     </div>
   </div>
+
+  <!-- Calendly widget -->
+  <div id="online-booking" class="max-w-3xl mx-auto scroll-mt-24">
+    <div class="bg-white p-1 sm:p-3 md:p-4 shadow-2xl">
+      <div class="calendly-inline-widget w-full" data-url="https://calendly.com/example/30min" style="min-width:280px;height:700px;width:100%;"></div>
+    </div>
+  </div>
+  <!-- Calendly widget end -->
+
+  <p class="text-xs md:text-sm tracking-widest text-white/70 mt-9">オンライン予約がご利用いただけない場合は、お電話にて承っております</p>
 </section>
 
 <!-- ===================== FOOTER ===================== -->
@@ -583,6 +698,144 @@
     calculate();
   })();
 </script>
+
+<!-- お問い合わせフォーム：バリデーション＆Formspree送信 -->
+<script>
+  (function () {
+    const form = document.getElementById('reservationForm');
+    const formSuccess = document.getElementById('formSuccess');
+    const formErrorGeneral = document.getElementById('formErrorGeneral');
+    const submitBtn = document.getElementById('submitBtn');
+    const dateInput = document.getElementById('date');
+
+    function todayStr() {
+      const d = new Date();
+      const y = d.getFullYear();
+      const m = String(d.getMonth() + 1).padStart(2, '0');
+      const day = String(d.getDate()).padStart(2, '0');
+      return `${y}-${m}-${day}`;
+    }
+    dateInput.min = todayStr();
+
+    const requiredFields = ['name', 'phone', 'email', 'date', 'duration', 'car'];
+
+    function setError(fieldId, message) {
+      const errEl = document.getElementById('err-' + fieldId);
+      const inputEl = document.getElementById(fieldId);
+      if (errEl) {
+        errEl.textContent = message;
+        errEl.classList.remove('hidden');
+      }
+      if (inputEl) {
+        inputEl.classList.add('border-red-400');
+      }
+    }
+
+    function clearError(fieldId) {
+      const errEl = document.getElementById('err-' + fieldId);
+      const inputEl = document.getElementById(fieldId);
+      if (errEl) {
+        errEl.textContent = '';
+        errEl.classList.add('hidden');
+      }
+      if (inputEl) {
+        inputEl.classList.remove('border-red-400');
+      }
+    }
+
+    function validate() {
+      let valid = true;
+      requiredFields.forEach(clearError);
+
+      const name = document.getElementById('name');
+      if (!name.value.trim()) {
+        setError('name', 'お名前を入力してください');
+        valid = false;
+      }
+
+      const phone = document.getElementById('phone');
+      const phoneDigits = phone.value.replace(/[^0-9]/g, '');
+      if (!phone.value.trim()) {
+        setError('phone', '電話番号を入力してください');
+        valid = false;
+      } else if (phoneDigits.length < 9 || phoneDigits.length > 11) {
+        setError('phone', '正しい電話番号を入力してください');
+        valid = false;
+      }
+
+      const email = document.getElementById('email');
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email.value.trim()) {
+        setError('email', 'メールアドレスを入力してください');
+        valid = false;
+      } else if (!emailPattern.test(email.value.trim())) {
+        setError('email', '正しいメールアドレスを入力してください');
+        valid = false;
+      }
+
+      if (!dateInput.value) {
+        setError('date', 'ご利用希望日を選択してください');
+        valid = false;
+      } else if (dateInput.value < todayStr()) {
+        setError('date', '本日以降の日付を選択してください');
+        valid = false;
+      }
+
+      const duration = document.getElementById('duration');
+      if (!duration.value) {
+        setError('duration', 'ご利用期間を選択してください');
+        valid = false;
+      }
+
+      const car = document.getElementById('car');
+      if (!car.value) {
+        setError('car', '希望する車種を選択してください');
+        valid = false;
+      }
+
+      return valid;
+    }
+
+    requiredFields.forEach((fieldId) => {
+      const el = document.getElementById(fieldId);
+      el.addEventListener('input', () => clearError(fieldId));
+      el.addEventListener('change', () => clearError(fieldId));
+    });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!validate()) return;
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = '送信中...';
+      formErrorGeneral.classList.add('hidden');
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' },
+        });
+        if (response.ok) {
+          form.classList.add('hidden');
+          formSuccess.classList.remove('hidden');
+          formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          formErrorGeneral.classList.remove('hidden');
+          submitBtn.disabled = false;
+          submitBtn.textContent = '送信する';
+        }
+      } catch (err) {
+        formErrorGeneral.classList.remove('hidden');
+        submitBtn.disabled = false;
+        submitBtn.textContent = '送信する';
+      }
+    });
+  })();
+</script>
+
+<!-- Calendly widget script -->
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
 <!-- AOS (Animate On Scroll)：情報が素早く・明瞭に見えるようキビキビ設定 -->
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
