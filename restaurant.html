@@ -47,6 +47,8 @@
   /* ダーク背景での日付ピッカーアイコンを見やすくする */
   input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(1); cursor: pointer; }
 </style>
+<!-- AOS (Animate On Scroll) -->
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 </head>
 <body class="bg-primary text-white antialiased">
 
@@ -57,7 +59,7 @@
       <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 md:w-8 md:h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
     <div class="flex items-center gap-2 md:gap-3">
-      <a href="tel:0312345678" class="inline-flex items-center gap-2 bg-gold hover:bg-gold-light transition text-primary-dark px-4 md:px-6 py-2.5 md:py-3 text-xs md:text-sm tracking-wide font-bold">
+      <a href="#contact-form" class="inline-flex items-center gap-2 bg-gold hover:bg-gold-light transition text-primary-dark px-4 md:px-6 py-2.5 md:py-3 text-xs md:text-sm tracking-wide font-bold">
         ご予約はこちら
       </a>
       <a href="#access" class="hidden sm:inline-flex items-center gap-2 border border-white/40 text-white hover:border-gold hover:text-gold transition px-4 md:px-6 py-2.5 md:py-3 text-xs md:text-sm tracking-wide">
@@ -89,16 +91,17 @@
 <!-- ===================== 1. HERO（非対称・写真＋浮遊カード） ===================== -->
 <section id="hero" class="relative">
   <div class="relative h-[80vh] md:h-[85vh] overflow-hidden">
-    <img src="https://placehold.co/1920x1200/1a1a1a/c9a84c?text=Shabu-Shabu+Kuroyoton" alt="黒曜豚の特選しゃぶしゃぶ" class="w-full h-full object-cover opacity-60">
+    <!-- Photo by Jed Ji from Pexels (Pexels License) -->
+    <img src="https://images.pexels.com/photos/20036092/pexels-photo-20036092.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="黒曜豚の特選しゃぶしゃぶ" class="w-full h-full object-cover opacity-60">
     <div class="absolute inset-0 bg-gradient-to-t from-primary-dark/80 via-transparent to-primary-dark/40"></div>
 
     <!-- 縦書き漢字ラベル -->
-    <div class="absolute top-8 right-6 md:top-14 md:right-16 bg-primary-dark/80 px-3 py-6 md:px-4 md:py-10">
+    <div class="absolute top-8 right-6 md:top-14 md:right-16 bg-primary-dark/80 px-3 py-6 md:px-4 md:py-10" data-aos="fade-down" data-aos-duration="1200" data-aos-delay="300">
       <span class="vtext text-2xl md:text-4xl font-bold text-gold">極上</span>
     </div>
 
     <!-- 浮遊テキストカード -->
-    <div class="absolute left-6 right-6 bottom-6 md:right-auto md:left-14 md:bottom-14 md:max-w-lg bg-primary-dark/85 border border-gold/20 p-7 md:p-12">
+    <div class="absolute left-6 right-6 bottom-6 md:right-auto md:left-14 md:bottom-14 md:max-w-lg bg-primary-dark/85 border border-gold/20 p-7 md:p-12" data-aos="fade-up" data-aos-duration="1200">
       <p class="tracking-[0.4em] text-gold text-xs mb-5">TOKYO MINATO / PRIVATE ROOM SHABU-SHABU</p>
       <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-relaxed text-shadow mb-6">
         至福の一皿を、<br>あなたに
@@ -106,8 +109,8 @@
       <p class="text-sm md:text-base text-white/80 mb-8 tracking-wide leading-loose">
         最高級国産黒豚を産地直送。全席完全個室で味わう、接待・記念日にふさわしい特別なひととき。
       </p>
-      <a href="tel:0312345678" class="inline-flex items-center justify-center gap-3 bg-gold hover:bg-gold-light gold-glow transition text-primary-dark px-8 py-4 text-sm md:text-base tracking-wide font-bold">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.57.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.57 1 1 0 01-.25 1.01l-2.2 2.21z"/></svg>
+      <a href="#contact-form" class="inline-flex items-center justify-center gap-3 bg-gold hover:bg-gold-light gold-glow transition text-primary-dark px-8 py-4 text-sm md:text-base tracking-wide font-bold">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
         ご予約はこちら
       </a>
     </div>
@@ -115,15 +118,15 @@
 
   <!-- 下部プレビュー写真ストリップ -->
   <div class="grid grid-cols-2 gap-1 md:gap-2 h-28 md:h-44">
-    <img src="https://placehold.co/900x400/2a2a2a/c9a84c?text=Interior" alt="店内の様子" class="w-full h-full object-cover">
-    <img src="https://placehold.co/900x400/2a2a2a/c9a84c?text=Private+Room" alt="個室の様子" class="w-full h-full object-cover">
+    <img src="https://images.pexels.com/photos/5863513/pexels-photo-5863513.jpeg?auto=compress&cs=tinysrgb&w=900" alt="店内の様子" class="w-full h-full object-cover">
+    <img src="https://images.pexels.com/photos/30987884/pexels-photo-30987884.jpeg?auto=compress&cs=tinysrgb&w=900" alt="個室の様子" class="w-full h-full object-cover">
   </div>
 </section>
 
 <!-- ===================== 2. こだわり（非対称・交互配置） ===================== -->
 <section id="commitment" class="bg-primary py-20 md:py-28 px-6">
   <div class="max-w-6xl mx-auto">
-    <div class="flex items-end gap-5 mb-16 md:mb-24">
+    <div class="flex items-end gap-5 mb-16 md:mb-24" data-aos="fade-up" data-aos-duration="900">
       <span class="vtext text-xl md:text-2xl font-bold text-gold/60 leading-none h-16 md:h-20">拘</span>
       <div>
         <p class="tracking-[0.4em] text-gold text-xs md:text-sm mb-3">COMMITMENT</p>
@@ -132,9 +135,9 @@
     </div>
 
     <!-- 01 肉質 -->
-    <div class="relative mb-20 md:mb-28">
+    <div class="relative mb-20 md:mb-28" data-aos="fade-up" data-aos-duration="1000">
       <div class="relative h-72 md:h-[420px]">
-        <img src="https://placehold.co/1200x800/2a2a2a/c9a84c?text=Premium+Kuroton" alt="最高級国産黒豚" class="w-full h-full object-cover">
+        <img src="https://images.pexels.com/photos/20036092/pexels-photo-20036092.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="最高級国産黒豚" class="w-full h-full object-cover">
         <div class="absolute top-6 right-6 md:top-8 md:right-8 bg-primary-dark/80 px-3 py-5 md:px-4 md:py-8">
           <span class="vtext text-lg md:text-2xl font-bold text-gold">肉質</span>
         </div>
@@ -147,9 +150,9 @@
     </div>
 
     <!-- 02 空間 -->
-    <div class="relative mb-20 md:mb-28">
+    <div class="relative mb-20 md:mb-28" data-aos="fade-up" data-aos-duration="1000">
       <div class="relative h-72 md:h-[420px]">
-        <img src="https://placehold.co/1200x800/2a2a2a/c9a84c?text=Private+Space" alt="完全個室の空間" class="w-full h-full object-cover">
+        <img src="https://images.pexels.com/photos/33097440/pexels-photo-33097440.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="完全個室の空間" class="w-full h-full object-cover">
         <div class="absolute top-6 left-6 md:top-8 md:left-8 bg-primary-dark/80 px-3 py-5 md:px-4 md:py-8">
           <span class="vtext text-lg md:text-2xl font-bold text-gold">空間</span>
         </div>
@@ -162,9 +165,9 @@
     </div>
 
     <!-- 03 おもてなし -->
-    <div class="relative">
+    <div class="relative" data-aos="fade-up" data-aos-duration="1000">
       <div class="relative h-72 md:h-[420px]">
-        <img src="https://placehold.co/1200x800/2a2a2a/c9a84c?text=Omotenashi" alt="おもてなし" class="w-full h-full object-cover">
+        <img src="https://images.pexels.com/photos/5371583/pexels-photo-5371583.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="おもてなし" class="w-full h-full object-cover">
         <div class="absolute top-6 right-6 md:top-8 md:right-8 bg-primary-dark/80 px-3 py-5 md:px-4 md:py-8">
           <span class="vtext text-lg md:text-2xl font-bold text-gold">客膳</span>
         </div>
@@ -183,7 +186,7 @@
 <!-- ===================== 3. おすすめコース ===================== -->
 <section id="courses" class="bg-primary-dark py-20 md:py-28 px-6">
   <div class="max-w-6xl mx-auto">
-    <div class="flex items-end gap-5 mb-16">
+    <div class="flex items-end gap-5 mb-16" data-aos="fade-up" data-aos-duration="900">
       <span class="vtext text-xl md:text-2xl font-bold text-gold/60 leading-none h-16 md:h-20">膳</span>
       <div>
         <p class="tracking-[0.4em] text-gold text-xs md:text-sm mb-3">COURSE</p>
@@ -192,8 +195,8 @@
     </div>
     <div class="grid md:grid-cols-3 gap-8">
       <!-- 彩コース -->
-      <div class="bg-primary border border-gold/20 flex flex-col">
-        <img src="https://placehold.co/600x400/2a2a2a/c9a84c?text=Irodori+Course" alt="彩コース" class="w-full h-52 object-cover">
+      <div class="bg-primary border border-gold/20 flex flex-col" data-aos="fade-up" data-aos-duration="900" data-aos-delay="0">
+        <img src="https://images.pexels.com/photos/8288043/pexels-photo-8288043.jpeg?auto=compress&cs=tinysrgb&w=700" alt="彩コース" class="w-full h-52 object-cover">
         <div class="p-8 flex flex-col flex-1 text-center">
           <h3 class="text-xl font-bold mb-1">彩 -irodori- コース</h3>
           <p class="text-xs text-white/50 mb-4 tracking-widest">全6品</p>
@@ -206,13 +209,13 @@
             <li>・〆の黒豚出汁うどん</li>
             <li>・本日のデザート</li>
           </ul>
-          <a href="tel:0312345678" class="border border-gold text-gold hover:bg-gold hover:text-primary-dark transition py-3 tracking-wide">このコースを予約</a>
+          <a href="#contact-form" class="border border-gold text-gold hover:bg-gold hover:text-primary-dark transition py-3 tracking-wide">このコースを予約</a>
         </div>
       </div>
       <!-- 雅コース：人気 -->
-      <div class="relative bg-primary border-2 border-gold flex flex-col gold-glow">
+      <div class="relative bg-primary border-2 border-gold flex flex-col gold-glow" data-aos="fade-up" data-aos-duration="900" data-aos-delay="200">
         <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gold text-primary-dark text-xs font-bold px-5 py-1 tracking-widest">最も選ばれています</span>
-        <img src="https://placehold.co/600x400/2a2a2a/c9a84c?text=Miyabi+Course" alt="雅コース" class="w-full h-52 object-cover">
+        <img src="https://images.pexels.com/photos/20036092/pexels-photo-20036092.jpeg?auto=compress&cs=tinysrgb&w=700" alt="雅コース" class="w-full h-52 object-cover">
         <div class="p-8 pt-6 flex flex-col flex-1 text-center">
           <h3 class="text-xl font-bold mb-1">雅 -miyabi- コース</h3>
           <p class="text-xs text-white/50 mb-4 tracking-widest">全8品</p>
@@ -226,12 +229,12 @@
             <li>・〆の黒豚出汁雑炊</li>
             <li>・本日のデザート／食後の一杯</li>
           </ul>
-          <a href="tel:0312345678" class="bg-gold hover:bg-gold-light text-primary-dark transition py-3 tracking-wide font-bold">このコースを予約</a>
+          <a href="#contact-form" class="bg-gold hover:bg-gold-light text-primary-dark transition py-3 tracking-wide font-bold">このコースを予約</a>
         </div>
       </div>
       <!-- 極コース -->
-      <div class="bg-primary border border-gold/20 flex flex-col">
-        <img src="https://placehold.co/600x400/2a2a2a/c9a84c?text=Kiwami+Course" alt="極コース" class="w-full h-52 object-cover">
+      <div class="bg-primary border border-gold/20 flex flex-col" data-aos="fade-up" data-aos-duration="900" data-aos-delay="400">
+        <img src="https://images.pexels.com/photos/129465/pexels-photo-129465.jpeg?auto=compress&cs=tinysrgb&w=700" alt="極コース" class="w-full h-52 object-cover">
         <div class="p-8 flex flex-col flex-1 text-center">
           <h3 class="text-xl font-bold mb-1">極 -kiwami- コース</h3>
           <p class="text-xs text-white/50 mb-4 tracking-widest">全10品・接待/記念日向け</p>
@@ -246,7 +249,7 @@
             <li>・〆の黒豚出汁雑炊</li>
             <li>・特製デザート／飲み放題付</li>
           </ul>
-          <a href="tel:0312345678" class="border border-gold text-gold hover:bg-gold hover:text-primary-dark transition py-3 tracking-wide">このコースを予約</a>
+          <a href="#contact-form" class="border border-gold text-gold hover:bg-gold hover:text-primary-dark transition py-3 tracking-wide">このコースを予約</a>
         </div>
       </div>
     </div>
@@ -256,7 +259,7 @@
 <!-- ===================== 4. メニューハイライト ===================== -->
 <section id="menu" class="bg-primary py-20 md:py-28 px-6">
   <div class="max-w-6xl mx-auto">
-    <div class="flex items-end gap-5 mb-16">
+    <div class="flex items-end gap-5 mb-16" data-aos="fade-up" data-aos-duration="900">
       <span class="vtext text-xl md:text-2xl font-bold text-gold/60 leading-none h-16 md:h-20">味</span>
       <div>
         <p class="tracking-[0.4em] text-gold text-xs md:text-sm mb-3">MENU HIGHLIGHT</p>
@@ -264,38 +267,38 @@
       </div>
     </div>
     <div class="grid grid-cols-2 md:grid-cols-2 gap-4 md:gap-6">
-      <div class="relative group overflow-hidden">
-        <img src="https://placehold.co/700x500/2a2a2a/c9a84c?text=Kata-Rosu" alt="特選黒曜豚 肩ロース" class="w-full h-40 md:h-64 object-cover">
+      <div class="relative group overflow-hidden" data-aos="fade-up" data-aos-duration="900" data-aos-delay="0">
+        <img src="https://images.pexels.com/photos/20036092/pexels-photo-20036092.jpeg?auto=compress&cs=tinysrgb&w=700" alt="特選黒曜豚 肩ロース" class="w-full h-40 md:h-64 object-cover">
         <div class="absolute inset-0 bg-gradient-to-t from-primary-dark/90 to-transparent flex items-end p-4">
           <p class="text-sm md:text-base font-bold">特選黒曜豚 肩ロース</p>
         </div>
       </div>
-      <div class="relative group overflow-hidden">
-        <img src="https://placehold.co/700x500/2a2a2a/c9a84c?text=Bara-Niku" alt="特選黒曜豚 バラ肉" class="w-full h-40 md:h-64 object-cover">
+      <div class="relative group overflow-hidden" data-aos="fade-up" data-aos-duration="900" data-aos-delay="150">
+        <img src="https://images.pexels.com/photos/8288043/pexels-photo-8288043.jpeg?auto=compress&cs=tinysrgb&w=700" alt="特選黒曜豚 バラ肉" class="w-full h-40 md:h-64 object-cover">
         <div class="absolute inset-0 bg-gradient-to-t from-primary-dark/90 to-transparent flex items-end p-4">
           <p class="text-sm md:text-base font-bold">特選黒曜豚 バラ肉</p>
         </div>
       </div>
-      <div class="relative group overflow-hidden">
-        <img src="https://placehold.co/700x500/2a2a2a/c9a84c?text=Goma-Dare" alt="特製胡麻だれ・ポン酢" class="w-full h-40 md:h-64 object-cover">
+      <div class="relative group overflow-hidden" data-aos="fade-up" data-aos-duration="900" data-aos-delay="300">
+        <img src="https://images.pexels.com/photos/4985527/pexels-photo-4985527.jpeg?auto=compress&cs=tinysrgb&w=700" alt="特製胡麻だれ・ポン酢" class="w-full h-40 md:h-64 object-cover">
         <div class="absolute inset-0 bg-gradient-to-t from-primary-dark/90 to-transparent flex items-end p-4">
           <p class="text-sm md:text-base font-bold">特製胡麻だれ・ポン酢</p>
         </div>
       </div>
-      <div class="relative group overflow-hidden">
-        <img src="https://placehold.co/700x500/2a2a2a/c9a84c?text=Vegetables" alt="産地直送 野菜盛り合わせ" class="w-full h-40 md:h-64 object-cover">
+      <div class="relative group overflow-hidden" data-aos="fade-up" data-aos-duration="900" data-aos-delay="0">
+        <img src="https://images.pexels.com/photos/129465/pexels-photo-129465.jpeg?auto=compress&cs=tinysrgb&w=700" alt="産地直送 野菜盛り合わせ" class="w-full h-40 md:h-64 object-cover">
         <div class="absolute inset-0 bg-gradient-to-t from-primary-dark/90 to-transparent flex items-end p-4">
           <p class="text-sm md:text-base font-bold">産地直送 野菜盛り合わせ</p>
         </div>
       </div>
-      <div class="relative group overflow-hidden">
-        <img src="https://placehold.co/700x500/2a2a2a/c9a84c?text=Zosui" alt="〆の黒豚出汁雑炊" class="w-full h-40 md:h-64 object-cover">
+      <div class="relative group overflow-hidden" data-aos="fade-up" data-aos-duration="900" data-aos-delay="150">
+        <img src="https://images.pexels.com/photos/6732732/pexels-photo-6732732.jpeg?auto=compress&cs=tinysrgb&w=700" alt="〆の黒豚出汁雑炊" class="w-full h-40 md:h-64 object-cover">
         <div class="absolute inset-0 bg-gradient-to-t from-primary-dark/90 to-transparent flex items-end p-4">
           <p class="text-sm md:text-base font-bold">〆の黒豚出汁雑炊</p>
         </div>
       </div>
-      <div class="relative group overflow-hidden">
-        <img src="https://placehold.co/700x500/2a2a2a/c9a84c?text=Dessert" alt="季節のデザート" class="w-full h-40 md:h-64 object-cover">
+      <div class="relative group overflow-hidden" data-aos="fade-up" data-aos-duration="900" data-aos-delay="300">
+        <img src="https://images.pexels.com/photos/33033809/pexels-photo-33033809.jpeg?auto=compress&cs=tinysrgb&w=700" alt="季節のデザート" class="w-full h-40 md:h-64 object-cover">
         <div class="absolute inset-0 bg-gradient-to-t from-primary-dark/90 to-transparent flex items-end p-4">
           <p class="text-sm md:text-base font-bold">季節のデザート</p>
         </div>
@@ -309,7 +312,7 @@
 <!-- ===================== 5. 個室紹介（非対称・交互配置） ===================== -->
 <section id="rooms" class="bg-primary-dark py-20 md:py-28 px-6">
   <div class="max-w-6xl mx-auto">
-    <div class="flex items-end gap-5 mb-16 md:mb-24">
+    <div class="flex items-end gap-5 mb-16 md:mb-24" data-aos="fade-up" data-aos-duration="900">
       <span class="vtext text-xl md:text-2xl font-bold text-gold/60 leading-none h-16 md:h-20">室</span>
       <div>
         <p class="tracking-[0.4em] text-gold text-xs md:text-sm mb-3">PRIVATE ROOM</p>
@@ -318,9 +321,9 @@
     </div>
 
     <!-- 2名用 -->
-    <div class="relative mb-20 md:mb-28">
+    <div class="relative mb-20 md:mb-28" data-aos="fade-up" data-aos-duration="1000">
       <div class="relative h-64 md:h-96">
-        <img src="https://placehold.co/1200x800/2a2a2a/c9a84c?text=Room+for+2" alt="2名用個室" class="w-full h-full object-cover">
+        <img src="https://images.pexels.com/photos/30987884/pexels-photo-30987884.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="2名用個室" class="w-full h-full object-cover">
         <div class="absolute top-6 right-6 md:top-8 md:right-8 bg-primary-dark/80 px-3 py-5 md:px-4 md:py-8">
           <span class="vtext text-lg md:text-2xl font-bold text-gold">二名</span>
         </div>
@@ -333,9 +336,9 @@
     </div>
 
     <!-- 4名用 -->
-    <div class="relative mb-20 md:mb-28">
+    <div class="relative mb-20 md:mb-28" data-aos="fade-up" data-aos-duration="1000">
       <div class="relative h-64 md:h-96">
-        <img src="https://placehold.co/1200x800/2a2a2a/c9a84c?text=Room+for+4" alt="4名用個室" class="w-full h-full object-cover">
+        <img src="https://images.pexels.com/photos/33097440/pexels-photo-33097440.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="4名用個室" class="w-full h-full object-cover">
         <div class="absolute top-6 left-6 md:top-8 md:left-8 bg-primary-dark/80 px-3 py-5 md:px-4 md:py-8">
           <span class="vtext text-lg md:text-2xl font-bold text-gold">四名</span>
         </div>
@@ -348,9 +351,9 @@
     </div>
 
     <!-- 8名用 -->
-    <div class="relative">
+    <div class="relative" data-aos="fade-up" data-aos-duration="1000">
       <div class="relative h-64 md:h-96">
-        <img src="https://placehold.co/1200x800/2a2a2a/c9a84c?text=Room+for+8" alt="8名用個室" class="w-full h-full object-cover">
+        <img src="https://images.pexels.com/photos/5863513/pexels-photo-5863513.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="8名用個室" class="w-full h-full object-cover">
         <div class="absolute top-6 right-6 md:top-8 md:right-8 bg-primary-dark/80 px-3 py-5 md:px-4 md:py-8">
           <span class="vtext text-lg md:text-2xl font-bold text-gold">八名</span>
         </div>
@@ -367,7 +370,7 @@
 <!-- ===================== 6. お客様の声 ===================== -->
 <section id="voice" class="bg-primary py-20 md:py-28 px-6">
   <div class="max-w-6xl mx-auto">
-    <div class="flex items-end gap-5 mb-16">
+    <div class="flex items-end gap-5 mb-16" data-aos="fade-up" data-aos-duration="900">
       <span class="vtext text-xl md:text-2xl font-bold text-gold/60 leading-none h-16 md:h-20">声</span>
       <div>
         <p class="tracking-[0.4em] text-gold text-xs md:text-sm mb-3">VOICE</p>
@@ -375,17 +378,17 @@
       </div>
     </div>
     <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-primary-light/40 border border-gold/10 p-8">
+      <div class="bg-primary-light/40 border border-gold/10 p-8" data-aos="fade-up" data-aos-duration="900" data-aos-delay="0">
         <p class="text-gold tracking-wider mb-4">★★★★★</p>
         <p class="text-white/80 leading-relaxed mb-6">取引先との接待で利用しました。完全個室の落ち着いた雰囲気とお肉の質の高さに、先方も大変満足されていました。今後も大事な席で利用したいと思います。</p>
         <p class="font-bold text-sm">M.S様（40代・経営者）</p>
       </div>
-      <div class="bg-primary-light/40 border border-gold/10 p-8">
+      <div class="bg-primary-light/40 border border-gold/10 p-8" data-aos="fade-up" data-aos-duration="900" data-aos-delay="200">
         <p class="text-gold tracking-wider mb-4">★★★★★</p>
         <p class="text-white/80 leading-relaxed mb-6">結婚記念日にお祝いで伺いました。2名用の個室はとてもプライベート感があり、特別な一夜になりました。お肉の甘みが今まで食べたしゃぶしゃぶと全く違いました。</p>
         <p class="font-bold text-sm">K.T様（30代・会社員）</p>
       </div>
-      <div class="bg-primary-light/40 border border-gold/10 p-8">
+      <div class="bg-primary-light/40 border border-gold/10 p-8" data-aos="fade-up" data-aos-duration="900" data-aos-delay="400">
         <p class="text-gold tracking-wider mb-4">★★★★★</p>
         <p class="text-white/80 leading-relaxed mb-6">会社の会食で大人数の個室を利用しました。掘りごたつでゆったり過ごせ、スタッフの方の気配りも素晴らしく、上司からも高評価でした。</p>
         <p class="font-bold text-sm">H.Y様（50代・役員）</p>
@@ -399,7 +402,7 @@
 <!-- ===================== 7. アクセス・営業時間 ===================== -->
 <section id="access" class="bg-primary-dark py-20 md:py-28 px-6">
   <div class="max-w-6xl mx-auto">
-    <div class="flex items-end gap-5 mb-16">
+    <div class="flex items-end gap-5 mb-16" data-aos="fade-up" data-aos-duration="900">
       <span class="vtext text-xl md:text-2xl font-bold text-gold/60 leading-none h-16 md:h-20">道</span>
       <div>
         <p class="tracking-[0.4em] text-gold text-xs md:text-sm mb-3">ACCESS</p>
@@ -407,8 +410,8 @@
       </div>
     </div>
     <div class="grid md:grid-cols-2 gap-10 items-center">
-      <img src="https://placehold.co/700x500/2a2a2a/c9a84c?text=MAP" alt="店舗までの地図" class="w-full h-72 md:h-96 object-cover">
-      <div class="space-y-6 text-base md:text-lg">
+      <img src="https://placehold.co/700x500/2a2a2a/c9a84c?text=MAP" alt="店舗までの地図" class="w-full h-72 md:h-96 object-cover" data-aos="fade-right" data-aos-duration="1000">
+      <div class="space-y-6 text-base md:text-lg" data-aos="fade-left" data-aos-duration="1000">
         <div class="flex gap-4">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gold flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7.05 11.3 7.35 11.55a1 1 0 001.3 0C12.95 21.3 20 15.25 20 10c0-4.42-3.58-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
           <p>東京都港区西麻布1-2-3 黒曜台ビル2F<br><span class="text-white/60 text-sm md:text-base">東京メトロ日比谷線「六本木駅」より徒歩7分</span></p>
@@ -774,6 +777,17 @@
       }
     });
   })();
+</script>
+
+<!-- AOS (Animate On Scroll)：高級感を出すためゆっくり・なめらかに -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    easing: 'ease-in-out-cubic',
+    once: true,
+    offset: 80,
+  });
 </script>
 </body>
 </html>

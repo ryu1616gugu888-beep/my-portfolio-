@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Izakaya Takumi | Authentic Japanese Izakaya in Shinjuku, Tokyo</title>
+<meta name="description" content="Experience real Japanese izakaya culture in Shinjuku, Tokyo. All-you-can-drink beer courses from ¥2,500. Friendly staff, lively atmosphere, English menu available.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Izakaya Takumi | Authentic Japanese Izakaya in Shinjuku, Tokyo">
+<meta property="og:description" content="All-you-can-drink beer courses from ¥2,500. Experience real Japanese izakaya culture in Shinjuku, Tokyo.">
+<meta property="og:image" content="https://images.pexels.com/photos/37919989/pexels-photo-37919989.jpeg?auto=compress&cs=tinysrgb&w=1200">
+<link rel="icon" href="https://placehold.co/64x64/bc002d/ffd400?text=IT">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          red: {
+            DEFAULT: '#bc002d',
+            light: '#e0143f',
+            dark: '#8a0020',
+          },
+          yellow: {
+            DEFAULT: '#ffd400',
+            light: '#ffe14d',
+            dark: '#e0ac00',
+          },
+        },
+      },
+    },
+  }
+</script>
+<style>
+  html { scroll-padding-top: 76px; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
+  .text-shadow { text-shadow: 0 2px 10px rgba(0,0,0,0.6); }
+  .lantern-glow { box-shadow: 0 4px 18px rgba(188,0,45,0.35); }
+  summary::-webkit-details-marker { display: none; }
+  details[open] .menu-icon { transform: rotate(45deg); }
+</style>
+</head>
+<body class="bg-white text-gray-900 antialiased">
+
+<!-- ===================== HEADER ===================== -->
+<header class="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
+  <div class="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-16 md:h-20">
+    <a href="#hero" class="flex items-center gap-2">
+      <span class="text-lg md:text-2xl font-black tracking-tight">
+        <span class="text-red">IZAKAYA</span> <span class="text-gray-900">TAKUMI</span>
+      </span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-6 text-sm font-bold text-gray-700">
+      <a href="#specialties" class="hover:text-red transition">Our Specialties</a>
+      <a href="#courses" class="hover:text-red transition">Drink Courses</a>
+      <a href="#menu" class="hover:text-red transition">Menu</a>
+      <a href="#voice" class="hover:text-red transition">Reviews</a>
+      <a href="#access" class="hover:text-red transition">Access</a>
+      <a href="#contact-form" class="hover:text-red transition">Reserve</a>
+    </nav>
+    <a href="tel:0312345678" class="hidden md:inline-flex items-center gap-2 bg-yellow hover:bg-yellow-dark transition text-gray-900 px-5 py-3 text-sm font-black">
+      📞 03-1234-5678
+    </a>
+    <button id="menuBtn" class="lg:hidden text-gray-900" aria-label="menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+  <nav id="mobileMenu" class="hidden lg:hidden flex flex-col bg-white text-center border-t border-gray-100 font-bold">
+    <a href="#specialties" class="py-3 border-b border-gray-100">Our Specialties</a>
+    <a href="#courses" class="py-3 border-b border-gray-100">Drink Courses</a>
+    <a href="#menu" class="py-3 border-b border-gray-100">Menu</a>
+    <a href="#voice" class="py-3 border-b border-gray-100">Reviews</a>
+    <a href="#access" class="py-3 border-b border-gray-100">Access</a>
+    <a href="#contact-form" class="py-3 border-b border-gray-100">Reserve</a>
+    <a href="tel:0312345678" class="py-4 bg-red text-white">📞 03-1234-5678</a>
+  </nav>
+</header>
+
+<!-- ===================== 1. HERO ===================== -->
+<section id="hero" class="relative pt-16 md:pt-20 min-h-screen flex items-center bg-gray-900">
+  <div class="absolute inset-0">
+    <!-- Photo by Iban Lopez Luna from Pexels (Pexels License) -->
+    <img src="https://images.pexels.com/photos/37919989/pexels-photo-37919989.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="Lively izakaya interior with red lanterns" class="w-full h-full object-cover opacity-70">
+    <div class="absolute inset-0 bg-gradient-to-t from-gray-900/95 via-gray-900/50 to-gray-900/70"></div>
+  </div>
+  <div class="relative max-w-5xl mx-auto px-6 py-24 text-center text-white">
+    <p class="inline-block bg-red text-white text-xs md:text-sm font-black px-4 py-2 tracking-widest mb-6 lantern-glow">SHINJUKU, TOKYO</p>
+    <h1 class="text-3xl sm:text-4xl md:text-6xl font-black leading-snug md:leading-tight text-shadow mb-6">
+      Want to Experience Real<br>
+      <span class="text-yellow">Japanese Izakaya Culture?</span>
+    </h1>
+    <p class="text-base md:text-xl text-white/90 mb-10 tracking-wide">
+      All-you-can-drink beer courses from <span class="text-yellow font-black">¥2,500</span>. Loud, fun, and full of good food &amp; good beer — just like a real Tokyo izakaya should be.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+      <a href="#contact-form" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-yellow hover:bg-yellow-dark lantern-glow transition text-gray-900 px-10 py-5 text-lg tracking-wide font-black">
+        📅 Reserve Your Table
+      </a>
+      <a href="#courses" class="w-full sm:w-auto inline-flex items-center justify-center border-2 border-white hover:border-yellow hover:text-yellow transition text-white px-10 py-5 text-lg tracking-wide font-bold">
+        See Drink Courses
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 2. OUR SPECIALTIES ===================== -->
+<section id="specialties" class="bg-white py-20 md:py-28 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <p class="text-red font-black tracking-widest text-sm mb-3">OUR SPECIALTIES</p>
+      <h2 class="text-2xl md:text-4xl font-black">Three Things We're Proud Of</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="border-2 border-gray-100 shadow-lg">
+        <!-- Photo by Madeline Liu on Unsplash (Unsplash License) -->
+        <img src="https://images.unsplash.com/photo-1756260853158-a63f71b4bff6?w=800&auto=format&fit=crop" alt="Japanese sake bottle and cup" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-10 h-10 rounded-full bg-red text-white flex items-center justify-center font-black text-lg flex-shrink-0">酒</span>
+            <h3 class="text-lg font-black">Premium Japanese Sake</h3>
+          </div>
+          <p class="text-gray-600 leading-relaxed">A carefully chosen selection of sake from all over Japan, including rare local brews you won't find outside the country.</p>
+        </div>
+      </div>
+      <div class="border-2 border-gray-100 shadow-lg">
+        <!-- Photo by Iban Lopez Luna from Pexels (Pexels License) -->
+        <img src="https://images.pexels.com/photos/37920005/pexels-photo-37920005.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Lively izakaya atmosphere with lanterns" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-10 h-10 rounded-full bg-red text-white flex items-center justify-center font-black text-lg flex-shrink-0">場</span>
+            <h3 class="text-lg font-black">Lively, Authentic Atmosphere</h3>
+          </div>
+          <p class="text-gray-600 leading-relaxed">Red lanterns, wooden counters, and the noisy, cheerful buzz of a real Japanese izakaya — not a tourist trap, the real deal.</p>
+        </div>
+      </div>
+      <div class="border-2 border-gray-100 shadow-lg">
+        <!-- Photo by Pranjal from Pexels (Pexels License) -->
+        <img src="https://images.pexels.com/photos/29765727/pexels-photo-29765727.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Bartender pouring a fresh draft beer" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-10 h-10 rounded-full bg-red text-white flex items-center justify-center font-black text-lg flex-shrink-0">心</span>
+            <h3 class="text-lg font-black">Warm Japanese Hospitality</h3>
+          </div>
+          <p class="text-gray-600 leading-relaxed">Our staff speak English and love making visitors from abroad feel at home — no Japanese required to have a great night.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 3. DRINK COURSES ===================== -->
+<section id="courses" class="bg-gray-900 py-20 md:py-28 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <p class="text-yellow font-black tracking-widest text-sm mb-3">ALL-YOU-CAN-DRINK COURSES</p>
+      <h2 class="text-2xl md:text-4xl font-black text-white">Recommended Courses</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Course 1 -->
+      <div class="bg-white border-2 border-yellow flex flex-col">
+        <!-- Photo by Pranjal from Pexels (Pexels License) -->
+        <img src="https://images.pexels.com/photos/29765727/pexels-photo-29765727.jpeg?auto=compress&cs=tinysrgb&w=700" alt="2 Hour All-You-Can-Drink Beer Course" class="w-full h-48 object-cover">
+        <div class="p-8 flex flex-col flex-1 text-center">
+          <h3 class="text-lg font-black mb-1">2H All-You-Can-Drink Beer</h3>
+          <p class="text-xs text-gray-500 mb-4 tracking-widest">2 HOURS · BEER ONLY</p>
+          <p class="text-4xl font-black text-red mb-6">¥2,500</p>
+          <ul class="text-sm text-left text-gray-600 space-y-2 mb-8 flex-1">
+            <li>・Unlimited draft beer for 2 hours</li>
+            <li>・Perfect for a quick night out</li>
+            <li>・Great value, great beer</li>
+          </ul>
+          <a href="#contact-form" class="border-2 border-red text-red hover:bg-red hover:text-white transition py-3 tracking-wide font-bold">Book This Course</a>
+        </div>
+      </div>
+      <!-- Course 2: Popular -->
+      <div class="relative bg-white border-2 border-red flex flex-col lantern-glow">
+        <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-red text-white text-xs font-black px-5 py-1 tracking-widest">MOST POPULAR</span>
+        <!-- Photo by Darlene Alderson from Pexels (Pexels License) -->
+        <img src="https://images.pexels.com/photos/7016490/pexels-photo-7016490.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Unlimited-Time All-You-Can-Drink Beer Course" class="w-full h-48 object-cover">
+        <div class="p-8 pt-6 flex flex-col flex-1 text-center">
+          <h3 class="text-lg font-black mb-1">Unlimited-Time Beer Course</h3>
+          <p class="text-xs text-gray-500 mb-4 tracking-widest">NO TIME LIMIT · BEER ONLY</p>
+          <p class="text-4xl font-black text-red mb-6">¥5,000</p>
+          <ul class="text-sm text-left text-gray-600 space-y-2 mb-8 flex-1">
+            <li>・No time limit — stay as long as you like</li>
+            <li>・Unlimited draft beer all night</li>
+            <li>・Ideal for groups &amp; celebrations</li>
+          </ul>
+          <a href="#contact-form" class="bg-red hover:bg-red-dark text-white transition py-3 tracking-wide font-black">Book This Course</a>
+        </div>
+      </div>
+      <!-- Course 3 -->
+      <div class="bg-white border-2 border-yellow flex flex-col">
+        <!-- Photo by Gerald Jake Abangan from Pexels (Pexels License) -->
+        <img src="https://images.pexels.com/photos/2689419/pexels-photo-2689419.jpeg?auto=compress&cs=tinysrgb&w=700" alt="2 Hour All-You-Can-Eat-and-Drink Course" class="w-full h-48 object-cover">
+        <div class="p-8 flex flex-col flex-1 text-center">
+          <h3 class="text-lg font-black mb-1">2H Food &amp; Drink Course</h3>
+          <p class="text-xs text-gray-500 mb-4 tracking-widest">2 HOURS · FOOD + DRINK</p>
+          <p class="text-4xl font-black text-red mb-6">¥4,000</p>
+          <ul class="text-sm text-left text-gray-600 space-y-2 mb-8 flex-1">
+            <li>・All-you-can-eat izakaya dishes</li>
+            <li>・All-you-can-drink for 2 hours</li>
+            <li>・Best for trying everything on the menu</li>
+          </ul>
+          <a href="#contact-form" class="border-2 border-red text-red hover:bg-red hover:text-white transition py-3 tracking-wide font-bold">Book This Course</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 4. MENU HIGHLIGHT ===================== -->
+<section id="menu" class="bg-white py-20 md:py-28 px-6">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-16">
+      <p class="text-red font-black tracking-widest text-sm mb-3">MENU HIGHLIGHT</p>
+      <h2 class="text-2xl md:text-4xl font-black mb-3">Sake, Beer &amp; Yakitori</h2>
+      <p class="text-gray-600">Tap a menu to see the full lineup &amp; prices</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <!-- Sake -->
+      <details class="group border-2 border-gray-100 shadow-lg">
+        <summary class="relative list-none cursor-pointer overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1756260853158-a63f71b4bff6?w=700&auto=format&fit=crop" alt="Premium sake bottle and cup" class="w-full h-56 object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-4">
+            <p class="text-base md:text-lg font-black text-white">🍶 Sake Menu</p>
+          </div>
+          <span class="menu-icon absolute top-3 right-3 bg-yellow text-gray-900 w-8 h-8 rounded-full flex items-center justify-center text-xl font-black transition-transform">＋</span>
+        </summary>
+        <ul class="p-6 space-y-3 text-sm md:text-base">
+          <li class="flex justify-between gap-4"><span>Junmai Daiginjo "IWA 5"</span><span class="font-black text-red whitespace-nowrap">¥1,800</span></li>
+          <li class="flex justify-between gap-4"><span>Dassai 45</span><span class="font-black text-red whitespace-nowrap">¥1,200</span></li>
+          <li class="flex justify-between gap-4"><span>House Warm Sake</span><span class="font-black text-red whitespace-nowrap">¥700</span></li>
+          <li class="flex justify-between gap-4"><span>Nigori (Cloudy) Sake</span><span class="font-black text-red whitespace-nowrap">¥900</span></li>
+          <li class="flex justify-between gap-4"><span>Sake Tasting Flight (3 kinds)</span><span class="font-black text-red whitespace-nowrap">¥1,500</span></li>
+        </ul>
+      </details>
+      <!-- Beer -->
+      <details class="group border-2 border-gray-100 shadow-lg">
+        <summary class="relative list-none cursor-pointer overflow-hidden">
+          <img src="https://images.pexels.com/photos/29765727/pexels-photo-29765727.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Ice cold draft beer" class="w-full h-56 object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-4">
+            <p class="text-base md:text-lg font-black text-white">🍺 Beer Menu</p>
+          </div>
+          <span class="menu-icon absolute top-3 right-3 bg-yellow text-gray-900 w-8 h-8 rounded-full flex items-center justify-center text-xl font-black transition-transform">＋</span>
+        </summary>
+        <ul class="p-6 space-y-3 text-sm md:text-base">
+          <li class="flex justify-between gap-4"><span>Draft Beer (Asahi Super Dry)</span><span class="font-black text-red whitespace-nowrap">¥600</span></li>
+          <li class="flex justify-between gap-4"><span>Draft Beer (Kirin Ichiban)</span><span class="font-black text-red whitespace-nowrap">¥600</span></li>
+          <li class="flex justify-between gap-4"><span>Lemon Sour Beer</span><span class="font-black text-red whitespace-nowrap">¥650</span></li>
+          <li class="flex justify-between gap-4"><span>Bottled Craft Beer</span><span class="font-black text-red whitespace-nowrap">¥800</span></li>
+          <li class="flex justify-between gap-4"><span>Non-Alcoholic Beer</span><span class="font-black text-red whitespace-nowrap">¥550</span></li>
+        </ul>
+      </details>
+      <!-- Yakitori -->
+      <details class="group border-2 border-gray-100 shadow-lg">
+        <summary class="relative list-none cursor-pointer overflow-hidden">
+          <img src="https://images.pexels.com/photos/2689419/pexels-photo-2689419.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Grilled yakitori skewers" class="w-full h-56 object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-4">
+            <p class="text-base md:text-lg font-black text-white">🍢 Yakitori Menu</p>
+          </div>
+          <span class="menu-icon absolute top-3 right-3 bg-yellow text-gray-900 w-8 h-8 rounded-full flex items-center justify-center text-xl font-black transition-transform">＋</span>
+        </summary>
+        <ul class="p-6 space-y-3 text-sm md:text-base">
+          <li class="flex justify-between gap-4"><span>Negima (Chicken &amp; Leek)</span><span class="font-black text-red whitespace-nowrap">¥180</span></li>
+          <li class="flex justify-between gap-4"><span>Tsukune (Chicken Meatball)</span><span class="font-black text-red whitespace-nowrap">¥200</span></li>
+          <li class="flex justify-between gap-4"><span>Kawa (Chicken Skin)</span><span class="font-black text-red whitespace-nowrap">¥150</span></li>
+          <li class="flex justify-between gap-4"><span>Butabara (Pork Belly)</span><span class="font-black text-red whitespace-nowrap">¥180</span></li>
+          <li class="flex justify-between gap-4"><span>Yakitori Assortment (5 skewers)</span><span class="font-black text-red whitespace-nowrap">¥850</span></li>
+        </ul>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 6. CUSTOMER REVIEWS ===================== -->
+<section id="voice" class="bg-red py-20 md:py-28 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <p class="text-yellow font-black tracking-widest text-sm mb-3">TRAVELER REVIEWS</p>
+      <h2 class="text-2xl md:text-4xl font-black text-white">What Our Guests Say</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white p-8 shadow-lg">
+        <div class="flex items-center gap-4 mb-5">
+          <img src="https://images.pexels.com/photos/14687263/pexels-photo-14687263.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Tom, United Kingdom" class="w-14 h-14 rounded-full object-cover">
+          <div>
+            <p class="font-black">Tom, United Kingdom</p>
+            <p class="text-yellow-dark tracking-wider">★★★★★</p>
+          </div>
+        </div>
+        <p class="text-gray-700 leading-relaxed">"Best izakaya experience in Tokyo! We don't speak Japanese but the staff made everything so easy. Great beer, even better atmosphere."</p>
+      </div>
+      <div class="bg-white p-8 shadow-lg">
+        <div class="flex items-center gap-4 mb-5">
+          <img src="https://images.pexels.com/photos/6311599/pexels-photo-6311599.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Emma, Australia" class="w-14 h-14 rounded-full object-cover">
+          <div>
+            <p class="font-black">Emma, Australia</p>
+            <p class="text-yellow-dark tracking-wider">★★★★★</p>
+          </div>
+        </div>
+        <p class="text-gray-700 leading-relaxed">"Loved trying the sake flight with my friends! So much fun, so loud, so authentic. Exactly the Tokyo night out we were hoping for."</p>
+      </div>
+      <div class="bg-white p-8 shadow-lg">
+        <div class="flex items-center gap-4 mb-5">
+          <img src="https://images.pexels.com/photos/36291553/pexels-photo-36291553.jpeg?auto=compress&cs=tinysrgb&w=200" alt="David, United States" class="w-14 h-14 rounded-full object-cover">
+          <div>
+            <p class="font-black">David, United States</p>
+            <p class="text-yellow-dark tracking-wider">★★★★★</p>
+          </div>
+        </div>
+        <p class="text-gray-700 leading-relaxed">"The all-you-can-drink deal was incredible value. Felt like a real local izakaya, not a tourist spot. Will come back on our next trip!"</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 7. ACCESS & HOURS ===================== -->
+<section id="access" class="bg-white py-20 md:py-28 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <p class="text-red font-black tracking-widest text-sm mb-3">ACCESS &amp; HOURS</p>
+      <h2 class="text-2xl md:text-4xl font-black">Find Us in Shinjuku</h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <img src="https://placehold.co/700x500/bc002d/ffd400?text=MAP" alt="Map to Izakaya Takumi" class="w-full h-72 md:h-96 object-cover">
+      <div class="space-y-6 text-base md:text-lg">
+        <div class="flex gap-4">
+          <span class="text-red text-xl flex-shrink-0">📍</span>
+          <p>2-3-4 Kabukicho, Shinjuku-ku, Tokyo<br><span class="text-gray-500 text-sm md:text-base">5-minute walk from Shinjuku Station (East Exit)</span></p>
+        </div>
+        <div class="flex gap-4">
+          <span class="text-red text-xl flex-shrink-0">🕐</span>
+          <p>Open: 5:00 PM – 1:00 AM (Last Order 12:30 AM)<br><span class="text-gray-500 text-sm md:text-base">Open every day, including holidays</span></p>
+        </div>
+        <div class="flex gap-4">
+          <span class="text-red text-xl flex-shrink-0">🚗</span>
+          <p>No on-site parking<br><span class="text-gray-500 text-sm md:text-base">Nearest coin parking: Times Parking Kabukicho, 3-min walk (we recommend the train — Shinjuku Station is right around the corner!)</span></p>
+        </div>
+        <div class="flex gap-4">
+          <span class="text-red text-xl flex-shrink-0">📞</span>
+          <p>TEL: <a href="tel:0312345678" class="text-red hover:underline font-bold">03-1234-5678</a> <span class="text-gray-500 text-sm">(English OK)</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 8. RESERVATION CTA ===================== -->
+<section id="reservation" class="bg-gray-900 py-20 md:py-28 px-6 text-center">
+  <div class="max-w-3xl mx-auto">
+    <p class="tracking-widest text-xs md:text-sm mb-4 text-yellow font-black">RESERVATION</p>
+    <h2 class="text-2xl md:text-4xl font-black mb-6 text-white">Ready for a Real Tokyo Night Out?</h2>
+    <p class="text-white/80 mb-12 leading-relaxed">Book by phone or online — English-speaking staff, no reservation fee, and a seat waiting for you at the counter.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="tel:0312345678" class="inline-flex items-center justify-center gap-3 bg-yellow hover:bg-yellow-dark lantern-glow transition text-gray-900 px-10 py-5 text-lg tracking-wide font-black">
+        📞 Call to Reserve
+      </a>
+      <a href="#contact-form" class="inline-flex items-center justify-center gap-3 border-2 border-yellow text-yellow hover:bg-yellow hover:text-gray-900 transition px-10 py-5 text-lg tracking-wide font-black">
+        Book Online
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 9. RESERVATION FORM ===================== -->
+<section id="contact-form" class="bg-white py-20 md:py-28 px-6">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-10">
+      <p class="text-red font-black tracking-widest text-sm mb-3">RESERVATION FORM</p>
+      <h2 class="text-2xl md:text-4xl font-black mb-3">Reserve Your Table</h2>
+      <p class="text-gray-600">Fill out the form below and we'll confirm your reservation shortly.</p>
+    </div>
+
+    <!-- Replace the Formspree action URL below with your own form ID (free plan allows up to 50 submissions/month) -->
+    <form id="reservationForm" action="https://formspree.io/f/yourFormID" method="POST" class="bg-white border-2 border-gray-100 shadow-lg p-7 md:p-12" novalidate>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <label for="name" class="block text-sm text-gray-700 mb-2 font-bold">Name <span class="text-red">*</span></label>
+          <input type="text" id="name" name="name" class="w-full bg-white border-2 border-gray-200 focus:border-red focus:outline-none px-4 py-3 text-gray-900 placeholder-gray-400 transition text-sm md:text-base" placeholder="John Smith">
+          <p id="err-name" class="text-xs text-red mt-1 hidden"></p>
+        </div>
+        <div>
+          <label for="phone" class="block text-sm text-gray-700 mb-2 font-bold">Phone Number <span class="text-red">*</span></label>
+          <input type="tel" id="phone" name="phone" class="w-full bg-white border-2 border-gray-200 focus:border-red focus:outline-none px-4 py-3 text-gray-900 placeholder-gray-400 transition text-sm md:text-base" placeholder="080-1234-5678">
+          <p id="err-phone" class="text-xs text-red mt-1 hidden"></p>
+        </div>
+        <div class="md:col-span-2">
+          <label for="email" class="block text-sm text-gray-700 mb-2 font-bold">Email Address <span class="text-red">*</span></label>
+          <input type="email" id="email" name="email" class="w-full bg-white border-2 border-gray-200 focus:border-red focus:outline-none px-4 py-3 text-gray-900 placeholder-gray-400 transition text-sm md:text-base" placeholder="you@example.com">
+          <p id="err-email" class="text-xs text-red mt-1 hidden"></p>
+        </div>
+        <div>
+          <label for="date" class="block text-sm text-gray-700 mb-2 font-bold">Reservation Date <span class="text-red">*</span></label>
+          <input type="date" id="date" name="date" class="w-full bg-white border-2 border-gray-200 focus:border-red focus:outline-none px-4 py-3 text-gray-900 transition text-sm md:text-base">
+          <p id="err-date" class="text-xs text-red mt-1 hidden"></p>
+        </div>
+        <div>
+          <label for="time" class="block text-sm text-gray-700 mb-2 font-bold">Reservation Time <span class="text-red">*</span></label>
+          <select id="time" name="time" class="w-full bg-white border-2 border-gray-200 focus:border-red focus:outline-none px-4 py-3 text-gray-900 transition text-sm md:text-base">
+            <option value="">Select a time</option>
+            <option value="17:00">17:00</option>
+            <option value="17:30">17:30</option>
+            <option value="18:00">18:00</option>
+            <option value="18:30">18:30</option>
+            <option value="19:00">19:00</option>
+            <option value="19:30">19:30</option>
+            <option value="20:00">20:00</option>
+            <option value="20:30">20:30</option>
+            <option value="21:00">21:00</option>
+            <option value="21:30">21:30</option>
+            <option value="22:00">22:00</option>
+            <option value="22:30">22:30</option>
+            <option value="23:00">23:00</option>
+            <option value="23:30">23:30</option>
+          </select>
+          <p id="err-time" class="text-xs text-red mt-1 hidden"></p>
+        </div>
+        <div>
+          <label for="headcount" class="block text-sm text-gray-700 mb-2 font-bold">Number of Guests <span class="text-red">*</span></label>
+          <select id="headcount" name="headcount" class="w-full bg-white border-2 border-gray-200 focus:border-red focus:outline-none px-4 py-3 text-gray-900 transition text-sm md:text-base">
+            <option value="">Select</option>
+            <option value="1">1 guest</option>
+            <option value="2">2 guests</option>
+            <option value="3">3 guests</option>
+            <option value="4">4 guests</option>
+            <option value="5">5 guests</option>
+            <option value="6">6 guests</option>
+            <option value="7">7 guests</option>
+            <option value="8">8 guests</option>
+            <option value="9">9 guests</option>
+            <option value="10">10 guests</option>
+            <option value="11">11 guests</option>
+            <option value="12">12 guests</option>
+            <option value="13">13 guests</option>
+            <option value="14">14 guests</option>
+            <option value="15">15 guests</option>
+            <option value="16">16 guests</option>
+            <option value="17">17 guests</option>
+            <option value="18">18 guests</option>
+            <option value="19">19 guests</option>
+            <option value="20">20 guests</option>
+          </select>
+          <p id="err-headcount" class="text-xs text-red mt-1 hidden"></p>
+        </div>
+        <div class="md:col-span-2">
+          <label for="purpose" class="block text-sm text-gray-700 mb-2 font-bold">Purpose of Visit <span class="text-red">*</span></label>
+          <select id="purpose" name="purpose" class="w-full bg-white border-2 border-gray-200 focus:border-red focus:outline-none px-4 py-3 text-gray-900 transition text-sm md:text-base">
+            <option value="">Select</option>
+            <option value="Business Entertainment">Business Entertainment</option>
+            <option value="Celebration">Celebration</option>
+            <option value="Casual Night Out">Casual Night Out</option>
+            <option value="Other">Other</option>
+          </select>
+          <p id="err-purpose" class="text-xs text-red mt-1 hidden"></p>
+        </div>
+        <div class="md:col-span-2">
+          <label class="block text-sm text-gray-700 mb-3 font-bold">Seating Preference <span class="text-red">*</span></label>
+          <div class="flex flex-wrap gap-6">
+            <label class="inline-flex items-center gap-2 text-sm text-gray-700">
+              <input type="radio" name="room_preference" value="Counter Seat" class="accent-red w-4 h-4"> Counter Seat
+            </label>
+            <label class="inline-flex items-center gap-2 text-sm text-gray-700">
+              <input type="radio" name="room_preference" value="Table Seat" class="accent-red w-4 h-4"> Table Seat
+            </label>
+            <label class="inline-flex items-center gap-2 text-sm text-gray-700">
+              <input type="radio" name="room_preference" value="Either" class="accent-red w-4 h-4"> Either is Fine
+            </label>
+          </div>
+          <p id="err-room_preference" class="text-xs text-red mt-2 hidden"></p>
+        </div>
+        <div class="md:col-span-2">
+          <label for="allergy" class="block text-sm text-gray-700 mb-2 font-bold">Allergies / Dietary Notes (optional)</label>
+          <textarea id="allergy" name="allergy" rows="3" class="w-full bg-white border-2 border-gray-200 focus:border-red focus:outline-none px-4 py-3 text-gray-900 placeholder-gray-400 transition text-sm md:text-base" placeholder="e.g. I'm allergic to shellfish"></textarea>
+        </div>
+      </div>
+
+      <p id="formErrorGeneral" class="hidden text-sm text-red mt-6 text-center">Something went wrong. Please call us instead — we're happy to help.</p>
+
+      <button type="submit" id="submitBtn" class="w-full mt-8 inline-flex items-center justify-center gap-3 bg-red hover:bg-red-dark lantern-glow transition text-white px-10 py-4 text-base md:text-lg tracking-wide font-black">
+        Submit Reservation
+      </button>
+    </form>
+
+    <!-- Success message -->
+    <div id="formSuccess" class="hidden bg-white border-2 border-yellow shadow-lg p-10 text-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-red mx-auto mb-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      <h3 class="text-xl md:text-2xl font-black mb-4">Thank You for Your Reservation!</h3>
+      <p class="text-gray-600 leading-relaxed">We'll review your request and contact you shortly to confirm.<br>Need it sooner? Feel free to call us directly.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="bg-black text-white/60 py-10 px-6 text-center text-sm">
+  <p class="mb-2 font-black text-white tracking-widest">IZAKAYA TAKUMI</p>
+  <p class="mb-4">2-3-4 Kabukicho, Shinjuku-ku, Tokyo | TEL: 03-1234-5678 | Open 5:00 PM – 1:00 AM Daily</p>
+  <p>&copy; 2026 Izakaya Takumi. All Rights Reserved.</p>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+  });
+</script>
+
+<!-- Reservation form: validation + Formspree submission -->
+<script>
+  (function () {
+    const form = document.getElementById('reservationForm');
+    const formSuccess = document.getElementById('formSuccess');
+    const formErrorGeneral = document.getElementById('formErrorGeneral');
+    const submitBtn = document.getElementById('submitBtn');
+    const dateInput = document.getElementById('date');
+
+    function todayStr() {
+      const d = new Date();
+      const y = d.getFullYear();
+      const m = String(d.getMonth() + 1).padStart(2, '0');
+      const day = String(d.getDate()).padStart(2, '0');
+      return `${y}-${m}-${day}`;
+    }
+    dateInput.min = todayStr();
+
+    const requiredFields = ['name', 'phone', 'email', 'date', 'time', 'headcount', 'purpose'];
+
+    function setError(fieldId, message) {
+      const errEl = document.getElementById('err-' + fieldId);
+      const inputEl = document.getElementById(fieldId);
+      if (errEl) {
+        errEl.textContent = message;
+        errEl.classList.remove('hidden');
+      }
+      if (inputEl) {
+        inputEl.classList.add('border-red');
+      }
+    }
+
+    function clearError(fieldId) {
+      const errEl = document.getElementById('err-' + fieldId);
+      const inputEl = document.getElementById(fieldId);
+      if (errEl) {
+        errEl.textContent = '';
+        errEl.classList.add('hidden');
+      }
+      if (inputEl) {
+        inputEl.classList.remove('border-red');
+      }
+    }
+
+    function validate() {
+      let valid = true;
+      requiredFields.forEach(clearError);
+      clearError('room_preference');
+
+      const name = document.getElementById('name');
+      if (!name.value.trim()) {
+        setError('name', 'Please enter your name.');
+        valid = false;
+      }
+
+      const phone = document.getElementById('phone');
+      const phoneDigits = phone.value.replace(/[^0-9]/g, '');
+      if (!phone.value.trim()) {
+        setError('phone', 'Please enter your phone number.');
+        valid = false;
+      } else if (phoneDigits.length < 8 || phoneDigits.length > 15) {
+        setError('phone', 'Please enter a valid phone number.');
+        valid = false;
+      }
+
+      const email = document.getElementById('email');
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email.value.trim()) {
+        setError('email', 'Please enter your email address.');
+        valid = false;
+      } else if (!emailPattern.test(email.value.trim())) {
+        setError('email', 'Please enter a valid email address.');
+        valid = false;
+      }
+
+      if (!dateInput.value) {
+        setError('date', 'Please select a reservation date.');
+        valid = false;
+      } else if (dateInput.value < todayStr()) {
+        setError('date', 'Please select today or a future date.');
+        valid = false;
+      }
+
+      const time = document.getElementById('time');
+      if (!time.value) {
+        setError('time', 'Please select a reservation time.');
+        valid = false;
+      }
+
+      const headcount = document.getElementById('headcount');
+      if (!headcount.value) {
+        setError('headcount', 'Please select the number of guests.');
+        valid = false;
+      }
+
+      const purpose = document.getElementById('purpose');
+      if (!purpose.value) {
+        setError('purpose', 'Please select the purpose of your visit.');
+        valid = false;
+      }
+
+      const roomPreference = form.querySelector('input[name="room_preference"]:checked');
+      if (!roomPreference) {
+        setError('room_preference', 'Please select a seating preference.');
+        valid = false;
+      }
+
+      return valid;
+    }
+
+    requiredFields.forEach((fieldId) => {
+      const el = document.getElementById(fieldId);
+      el.addEventListener('input', () => clearError(fieldId));
+      el.addEventListener('change', () => clearError(fieldId));
+    });
+    form.querySelectorAll('input[name="room_preference"]').forEach((el) => {
+      el.addEventListener('change', () => clearError('room_preference'));
+    });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!validate()) return;
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting...';
+      formErrorGeneral.classList.add('hidden');
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' },
+        });
+        if (response.ok) {
+          form.classList.add('hidden');
+          formSuccess.classList.remove('hidden');
+          formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          formErrorGeneral.classList.remove('hidden');
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Submit Reservation';
+        }
+      } catch (err) {
+        formErrorGeneral.classList.remove('hidden');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit Reservation';
+      }
+    });
+  })();
+</script>
+</body>
+</html>
