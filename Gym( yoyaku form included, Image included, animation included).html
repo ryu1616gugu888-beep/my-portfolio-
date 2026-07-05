@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>本気のトレーニーのためのジム｜Fitness Gym Builder Max｜国分寺</title>
+<meta name="description" content="国分寺駅徒歩5分。スミスマシン5台・ダンベル1〜60kg完備、完全予約制。ボディビル大会出場者向けコーチングプランありの本格派フィットネスジム、月額6,700円から。">
+<meta name="keywords" content="国分寺,フィットネスジム,筋トレ,ボディビル,パーソナルトレーニング,スミスマシン">
+
+<!-- OGP -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="本気のトレーニーのためのジム｜Fitness Gym Builder Max">
+<meta property="og:description" content="国分寺駅徒歩5分。月額6,700円で通える本気のトレーニングジム。ボディビル大会出場者向けコーチングプランあり。">
+<meta property="og:image" content="https://placehold.co/1200x630/001D3D/FFFFFF?text=Fitness+Gym+Builder+Max">
+<meta property="og:url" content="https://www.fitness-gym-builder-max.example.com/">
+<meta property="og:site_name" content="Fitness Gym Builder Max">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="本気のトレーニーのためのジム｜Fitness Gym Builder Max">
+<meta name="twitter:description" content="国分寺駅徒歩5分。月額6,700円で通える本気のトレーニングジム。">
+<meta name="twitter:image" content="https://placehold.co/1200x630/001D3D/FFFFFF?text=Fitness+Gym+Builder+Max">
+
+<link rel="icon" href="https://placehold.co/64x64/001D3D/BC4749?text=FGBM">
+
+<!-- AOS (Animate On Scroll) -->
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary: {
+            DEFAULT: '#001D3D',
+            light: '#0A3B6B',
+            dark: '#000E1F',
+          },
+          accent: {
+            DEFAULT: '#BC4749',
+            light: '#D66163',
+            dark: '#8F3436',
+          },
+        },
+        fontFamily: {
+          serif: ['"Times New Roman"', 'Times', 'serif'],
+        },
+      },
+    },
+  }
+</script>
+<style>
+  html { scroll-padding-top: 88px; }
+  body { font-family: 'Times New Roman', Times, serif; }
+  .text-shadow { text-shadow: 0 2px 12px rgba(0,0,0,0.6); }
+  .badge-pop { box-shadow: 0 4px 14px rgba(188,71,73,0.5); }
+  /* CTAボタン：ホバーで拡大＋影を強調 */
+  .cta-hover { transition: transform 0.5s ease, box-shadow 0.5s ease, background-color 0.3s ease; }
+  .cta-hover:hover { transform: scale(1.05); box-shadow: 0 14px 32px rgba(0,0,0,0.4); }
+  @media (prefers-reduced-motion: reduce) {
+    [data-aos] { transition: none !important; transform: none !important; }
+  }
+</style>
+</head>
+<body class="bg-white text-primary antialiased">
+
+<!-- ===================== HEADER ===================== -->
+<header class="fixed top-0 left-0 w-full z-50 bg-primary/95 backdrop-blur text-white border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-20">
+    <a href="#hero" class="flex items-center gap-2">
+      <span class="text-lg md:text-2xl tracking-wider font-bold">FITNESS GYM<br class="hidden md:block"> <span class="text-accent">BUILDER MAX</span></span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-sm tracking-wide">
+      <a href="#worries" class="hover:text-accent transition">お悩み</a>
+      <a href="#reasons" class="hover:text-accent transition">選ばれる理由</a>
+      <a href="#pricing" class="hover:text-accent transition">料金プラン</a>
+      <a href="#voice" class="hover:text-accent transition">利用者の声</a>
+      <a href="#staff" class="hover:text-accent transition">スタッフ紹介</a>
+      <a href="#access" class="hover:text-accent transition">アクセス</a>
+      <a href="#reservation" class="hover:text-accent transition">ご予約</a>
+    </nav>
+    <a href="tel:0423001234" class="hidden md:inline-flex items-center gap-2 bg-accent hover:bg-accent-dark transition cta-hover text-white px-5 py-3 text-sm tracking-wide">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.57.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.57 1 1 0 01-.25 1.01l-2.2 2.21z"/></svg>
+      042-300-1234
+    </a>
+    <button id="menuBtn" class="lg:hidden text-white" aria-label="menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+  <nav id="mobileMenu" class="hidden lg:hidden flex flex-col bg-primary-dark text-white text-center border-t border-white/10">
+    <a href="#worries" class="py-3 border-b border-white/10">お悩み</a>
+    <a href="#reasons" class="py-3 border-b border-white/10">選ばれる理由</a>
+    <a href="#pricing" class="py-3 border-b border-white/10">料金プラン</a>
+    <a href="#voice" class="py-3 border-b border-white/10">利用者の声</a>
+    <a href="#staff" class="py-3 border-b border-white/10">スタッフ紹介</a>
+    <a href="#access" class="py-3 border-b border-white/10">アクセス</a>
+    <a href="#reservation" class="py-3 border-b border-white/10">ご予約</a>
+    <a href="tel:0423001234" class="py-4 bg-accent">📞 042-300-1234</a>
+  </nav>
+</header>
+
+<!-- ===================== 1. HERO ===================== -->
+<section id="hero" class="relative pt-20 min-h-screen flex items-center bg-primary">
+  <div class="absolute inset-0">
+    <!-- Photo by Andrea Piacquadio from Pexels (free to use, Pexels License): https://www.pexels.com/photo/black-and-red-dumbbells-on-brown-wooden-floor-3916766/ -->
+    <img src="https://images.pexels.com/photos/3916766/pexels-photo-3916766.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="ジム内観" class="w-full h-full object-cover opacity-60">
+    <div class="absolute inset-0 bg-gradient-to-b from-primary-dark/80 via-primary/70 to-primary-dark/90"></div>
+  </div>
+  <div class="relative max-w-5xl mx-auto px-6 py-24 text-center text-white">
+    <p class="tracking-[0.3em] text-accent text-sm md:text-base mb-6" data-aos="fade-down" data-aos-duration="500">FOR SERIOUS TRAINEES ONLY</p>
+    <h1 class="text-3xl sm:text-4xl md:text-6xl font-bold leading-snug md:leading-tight text-shadow mb-6"
+        data-aos="fade-up" data-aos-easing="ease-out-back" data-aos-duration="700" data-aos-delay="100">
+      本気のトレーニーのための、<br>月額6,700円で通える<br class="md:hidden">
+      <span class="text-accent">“本気”</span>のトレーニングジム
+    </h1>
+    <p class="text-base md:text-xl text-white/90 mb-10 tracking-wide" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
+      JR中央線 国分寺駅 徒歩5分・ボディビル大会出場者向けプランあり
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center" data-aos="fade-up" data-aos-duration="500" data-aos-delay="420">
+      <a href="tel:0423001234" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-accent hover:bg-accent-dark badge-pop transition cta-hover text-white px-10 py-5 text-lg tracking-wide font-bold">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.57.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.57 1 1 0 01-.25 1.01l-2.2 2.21z"/></svg>
+        無料体験・見学予約はこちら
+      </a>
+      <a href="#pricing" class="w-full sm:w-auto inline-flex items-center justify-center border border-white/60 hover:border-accent hover:text-accent transition cta-hover text-white px-10 py-5 text-lg tracking-wide">
+        料金プランを見る
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 2. お悩み ===================== -->
+<section id="worries" class="bg-white py-20 md:py-28 px-6">
+  <div class="max-w-5xl mx-auto text-center">
+    <p class="tracking-[0.3em] text-accent text-sm mb-3" data-aos="fade-up" data-aos-duration="500">WORRIES</p>
+    <h2 class="text-2xl md:text-4xl font-bold mb-16" data-aos="fade-up" data-aos-duration="500">こんなお悩みありませんか？</h2>
+    <div class="grid md:grid-cols-3 gap-8 text-left">
+      <div class="border border-primary/10 shadow-lg p-8 flex flex-col items-center text-center" data-aos="fade-up" data-aos-duration="500" data-aos-delay="0">
+        <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <p class="leading-relaxed">本気でトレーニングをしたいのに、マシンが揃っていなかったり、他の利用者とのレベル差がありすぎて理想のトレーニングができない</p>
+      </div>
+      <div class="border border-primary/10 shadow-lg p-8 flex flex-col items-center text-center" data-aos="fade-up" data-aos-duration="500" data-aos-delay="120">
+        <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <p class="leading-relaxed">ボディビルダーが使用しているジムは都心に密集しており、近場でクオリティの高いジムがない</p>
+      </div>
+      <div class="border border-primary/10 shadow-lg p-8 flex flex-col items-center text-center" data-aos="fade-up" data-aos-duration="500" data-aos-delay="240">
+        <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 1.343-3 3s1.343 3 3 3 3 1.343 3 3-1.343 3-3 3m0-12c1.11 0 2.08.402 2.599 1M12 8V6m0 14v-2"/></svg>
+        </div>
+        <p class="leading-relaxed">レベルの高い利用者が集まるジムに通いたいけど、料金が高すぎる、、、</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 3. 選ばれる理由 ===================== -->
+<section id="reasons" class="bg-primary text-white py-20 md:py-28 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="500">
+      <p class="tracking-[0.3em] text-accent text-sm mb-3">WHY CHOSEN</p>
+      <h2 class="text-2xl md:text-4xl font-bold">このフィットネスジムが選ばれる理由</h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-10 mb-20">
+      <div class="bg-primary-light/40 border border-white/10" data-aos="fade-up" data-aos-duration="500" data-aos-delay="0">
+        <img src="https://placehold.co/600x400/0A3B6B/FFFFFF?text=Smith+Machine+x5" alt="スミスマシン5台完備" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <div class="flex items-center gap-3 mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-accent" viewBox="0 0 24 24" fill="currentColor"><path d="M2 10h2v4H2zm3-2h2v8H5zm14-2h2v8h-2zm-3 2h2v8h-2zM9 9h6v6H9z"/></svg>
+            <h3 class="text-lg font-bold">スミスマシン5台完備</h3>
+          </div>
+          <p class="text-white/80 leading-relaxed">待ち時間ゼロで高強度トレーニングが可能。フリーウエイトと組み合わせた本格的なメニューを組めます。</p>
+        </div>
+      </div>
+      <div class="bg-primary-light/40 border border-white/10" data-aos="fade-up" data-aos-duration="500" data-aos-delay="120">
+        <img src="https://placehold.co/600x400/0A3B6B/FFFFFF?text=Dumbbell+1-60kg" alt="ダンベル1〜60kg完備" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <div class="flex items-center gap-3 mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-accent" viewBox="0 0 24 24" fill="currentColor"><path d="M2 10h2v4H2zm3-2h2v8H5zm14-2h2v8h-2zm-3 2h2v8h-2zM9 9h6v6H9z"/></svg>
+            <h3 class="text-lg font-bold">ダンベル1〜60kgフルレンジ</h3>
+          </div>
+          <p class="text-white/80 leading-relaxed">初級者から上級者まで、圧倒的な重量バリエーション。伸び悩みのないトレーニングを実現します。</p>
+        </div>
+      </div>
+      <div class="bg-primary-light/40 border border-white/10" data-aos="fade-up" data-aos-duration="500" data-aos-delay="240">
+        <img src="https://placehold.co/600x400/0A3B6B/FFFFFF?text=Reservation+System" alt="完全予約制" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <div class="flex items-center gap-3 mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-accent" viewBox="0 0 24 24" fill="currentColor"><path d="M7 2v2H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V6a2 2 0 00-2-2h-2V2h-2v2H9V2H7zm12 6H5v12h14V8z"/></svg>
+            <h3 class="text-lg font-bold">完全予約制で密度の濃い時間</h3>
+          </div>
+          <p class="text-white/80 leading-relaxed">混雑や順番待ちのストレスなし。同じ熱量を持つ利用者だけの落ち着いた環境が手に入ります。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-10 items-center mb-20">
+      <img src="https://placehold.co/700x500/0A3B6B/BC4749?text=Bodybuilding+Coach" alt="コンテスト向けコーチングプラン" class="w-full h-72 md:h-96 object-cover" data-aos="fade-right" data-aos-duration="600">
+      <div data-aos="fade-left" data-aos-duration="600">
+        <p class="tracking-[0.3em] text-accent text-sm mb-3">COACHING PLAN</p>
+        <h3 class="text-xl md:text-3xl font-bold mb-5 leading-relaxed">ボディビルコンテスト出場者向け<br>専門コーチングプラン</h3>
+        <p class="text-white/80 leading-relaxed mb-6">大会経験豊富なコーチが、減量調整・ポージング指導・大会直前のピーキングまで徹底サポート。本気で舞台を目指す方のための特別プランです。</p>
+        <p class="text-3xl font-bold text-accent mb-2">+¥30,000<span class="text-lg"> / 1ヶ月</span></p>
+        <p class="text-sm text-white/60">※1年契約プラン・永続会員プランの会員様限定</p>
+      </div>
+    </div>
+
+    <!-- 比較セクション -->
+    <div data-aos="fade-up" data-aos-duration="500">
+      <h3 class="text-2xl md:text-3xl font-bold text-center mb-3">こんなに違う、<span class="text-accent">本気度のリアル。</span></h3>
+      <p class="text-center text-white/60 mb-14">他ジムに通う場合と、Fitness Gym Builder Maxに通う場合の違い</p>
+
+      <div class="relative grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-6 max-w-5xl mx-auto items-stretch">
+        <!-- 他ジム -->
+        <div class="bg-white/5 border border-white/15 p-8 md:p-10" data-aos="fade-right" data-aos-duration="500">
+          <span class="inline-block bg-white/10 text-white/80 text-xs font-bold px-4 py-2 tracking-widest mb-8">他のジムに通う場合</span>
+          <ul class="space-y-6">
+            <li class="flex gap-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white/50 font-bold">✕</span>
+              <div>
+                <p class="text-white/90">料金は<span class="font-bold">安いか高額の二択</span></p>
+                <p class="text-sm text-white/50 mt-1">4,000円は質が低く、12,000円は高すぎる</p>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white/50 font-bold">✕</span>
+              <div>
+                <p class="text-white/90">マシンが<span class="font-bold">揃っていない</span></p>
+                <p class="text-sm text-white/50 mt-1">順番待ちで理想のトレーニングができない</p>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white/50 font-bold">✕</span>
+              <div>
+                <p class="text-white/90">利用者は<span class="font-bold">健康目的が中心</span></p>
+                <p class="text-sm text-white/50 mt-1">モチベーションを保ちづらい</p>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white/50 font-bold">✕</span>
+              <div>
+                <p class="text-white/90">専門コーチングが<span class="font-bold">受けられない</span></p>
+                <p class="text-sm text-white/50 mt-1">大会対策は自己流になりがち</p>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white/50 font-bold">✕</span>
+              <div>
+                <p class="text-white/90">質の高いジムは<span class="font-bold">都心に集中</span></p>
+                <p class="text-sm text-white/50 mt-1">通うだけで時間と体力を消耗</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- VS バッジ -->
+        <div class="flex md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 justify-center z-10">
+          <div class="w-14 h-14 rounded-full bg-white text-primary flex items-center justify-center font-bold text-lg shadow-2xl">VS</div>
+        </div>
+
+        <!-- 当ジム -->
+        <div class="bg-primary-light/40 border-2 border-accent p-8 md:p-10" data-aos="fade-left" data-aos-duration="500">
+          <span class="inline-block bg-accent text-white text-xs font-bold px-4 py-2 tracking-widest mb-8">FITNESS GYM BUILDER MAX</span>
+          <ul class="space-y-6">
+            <li class="flex gap-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white font-bold">✓</span>
+              <div>
+                <p>月額<span class="font-bold text-accent">6,700円〜</span>で好バランス</p>
+                <p class="text-sm text-white/60 mt-1">質を落とさず、無理のない価格</p>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white font-bold">✓</span>
+              <div>
+                <p>スミスマシン5台・ダンベル<span class="font-bold text-accent">1〜60kg完備</span></p>
+                <p class="text-sm text-white/60 mt-1">待ち時間ゼロで妥協のない環境</p>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white font-bold">✓</span>
+              <div>
+                <p><span class="font-bold text-accent">本気の利用者</span>だけが集まる</p>
+                <p class="text-sm text-white/60 mt-1">良い刺激を受けながら追い込める</p>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white font-bold">✓</span>
+              <div>
+                <p>大会出場者向け<span class="font-bold text-accent">専門コーチング</span></p>
+                <p class="text-sm text-white/60 mt-1">減量からポージングまで徹底サポート</p>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white font-bold">✓</span>
+              <div>
+                <p>国分寺駅<span class="font-bold text-accent">徒歩5分</span></p>
+                <p class="text-sm text-white/60 mt-1">通いやすさも本気度を左右する</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="text-center text-lg md:text-xl font-bold mt-14">
+        料金も、マシンも、通いやすさも、<span class="text-accent">妥協しない。</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 4. 料金プラン ===================== -->
+<section id="pricing" class="bg-white py-20 md:py-28 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-6" data-aos="fade-up" data-aos-duration="500">
+      <p class="tracking-[0.3em] text-accent text-sm mb-3">PRICING</p>
+      <h2 class="text-2xl md:text-4xl font-bold">料金プラン</h2>
+    </div>
+    <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="500">
+      <span class="inline-block bg-accent text-white px-6 py-3 tracking-wide text-sm md:text-base font-bold badge-pop">
+        入会金キャンペーン実施中：通常5,000円 → 半額2,500円（2026年8月31日まで）
+      </span>
+    </div>
+
+    <div class="grid md:grid-cols-4 gap-6">
+      <!-- 1年契約 No.1 -->
+      <div class="relative border-2 border-accent flex flex-col" data-aos="fade-up" data-aos-duration="500" data-aos-delay="0">
+        <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent text-white text-xs font-bold px-4 py-1 tracking-widest badge-pop">No.1 人気プラン</span>
+        <div class="p-8 pt-10 flex flex-col flex-1 text-center">
+          <h3 class="text-lg font-bold mb-2">1年契約プラン</h3>
+          <p class="text-4xl font-bold text-accent mb-1"><span class="js-counter" data-prefix="¥" data-target="6700">¥0</span></p>
+          <p class="text-sm text-primary/60 mb-6">/ 月</p>
+          <ul class="text-sm text-left space-y-2 mb-8 flex-1">
+            <li>・全マシン利用可能</li>
+            <li>・完全予約制</li>
+            <li>・コーチ付きプランへ変更可能</li>
+          </ul>
+          <a href="tel:0423001234" class="bg-primary hover:bg-primary-light text-white py-3 tracking-wide transition cta-hover">申し込む</a>
+        </div>
+      </div>
+      <!-- 3ヶ月お試し -->
+      <div class="border border-primary/15 flex flex-col" data-aos="fade-up" data-aos-duration="500" data-aos-delay="120">
+        <div class="p-8 flex flex-col flex-1 text-center">
+          <h3 class="text-lg font-bold mb-2">3ヶ月お試しプラン</h3>
+          <p class="text-4xl font-bold text-primary mb-1"><span class="js-counter" data-prefix="¥" data-target="8000">¥0</span></p>
+          <p class="text-sm text-primary/60 mb-6">/ 月</p>
+          <ul class="text-sm text-left space-y-2 mb-8 flex-1">
+            <li>・短期集中で試したい方に</li>
+            <li>・全マシン利用可能</li>
+            <li>・3ヶ月後は1年契約へ移行可</li>
+          </ul>
+          <a href="tel:0423001234" class="bg-primary hover:bg-primary-light text-white py-3 tracking-wide transition cta-hover">申し込む</a>
+        </div>
+      </div>
+      <!-- コーチ付き -->
+      <div class="border border-primary/15 flex flex-col" data-aos="fade-up" data-aos-duration="500" data-aos-delay="240">
+        <div class="p-8 flex flex-col flex-1 text-center">
+          <h3 class="text-lg font-bold mb-2">コーチ付きプラン</h3>
+          <p class="text-4xl font-bold text-primary mb-1"><span class="js-counter" data-prefix="+¥" data-target="30000">+¥0</span></p>
+          <p class="text-sm text-primary/60 mb-6">1ヶ月お試し・追加オプション</p>
+          <ul class="text-sm text-left space-y-2 mb-8 flex-1">
+            <li>・専属コーチによる個別指導</li>
+            <li>・大会出場者向けサポート</li>
+            <li>・食事/減量アドバイス付き</li>
+            <li class="text-accent font-bold">・1年契約／永続プラン会員限定</li>
+          </ul>
+          <a href="tel:0423001234" class="bg-primary hover:bg-primary-light text-white py-3 tracking-wide transition cta-hover">申し込む</a>
+        </div>
+      </div>
+      <!-- 永続契約 -->
+      <div class="relative border-2 border-primary flex flex-col" data-aos="fade-up" data-aos-duration="500" data-aos-delay="360">
+        <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-bold px-4 py-1 tracking-widest badge-pop">月額最安</span>
+        <div class="p-8 pt-10 flex flex-col flex-1 text-center">
+          <h3 class="text-lg font-bold mb-2">永続会員プラン</h3>
+          <p class="text-4xl font-bold text-primary mb-1"><span class="js-counter" data-prefix="¥" data-target="5980">¥0</span></p>
+          <p class="text-sm text-primary/60 mb-6">/ 月（半年更新）</p>
+          <ul class="text-sm text-left space-y-2 mb-8 flex-1">
+            <li>・長期利用で最安の月額料金</li>
+            <li>・全マシン利用可能・完全予約制</li>
+            <li>・半年ごとの自動更新</li>
+            <li>・解約金25,000円</li>
+            <li>・コーチ付きプランへ変更可能</li>
+          </ul>
+          <a href="tel:0423001234" class="bg-primary hover:bg-primary-light text-white py-3 tracking-wide transition cta-hover">申し込む</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 5. 利用者の声 ===================== -->
+<section id="voice" class="bg-primary-dark text-white py-20 md:py-28 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="500">
+      <p class="tracking-[0.3em] text-accent text-sm mb-3">VOICE</p>
+      <h2 class="text-2xl md:text-4xl font-bold">利用者の声</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-primary-light/30 border border-white/10 p-8" data-aos="fade-up" data-aos-duration="500" data-aos-delay="0">
+        <div class="flex items-center gap-4 mb-5">
+          <img src="https://placehold.co/100x100/0A3B6B/FFFFFF?text=T.K" alt="利用者T.K様" class="w-14 h-14 rounded-full object-cover">
+          <div>
+            <p class="font-bold">T.K様（30代・会社経営）</p>
+            <p class="text-accent tracking-wider">★★★★★</p>
+          </div>
+        </div>
+        <p class="text-white/80 leading-relaxed">都心のジムに通っていましたが、通勤のついでに寄れる立地とマシンの質の高さに驚きました。完全予約制なので集中してトレーニングできます。</p>
+      </div>
+      <div class="bg-primary-light/30 border border-white/10 p-8" data-aos="fade-up" data-aos-duration="500" data-aos-delay="120">
+        <div class="flex items-center gap-4 mb-5">
+          <img src="https://placehold.co/100x100/0A3B6B/FFFFFF?text=S.M" alt="利用者S.M様" class="w-14 h-14 rounded-full object-cover">
+          <div>
+            <p class="font-bold">S.M様（20代・エンジニア）</p>
+            <p class="text-accent tracking-wider">★★★★★</p>
+          </div>
+        </div>
+        <p class="text-white/80 leading-relaxed">スミスマシンが常に空いているので待ち時間ゼロ。周りの利用者のレベルも高く、良い刺激をもらいながらトレーニングできています。</p>
+      </div>
+      <div class="bg-primary-light/30 border border-white/10 p-8" data-aos="fade-up" data-aos-duration="500" data-aos-delay="240">
+        <div class="flex items-center gap-4 mb-5">
+          <img src="https://placehold.co/100x100/0A3B6B/FFFFFF?text=Y.H" alt="利用者Y.H様" class="w-14 h-14 rounded-full object-cover">
+          <div>
+            <p class="font-bold">Y.H様（40代・自営業）</p>
+            <p class="text-accent tracking-wider">★★★★★</p>
+          </div>
+        </div>
+        <p class="text-white/80 leading-relaxed">ボディビル大会に向けてコーチングプランを利用中。減量期のアドバイスが的確で、初出場ながら結果を出すことができました。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 6. スタッフ紹介 ===================== -->
+<section id="staff" class="bg-white py-20 md:py-28 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="500">
+      <p class="tracking-[0.3em] text-accent text-sm mb-3">STAFF</p>
+      <h2 class="text-2xl md:text-4xl font-bold">スタッフ紹介</h2>
+    </div>
+
+    <h3 class="text-xl font-bold mb-8 border-l-4 border-accent pl-4">専属コーチ</h3>
+    <div class="grid md:grid-cols-3 gap-8 mb-20">
+      <div class="border border-primary/10 shadow-lg" data-aos="fade-up" data-aos-duration="500" data-aos-delay="0">
+        <img src="https://placehold.co/500x600/001D3D/BC4749?text=Coach+Physique+1" alt="ヘッドコーチ 鈴木大河 フィジーク写真" class="w-full h-80 object-cover">
+        <div class="p-6">
+          <p class="inline-block bg-accent text-white text-xs px-3 py-1 mb-3 tracking-wide">全日本ボディビル選手権 入賞</p>
+          <h4 class="text-lg font-bold mb-1">鈴木 大河（ヘッドコーチ）</h4>
+          <p class="text-sm text-primary/70 leading-relaxed">競技歴12年。減量指導とポージング指導を得意とし、多数の大会出場者を輩出。</p>
+        </div>
+      </div>
+      <div class="border border-primary/10 shadow-lg" data-aos="fade-up" data-aos-duration="500" data-aos-delay="120">
+        <img src="https://placehold.co/500x600/001D3D/BC4749?text=Coach+Physique+2" alt="コーチ 高橋剛 フィジーク写真" class="w-full h-80 object-cover">
+        <div class="p-6">
+          <p class="inline-block bg-accent text-white text-xs px-3 py-1 mb-3 tracking-wide">関東クラス別選手権 優勝</p>
+          <h4 class="text-lg font-bold mb-1">高橋 剛（コーチ）</h4>
+          <p class="text-sm text-primary/70 leading-relaxed">フィジーク部門で複数入賞。フォーム改善と怪我予防の指導に定評あり。</p>
+        </div>
+      </div>
+      <div class="border border-primary/10 shadow-lg" data-aos="fade-up" data-aos-duration="500" data-aos-delay="240">
+        <img src="https://placehold.co/500x600/001D3D/BC4749?text=Coach+Physique+3" alt="コーチ 田中翔 フィジーク写真" class="w-full h-80 object-cover">
+        <div class="p-6">
+          <p class="inline-block bg-accent text-white text-xs px-3 py-1 mb-3 tracking-wide">東京ノービス大会 入賞</p>
+          <h4 class="text-lg font-bold mb-1">田中 翔（コーチ）</h4>
+          <p class="text-sm text-primary/70 leading-relaxed">初心者〜中級者の土台作りが得意。栄養指導も含めたトータルサポート。</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-bold mb-8 border-l-4 border-accent pl-4">スタッフ</h3>
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+      <div class="text-center" data-aos="fade-up" data-aos-duration="500" data-aos-delay="0">
+        <img src="https://placehold.co/300x300/0A3B6B/FFFFFF?text=Staff+1" alt="スタッフ 佐藤蓮" class="w-full aspect-square object-cover mb-3">
+        <p class="font-bold text-sm">佐藤 蓮</p>
+        <p class="text-xs text-primary/60">フロント歴3年</p>
+      </div>
+      <div class="text-center" data-aos="fade-up" data-aos-duration="500" data-aos-delay="100">
+        <img src="https://placehold.co/300x300/0A3B6B/FFFFFF?text=Staff+2" alt="スタッフ 伊藤陸" class="w-full aspect-square object-cover mb-3">
+        <p class="font-bold text-sm">伊藤 陸</p>
+        <p class="text-xs text-primary/60">トレーナー歴5年</p>
+      </div>
+      <div class="text-center" data-aos="fade-up" data-aos-duration="500" data-aos-delay="200">
+        <img src="https://placehold.co/300x300/0A3B6B/FFFFFF?text=Staff+3" alt="スタッフ 渡辺健" class="w-full aspect-square object-cover mb-3">
+        <p class="font-bold text-sm">渡辺 健</p>
+        <p class="text-xs text-primary/60">元プロ野球トレーナー</p>
+      </div>
+      <div class="text-center" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
+        <img src="https://placehold.co/300x300/0A3B6B/FFFFFF?text=Staff+4" alt="スタッフ 中村匠" class="w-full aspect-square object-cover mb-3">
+        <p class="font-bold text-sm">中村 匠</p>
+        <p class="text-xs text-primary/60">柔道整復師資格保有</p>
+      </div>
+      <div class="text-center" data-aos="fade-up" data-aos-duration="500" data-aos-delay="400">
+        <img src="https://placehold.co/300x300/0A3B6B/FFFFFF?text=Staff+5" alt="スタッフ 小林蒼" class="w-full aspect-square object-cover mb-3">
+        <p class="font-bold text-sm">小林 蒼</p>
+        <p class="text-xs text-primary/60">栄養士資格保有</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 7. 店舗情報・アクセス ===================== -->
+<section id="access" class="bg-primary text-white py-20 md:py-28 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="500">
+      <p class="tracking-[0.3em] text-accent text-sm mb-3">ACCESS</p>
+      <h2 class="text-2xl md:text-4xl font-bold">店舗情報・アクセス</h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <img src="https://placehold.co/700x500/0A3B6B/FFFFFF?text=MAP" alt="国分寺駅からのアクセスマップ" class="w-full h-72 md:h-96 object-cover" data-aos="fade-right" data-aos-duration="600">
+      <div class="space-y-6 text-lg" data-aos="fade-left" data-aos-duration="600">
+        <div class="flex gap-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-accent flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7.05 11.3 7.35 11.55a1 1 0 001.3 0C12.95 21.3 20 15.25 20 10c0-4.42-3.58-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
+          <p>東京都国分寺市南町2-XX-XX 国分寺スクエアビル3F<br><span class="text-white/70 text-base">JR中央線「国分寺駅」南口より徒歩5分</span></p>
+        </div>
+        <div class="flex gap-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-accent flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <p>営業時間：7:00〜23:00<br><span class="text-white/70 text-base">定休日：毎週火曜日</span></p>
+        </div>
+        <div class="flex gap-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-accent flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.57.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.57 1 1 0 01-.25 1.01l-2.2 2.21z"/></svg>
+          <p>TEL：<a href="tel:0423001234" class="hover:text-accent transition">042-300-1234</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 8. 予約見学CTA ===================== -->
+<section id="reservation" class="bg-white py-20 md:py-28 px-6">
+  <div class="max-w-3xl mx-auto text-center" data-aos="fade-up" data-aos-duration="500">
+    <p class="tracking-[0.3em] text-accent text-sm mb-3">RESERVATION</p>
+    <h2 class="text-2xl md:text-4xl font-bold mb-6">見学のご予約はこちら</h2>
+    <p class="text-primary/70 mb-6 leading-relaxed">本気であなたのトレーニングを変える一歩を、ここから。</p>
+    <p class="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 tracking-wide text-sm md:text-base font-bold badge-pop mb-4">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-accent flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      24時間いつでもオンライン予約できます
+    </p>
+  </div>
+
+  <!-- Calendly widget -->
+  <div class="max-w-3xl mx-auto mt-10 mb-16" data-aos="fade-up" data-aos-duration="500" data-aos-delay="150">
+    <div class="bg-white border border-primary/10 shadow-2xl p-1 sm:p-3 md:p-4">
+      <div class="calendly-inline-widget w-full" data-url="https://calendly.com/example/30min" style="min-width:280px;height:700px;width:100%;"></div>
+    </div>
+  </div>
+  <!-- Calendly widget end -->
+
+  <div class="max-w-3xl mx-auto text-center border-t border-primary/10 pt-14" data-aos="fade-up" data-aos-duration="500" data-aos-delay="250">
+    <p class="text-xs md:text-sm tracking-widest text-primary/50 mb-6">オンライン予約がご利用いただけない場合は、お電話・LINEでも承っております</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="tel:0423001234" class="inline-flex items-center justify-center gap-3 bg-accent hover:bg-accent-dark badge-pop transition cta-hover text-white px-10 py-5 text-lg tracking-wide font-bold">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.57.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.57 1 1 0 01-.25 1.01l-2.2 2.21z"/></svg>
+        電話で予約する
+      </a>
+      <a href="https://line.me/R/ti/p/@fitnessbuildermax" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3 bg-[#06C755] hover:opacity-90 transition cta-hover text-white px-10 py-5 text-lg tracking-wide font-bold">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.94 2 10.8c0 3.3 2.15 6.19 5.36 7.78-.24.85-.85 3-.9 3.24 0 0-.02.15.08.2.1.06.22.02.22.02.29-.04 3.35-2.2 3.87-2.58.8.12 1.61.19 2.37.19 5.52 0 10-3.94 10-8.8S17.52 2 12 2z"/></svg>
+        LINEで予約する
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="bg-primary-dark text-white/70 py-10 px-6 text-center text-sm">
+  <p class="mb-2 font-bold text-white tracking-widest">FITNESS GYM BUILDER MAX</p>
+  <p class="mb-4">〒185-0000 東京都国分寺市南町2-XX-XX 国分寺スクエアビル3F｜TEL：042-300-1234｜営業時間 7:00〜23:00（火曜定休）</p>
+  <p>&copy; 2026 Fitness Gym Builder Max. All Rights Reserved.</p>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+  });
+</script>
+
+<!-- Calendly widget script -->
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+<!-- AOS (Animate On Scroll) -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 500,
+    easing: 'ease-out-cubic',
+    once: true,
+    offset: 60,
+  });
+</script>
+
+<!-- 料金プランの数字カウントアップ -->
+<script>
+  (function () {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const counters = document.querySelectorAll('.js-counter');
+    if (!counters.length) return;
+
+    function animateCounter(el) {
+      const target = parseInt(el.dataset.target, 10);
+      const prefix = el.dataset.prefix || '';
+      if (prefersReducedMotion) {
+        el.textContent = prefix + target.toLocaleString('ja-JP');
+        return;
+      }
+      const duration = 1200;
+      const startTime = performance.now();
+      function tick(now) {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const value = Math.floor(target * eased);
+        el.textContent = prefix + value.toLocaleString('ja-JP');
+        if (progress < 1) {
+          requestAnimationFrame(tick);
+        } else {
+          el.textContent = prefix + target.toLocaleString('ja-JP');
+        }
+      }
+      requestAnimationFrame(tick);
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+
+    counters.forEach((el) => observer.observe(el));
+  })();
+</script>
+</body>
+</html>

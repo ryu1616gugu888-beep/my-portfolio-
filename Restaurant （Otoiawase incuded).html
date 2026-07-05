@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>個室しゃぶしゃぶ 黒曜豚｜東京都港区</title>
+<meta name="description" content="最高級国産黒豚を産地直送。全席個室完備、接待・記念日に最適な特別空間で味わう至福のしゃぶしゃぶ。東京都港区。">
+<link rel="icon" href="https://placehold.co/64x64/1a1a1a/c9a84c?text=黒曜豚">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary: {
+            DEFAULT: '#1a1a1a',
+            light: '#2a2a2a',
+            dark: '#0d0d0d',
+          },
+          gold: {
+            DEFAULT: '#c9a84c',
+            light: '#ddc077',
+            dark: '#a8873a',
+          },
+        },
+        fontFamily: {
+          serif: ['"Yu Mincho"', '"YuMincho"', '"Hiragino Mincho ProN"', '"Noto Serif JP"', 'serif'],
+        },
+      },
+    },
+  }
+</script>
+<style>
+  html { scroll-padding-top: 76px; }
+  body { font-family: 'Yu Mincho', 'YuMincho', 'Hiragino Mincho ProN', 'Noto Serif JP', serif; }
+  .text-shadow { text-shadow: 0 2px 16px rgba(0,0,0,0.7); }
+  .gold-glow { box-shadow: 0 4px 20px rgba(201,168,76,0.35); }
+  .divider-gold { background: linear-gradient(90deg, transparent, #c9a84c, transparent); height: 1px; }
+  /* 縦書きラベル */
+  .vtext { writing-mode: vertical-rl; text-orientation: upright; letter-spacing: 0.2em; }
+  /* 和柄の斜線パターン帯 */
+  .pattern-band {
+    background-image: repeating-linear-gradient(45deg, rgba(201,168,76,0.08) 0, rgba(201,168,76,0.08) 1px, transparent 1px, transparent 16px),
+                       repeating-linear-gradient(-45deg, rgba(201,168,76,0.08) 0, rgba(201,168,76,0.08) 1px, transparent 1px, transparent 16px);
+  }
+  /* ダーク背景での日付ピッカーアイコンを見やすくする */
+  input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(1); cursor: pointer; }
+</style>
+</head>
+<body class="bg-primary text-white antialiased">
+
+<!-- ===================== HEADER（ミニマル） ===================== -->
+<header class="fixed top-0 left-0 w-full z-50 bg-primary-dark/70 backdrop-blur-sm">
+  <div class="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-16 md:h-20">
+    <button id="menuBtn" class="text-white hover:text-gold transition" aria-label="メニューを開く">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 md:w-8 md:h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <div class="flex items-center gap-2 md:gap-3">
+      <a href="tel:0312345678" class="inline-flex items-center gap-2 bg-gold hover:bg-gold-light transition text-primary-dark px-4 md:px-6 py-2.5 md:py-3 text-xs md:text-sm tracking-wide font-bold">
+        ご予約はこちら
+      </a>
+      <a href="#access" class="hidden sm:inline-flex items-center gap-2 border border-white/40 text-white hover:border-gold hover:text-gold transition px-4 md:px-6 py-2.5 md:py-3 text-xs md:text-sm tracking-wide">
+        アクセス
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== オーバーレイ全画面ナビ ===================== -->
+<div id="navOverlay" class="hidden fixed inset-0 z-[60] bg-primary-dark/98 flex-col items-center justify-center gap-8 text-center px-6">
+  <button id="closeMenuBtn" class="absolute top-6 right-6 md:top-8 md:right-8 text-white hover:text-gold transition" aria-label="メニューを閉じる">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+  <p class="text-gold tracking-[0.4em] text-xs mb-2">個室しゃぶしゃぶ 黒曜豚</p>
+  <nav class="flex flex-col gap-6 text-xl md:text-3xl tracking-widest">
+    <a href="#commitment" class="nav-link hover:text-gold transition">こだわり</a>
+    <a href="#courses" class="nav-link hover:text-gold transition">コース</a>
+    <a href="#menu" class="nav-link hover:text-gold transition">メニュー</a>
+    <a href="#rooms" class="nav-link hover:text-gold transition">個室紹介</a>
+    <a href="#voice" class="nav-link hover:text-gold transition">お客様の声</a>
+    <a href="#access" class="nav-link hover:text-gold transition">アクセス</a>
+    <a href="#contact-form" class="nav-link hover:text-gold transition">予約フォーム</a>
+  </nav>
+  <a href="tel:0312345678" class="nav-link mt-6 text-gold font-bold text-lg md:text-2xl tracking-widest">03-1234-5678</a>
+</div>
+
+<!-- 上部パターン帯 -->
+<div class="pt-16 md:pt-20 pattern-band h-10 md:h-14"></div>
+
+<!-- ===================== 1. HERO（非対称・写真＋浮遊カード） ===================== -->
+<section id="hero" class="relative">
+  <div class="relative h-[80vh] md:h-[85vh] overflow-hidden">
+    <img src="https://placehold.co/1920x1200/1a1a1a/c9a84c?text=Shabu-Shabu+Kuroyoton" alt="黒曜豚の特選しゃぶしゃぶ" class="w-full h-full object-cover opacity-60">
+    <div class="absolute inset-0 bg-gradient-to-t from-primary-dark/80 via-transparent to-primary-dark/40"></div>
+
+    <!-- 縦書き漢字ラベル -->
+    <div class="absolute top-8 right-6 md:top-14 md:right-16 bg-primary-dark/80 px-3 py-6 md:px-4 md:py-10">
+      <span class="vtext text-2xl md:text-4xl font-bold text-gold">極上</span>
+    </div>
+
+    <!-- 浮遊テキストカード -->
+    <div class="absolute left-6 right-6 bottom-6 md:right-auto md:left-14 md:bottom-14 md:max-w-lg bg-primary-dark/85 border border-gold/20 p-7 md:p-12">
+      <p class="tracking-[0.4em] text-gold text-xs mb-5">TOKYO MINATO / PRIVATE ROOM SHABU-SHABU</p>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-relaxed text-shadow mb-6">
+        至福の一皿を、<br>あなたに
+      </h1>
+      <p class="text-sm md:text-base text-white/80 mb-8 tracking-wide leading-loose">
+        最高級国産黒豚を産地直送。全席完全個室で味わう、接待・記念日にふさわしい特別なひととき。
+      </p>
+      <a href="tel:0312345678" class="inline-flex items-center justify-center gap-3 bg-gold hover:bg-gold-light gold-glow transition text-primary-dark px-8 py-4 text-sm md:text-base tracking-wide font-bold">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.57.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.57 1 1 0 01-.25 1.01l-2.2 2.21z"/></svg>
+        ご予約はこちら
+      </a>
+    </div>
+  </div>
+
+  <!-- 下部プレビュー写真ストリップ -->
+  <div class="grid grid-cols-2 gap-1 md:gap-2 h-28 md:h-44">
+    <img src="https://placehold.co/900x400/2a2a2a/c9a84c?text=Interior" alt="店内の様子" class="w-full h-full object-cover">
+    <img src="https://placehold.co/900x400/2a2a2a/c9a84c?text=Private+Room" alt="個室の様子" class="w-full h-full object-cover">
+  </div>
+</section>
+
+<!-- ===================== 2. こだわり（非対称・交互配置） ===================== -->
+<section id="commitment" class="bg-primary py-20 md:py-28 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex items-end gap-5 mb-16 md:mb-24">
+      <span class="vtext text-xl md:text-2xl font-bold text-gold/60 leading-none h-16 md:h-20">拘</span>
+      <div>
+        <p class="tracking-[0.4em] text-gold text-xs md:text-sm mb-3">COMMITMENT</p>
+        <h2 class="text-2xl md:text-4xl font-bold">三つのこだわり</h2>
+      </div>
+    </div>
+
+    <!-- 01 肉質 -->
+    <div class="relative mb-20 md:mb-28">
+      <div class="relative h-72 md:h-[420px]">
+        <img src="https://placehold.co/1200x800/2a2a2a/c9a84c?text=Premium+Kuroton" alt="最高級国産黒豚" class="w-full h-full object-cover">
+        <div class="absolute top-6 right-6 md:top-8 md:right-8 bg-primary-dark/80 px-3 py-5 md:px-4 md:py-8">
+          <span class="vtext text-lg md:text-2xl font-bold text-gold">肉質</span>
+        </div>
+      </div>
+      <div class="relative md:absolute md:left-10 md:top-1/2 md:-translate-y-1/2 md:max-w-md bg-primary-dark/90 border border-gold/20 p-7 md:p-10 -mt-10 mx-4 md:mx-0">
+        <p class="tracking-[0.3em] text-gold text-xs mb-4">01 / MEAT QUALITY</p>
+        <h3 class="text-lg md:text-2xl font-bold mb-5">肉質へのこだわり</h3>
+        <p class="text-white/70 leading-relaxed text-sm md:text-base">選び抜いた最高級国産黒豚を生産者から直送。脂の甘みと肉の旨みを、最良の状態のままお届けします。</p>
+      </div>
+    </div>
+
+    <!-- 02 空間 -->
+    <div class="relative mb-20 md:mb-28">
+      <div class="relative h-72 md:h-[420px]">
+        <img src="https://placehold.co/1200x800/2a2a2a/c9a84c?text=Private+Space" alt="完全個室の空間" class="w-full h-full object-cover">
+        <div class="absolute top-6 left-6 md:top-8 md:left-8 bg-primary-dark/80 px-3 py-5 md:px-4 md:py-8">
+          <span class="vtext text-lg md:text-2xl font-bold text-gold">空間</span>
+        </div>
+      </div>
+      <div class="relative md:absolute md:right-10 md:top-1/2 md:-translate-y-1/2 md:max-w-md bg-primary-dark/90 border border-gold/20 p-7 md:p-10 -mt-10 mx-4 md:mx-0 md:text-right">
+        <p class="tracking-[0.3em] text-gold text-xs mb-4">02 / SPACE</p>
+        <h3 class="text-lg md:text-2xl font-bold mb-5">空間へのこだわり</h3>
+        <p class="text-white/70 leading-relaxed text-sm md:text-base">全席完全個室をご用意。周囲を気にせず、大切な接待や記念日の会話に集中できる特別な空間です。</p>
+      </div>
+    </div>
+
+    <!-- 03 おもてなし -->
+    <div class="relative">
+      <div class="relative h-72 md:h-[420px]">
+        <img src="https://placehold.co/1200x800/2a2a2a/c9a84c?text=Omotenashi" alt="おもてなし" class="w-full h-full object-cover">
+        <div class="absolute top-6 right-6 md:top-8 md:right-8 bg-primary-dark/80 px-3 py-5 md:px-4 md:py-8">
+          <span class="vtext text-lg md:text-2xl font-bold text-gold">客膳</span>
+        </div>
+      </div>
+      <div class="relative md:absolute md:left-10 md:top-1/2 md:-translate-y-1/2 md:max-w-md bg-primary-dark/90 border border-gold/20 p-7 md:p-10 -mt-10 mx-4 md:mx-0">
+        <p class="tracking-[0.3em] text-gold text-xs mb-4">03 / OMOTENASHI</p>
+        <h3 class="text-lg md:text-2xl font-bold mb-5">おもてなしへのこだわり</h3>
+        <p class="text-white/70 leading-relaxed text-sm md:text-base">経験豊富な専任スタッフが、一組ごとに寄り添うきめ細やかなサービスで特別な時間を演出します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="pattern-band h-8 md:h-10"></div>
+
+<!-- ===================== 3. おすすめコース ===================== -->
+<section id="courses" class="bg-primary-dark py-20 md:py-28 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex items-end gap-5 mb-16">
+      <span class="vtext text-xl md:text-2xl font-bold text-gold/60 leading-none h-16 md:h-20">膳</span>
+      <div>
+        <p class="tracking-[0.4em] text-gold text-xs md:text-sm mb-3">COURSE</p>
+        <h2 class="text-2xl md:text-4xl font-bold">おすすめコース</h2>
+      </div>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- 彩コース -->
+      <div class="bg-primary border border-gold/20 flex flex-col">
+        <img src="https://placehold.co/600x400/2a2a2a/c9a84c?text=Irodori+Course" alt="彩コース" class="w-full h-52 object-cover">
+        <div class="p-8 flex flex-col flex-1 text-center">
+          <h3 class="text-xl font-bold mb-1">彩 -irodori- コース</h3>
+          <p class="text-xs text-white/50 mb-4 tracking-widest">全6品</p>
+          <p class="text-4xl font-bold text-gold mb-6">¥8,800</p>
+          <ul class="text-sm text-left text-white/70 space-y-2 mb-8 flex-1">
+            <li>・前菜盛り合わせ</li>
+            <li>・黒曜豚しゃぶしゃぶ（肩ロース）</li>
+            <li>・産地直送野菜盛り合わせ</li>
+            <li>・特製胡麻だれ／ポン酢</li>
+            <li>・〆の黒豚出汁うどん</li>
+            <li>・本日のデザート</li>
+          </ul>
+          <a href="tel:0312345678" class="border border-gold text-gold hover:bg-gold hover:text-primary-dark transition py-3 tracking-wide">このコースを予約</a>
+        </div>
+      </div>
+      <!-- 雅コース：人気 -->
+      <div class="relative bg-primary border-2 border-gold flex flex-col gold-glow">
+        <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gold text-primary-dark text-xs font-bold px-5 py-1 tracking-widest">最も選ばれています</span>
+        <img src="https://placehold.co/600x400/2a2a2a/c9a84c?text=Miyabi+Course" alt="雅コース" class="w-full h-52 object-cover">
+        <div class="p-8 pt-6 flex flex-col flex-1 text-center">
+          <h3 class="text-xl font-bold mb-1">雅 -miyabi- コース</h3>
+          <p class="text-xs text-white/50 mb-4 tracking-widest">全8品</p>
+          <p class="text-4xl font-bold text-gold mb-6">¥13,200</p>
+          <ul class="text-sm text-left text-white/70 space-y-2 mb-8 flex-1">
+            <li>・季節の前菜盛り合わせ</li>
+            <li>・黒曜豚しゃぶしゃぶ（肩ロース・バラ）</li>
+            <li>・特選国産和牛の一品</li>
+            <li>・産地直送野菜盛り合わせ</li>
+            <li>・特製胡麻だれ／ポン酢</li>
+            <li>・〆の黒豚出汁雑炊</li>
+            <li>・本日のデザート／食後の一杯</li>
+          </ul>
+          <a href="tel:0312345678" class="bg-gold hover:bg-gold-light text-primary-dark transition py-3 tracking-wide font-bold">このコースを予約</a>
+        </div>
+      </div>
+      <!-- 極コース -->
+      <div class="bg-primary border border-gold/20 flex flex-col">
+        <img src="https://placehold.co/600x400/2a2a2a/c9a84c?text=Kiwami+Course" alt="極コース" class="w-full h-52 object-cover">
+        <div class="p-8 flex flex-col flex-1 text-center">
+          <h3 class="text-xl font-bold mb-1">極 -kiwami- コース</h3>
+          <p class="text-xs text-white/50 mb-4 tracking-widest">全10品・接待/記念日向け</p>
+          <p class="text-4xl font-bold text-gold mb-6">¥19,800</p>
+          <ul class="text-sm text-left text-white/70 space-y-2 mb-8 flex-1">
+            <li>・特選前菜盛り合わせ</li>
+            <li>・黒曜豚しゃぶしゃぶ（希少部位含む）</li>
+            <li>・国産和牛極上ロース</li>
+            <li>・季節の逸品料理</li>
+            <li>・産地直送野菜盛り合わせ</li>
+            <li>・特製胡麻だれ／ポン酢</li>
+            <li>・〆の黒豚出汁雑炊</li>
+            <li>・特製デザート／飲み放題付</li>
+          </ul>
+          <a href="tel:0312345678" class="border border-gold text-gold hover:bg-gold hover:text-primary-dark transition py-3 tracking-wide">このコースを予約</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 4. メニューハイライト ===================== -->
+<section id="menu" class="bg-primary py-20 md:py-28 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex items-end gap-5 mb-16">
+      <span class="vtext text-xl md:text-2xl font-bold text-gold/60 leading-none h-16 md:h-20">味</span>
+      <div>
+        <p class="tracking-[0.4em] text-gold text-xs md:text-sm mb-3">MENU HIGHLIGHT</p>
+        <h2 class="text-2xl md:text-4xl font-bold">メニューハイライト</h2>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-2 gap-4 md:gap-6">
+      <div class="relative group overflow-hidden">
+        <img src="https://placehold.co/700x500/2a2a2a/c9a84c?text=Kata-Rosu" alt="特選黒曜豚 肩ロース" class="w-full h-40 md:h-64 object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-primary-dark/90 to-transparent flex items-end p-4">
+          <p class="text-sm md:text-base font-bold">特選黒曜豚 肩ロース</p>
+        </div>
+      </div>
+      <div class="relative group overflow-hidden">
+        <img src="https://placehold.co/700x500/2a2a2a/c9a84c?text=Bara-Niku" alt="特選黒曜豚 バラ肉" class="w-full h-40 md:h-64 object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-primary-dark/90 to-transparent flex items-end p-4">
+          <p class="text-sm md:text-base font-bold">特選黒曜豚 バラ肉</p>
+        </div>
+      </div>
+      <div class="relative group overflow-hidden">
+        <img src="https://placehold.co/700x500/2a2a2a/c9a84c?text=Goma-Dare" alt="特製胡麻だれ・ポン酢" class="w-full h-40 md:h-64 object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-primary-dark/90 to-transparent flex items-end p-4">
+          <p class="text-sm md:text-base font-bold">特製胡麻だれ・ポン酢</p>
+        </div>
+      </div>
+      <div class="relative group overflow-hidden">
+        <img src="https://placehold.co/700x500/2a2a2a/c9a84c?text=Vegetables" alt="産地直送 野菜盛り合わせ" class="w-full h-40 md:h-64 object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-primary-dark/90 to-transparent flex items-end p-4">
+          <p class="text-sm md:text-base font-bold">産地直送 野菜盛り合わせ</p>
+        </div>
+      </div>
+      <div class="relative group overflow-hidden">
+        <img src="https://placehold.co/700x500/2a2a2a/c9a84c?text=Zosui" alt="〆の黒豚出汁雑炊" class="w-full h-40 md:h-64 object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-primary-dark/90 to-transparent flex items-end p-4">
+          <p class="text-sm md:text-base font-bold">〆の黒豚出汁雑炊</p>
+        </div>
+      </div>
+      <div class="relative group overflow-hidden">
+        <img src="https://placehold.co/700x500/2a2a2a/c9a84c?text=Dessert" alt="季節のデザート" class="w-full h-40 md:h-64 object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-primary-dark/90 to-transparent flex items-end p-4">
+          <p class="text-sm md:text-base font-bold">季節のデザート</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="pattern-band h-8 md:h-10"></div>
+
+<!-- ===================== 5. 個室紹介（非対称・交互配置） ===================== -->
+<section id="rooms" class="bg-primary-dark py-20 md:py-28 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex items-end gap-5 mb-16 md:mb-24">
+      <span class="vtext text-xl md:text-2xl font-bold text-gold/60 leading-none h-16 md:h-20">室</span>
+      <div>
+        <p class="tracking-[0.4em] text-gold text-xs md:text-sm mb-3">PRIVATE ROOM</p>
+        <h2 class="text-2xl md:text-4xl font-bold">個室紹介</h2>
+      </div>
+    </div>
+
+    <!-- 2名用 -->
+    <div class="relative mb-20 md:mb-28">
+      <div class="relative h-64 md:h-96">
+        <img src="https://placehold.co/1200x800/2a2a2a/c9a84c?text=Room+for+2" alt="2名用個室" class="w-full h-full object-cover">
+        <div class="absolute top-6 right-6 md:top-8 md:right-8 bg-primary-dark/80 px-3 py-5 md:px-4 md:py-8">
+          <span class="vtext text-lg md:text-2xl font-bold text-gold">二名</span>
+        </div>
+      </div>
+      <div class="relative md:absolute md:left-10 md:top-1/2 md:-translate-y-1/2 md:max-w-md bg-primary/95 border border-gold/20 p-7 md:p-10 -mt-10 mx-4 md:mx-0">
+        <p class="tracking-[0.3em] text-gold text-xs mb-4">2名用</p>
+        <h3 class="text-lg md:text-2xl font-bold mb-5">二人の時間</h3>
+        <p class="text-white/70 leading-relaxed text-sm md:text-base">記念日やお誕生日に。周りを気にせず二人だけの時間を過ごせる、落ち着いた個室です。</p>
+      </div>
+    </div>
+
+    <!-- 4名用 -->
+    <div class="relative mb-20 md:mb-28">
+      <div class="relative h-64 md:h-96">
+        <img src="https://placehold.co/1200x800/2a2a2a/c9a84c?text=Room+for+4" alt="4名用個室" class="w-full h-full object-cover">
+        <div class="absolute top-6 left-6 md:top-8 md:left-8 bg-primary-dark/80 px-3 py-5 md:px-4 md:py-8">
+          <span class="vtext text-lg md:text-2xl font-bold text-gold">四名</span>
+        </div>
+      </div>
+      <div class="relative md:absolute md:right-10 md:top-1/2 md:-translate-y-1/2 md:max-w-md bg-primary/95 border border-gold/20 p-7 md:p-10 -mt-10 mx-4 md:mx-0 md:text-right">
+        <p class="tracking-[0.3em] text-gold text-xs mb-4">4名用</p>
+        <h3 class="text-lg md:text-2xl font-bold mb-5">まどいの間</h3>
+        <p class="text-white/70 leading-relaxed text-sm md:text-base">少人数の接待やご会食に最適。落ち着いた雰囲気の中でじっくりとお話しいただけます。</p>
+      </div>
+    </div>
+
+    <!-- 8名用 -->
+    <div class="relative">
+      <div class="relative h-64 md:h-96">
+        <img src="https://placehold.co/1200x800/2a2a2a/c9a84c?text=Room+for+8" alt="8名用個室" class="w-full h-full object-cover">
+        <div class="absolute top-6 right-6 md:top-8 md:right-8 bg-primary-dark/80 px-3 py-5 md:px-4 md:py-8">
+          <span class="vtext text-lg md:text-2xl font-bold text-gold">八名</span>
+        </div>
+      </div>
+      <div class="relative md:absolute md:left-10 md:top-1/2 md:-translate-y-1/2 md:max-w-md bg-primary/95 border border-gold/20 p-7 md:p-10 -mt-10 mx-4 md:mx-0">
+        <p class="tracking-[0.3em] text-gold text-xs mb-4">8名用</p>
+        <h3 class="text-lg md:text-2xl font-bold mb-5">集いの間</h3>
+        <p class="text-white/70 leading-relaxed text-sm md:text-base">掘りごたつ座敷の大型個室。接待や会社宴会など、大切な集まりにふさわしい空間です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 6. お客様の声 ===================== -->
+<section id="voice" class="bg-primary py-20 md:py-28 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex items-end gap-5 mb-16">
+      <span class="vtext text-xl md:text-2xl font-bold text-gold/60 leading-none h-16 md:h-20">声</span>
+      <div>
+        <p class="tracking-[0.4em] text-gold text-xs md:text-sm mb-3">VOICE</p>
+        <h2 class="text-2xl md:text-4xl font-bold">お客様の声</h2>
+      </div>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-primary-light/40 border border-gold/10 p-8">
+        <p class="text-gold tracking-wider mb-4">★★★★★</p>
+        <p class="text-white/80 leading-relaxed mb-6">取引先との接待で利用しました。完全個室の落ち着いた雰囲気とお肉の質の高さに、先方も大変満足されていました。今後も大事な席で利用したいと思います。</p>
+        <p class="font-bold text-sm">M.S様（40代・経営者）</p>
+      </div>
+      <div class="bg-primary-light/40 border border-gold/10 p-8">
+        <p class="text-gold tracking-wider mb-4">★★★★★</p>
+        <p class="text-white/80 leading-relaxed mb-6">結婚記念日にお祝いで伺いました。2名用の個室はとてもプライベート感があり、特別な一夜になりました。お肉の甘みが今まで食べたしゃぶしゃぶと全く違いました。</p>
+        <p class="font-bold text-sm">K.T様（30代・会社員）</p>
+      </div>
+      <div class="bg-primary-light/40 border border-gold/10 p-8">
+        <p class="text-gold tracking-wider mb-4">★★★★★</p>
+        <p class="text-white/80 leading-relaxed mb-6">会社の会食で大人数の個室を利用しました。掘りごたつでゆったり過ごせ、スタッフの方の気配りも素晴らしく、上司からも高評価でした。</p>
+        <p class="font-bold text-sm">H.Y様（50代・役員）</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="pattern-band h-8 md:h-10"></div>
+
+<!-- ===================== 7. アクセス・営業時間 ===================== -->
+<section id="access" class="bg-primary-dark py-20 md:py-28 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex items-end gap-5 mb-16">
+      <span class="vtext text-xl md:text-2xl font-bold text-gold/60 leading-none h-16 md:h-20">道</span>
+      <div>
+        <p class="tracking-[0.4em] text-gold text-xs md:text-sm mb-3">ACCESS</p>
+        <h2 class="text-2xl md:text-4xl font-bold">アクセス・営業時間</h2>
+      </div>
+    </div>
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <img src="https://placehold.co/700x500/2a2a2a/c9a84c?text=MAP" alt="店舗までの地図" class="w-full h-72 md:h-96 object-cover">
+      <div class="space-y-6 text-base md:text-lg">
+        <div class="flex gap-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gold flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7.05 11.3 7.35 11.55a1 1 0 001.3 0C12.95 21.3 20 15.25 20 10c0-4.42-3.58-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
+          <p>東京都港区西麻布1-2-3 黒曜台ビル2F<br><span class="text-white/60 text-sm md:text-base">東京メトロ日比谷線「六本木駅」より徒歩7分</span></p>
+        </div>
+        <div class="flex gap-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gold flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <p>営業時間：17:00〜23:00（L.O. 22:00）<br><span class="text-white/60 text-sm md:text-base">定休日：日曜日・祝日</span></p>
+        </div>
+        <div class="flex gap-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gold flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 17h14M5 17a2 2 0 100 4 2 2 0 000-4zm14 0a2 2 0 100 4 2 2 0 000-4zM5 17V9a2 2 0 012-2h10a2 2 0 012 2v8M7 7l1-4h8l1 4"/></svg>
+          <p>提携駐車場あり<br><span class="text-white/60 text-sm md:text-base">近隣コインパーキングご利用の場合はサービス券進呈</span></p>
+        </div>
+        <div class="flex gap-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gold flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.57.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.57 1 1 0 01-.25 1.01l-2.2 2.21z"/></svg>
+          <p>TEL：<a href="tel:0312345678" class="hover:text-gold transition">03-1234-5678</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 8. 予約CTA ===================== -->
+<section id="reservation" class="bg-primary py-20 md:py-28 px-6 text-center">
+  <div class="max-w-3xl mx-auto">
+    <p class="tracking-[0.4em] text-gold text-xs md:text-sm mb-4">RESERVATION</p>
+    <h2 class="text-2xl md:text-4xl font-bold mb-6">特別な一夜のご予約はこちらから</h2>
+    <div class="divider-gold w-24 mx-auto mb-10"></div>
+    <p class="text-white/70 mb-12 leading-relaxed">大切な接待やお祝いの席に。お電話またはWEBにて、お気軽にご予約ください。</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="tel:0312345678" class="inline-flex items-center justify-center gap-3 bg-gold hover:bg-gold-light gold-glow transition text-primary-dark px-10 py-5 text-lg tracking-wide font-bold">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.57.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.57 1 1 0 01-.25 1.01l-2.2 2.21z"/></svg>
+        電話で予約する
+      </a>
+      <a href="#contact-form" class="inline-flex items-center justify-center gap-3 border border-gold text-gold hover:bg-gold hover:text-primary-dark transition px-10 py-5 text-lg tracking-wide font-bold">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        WEB予約フォームへ
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="pattern-band h-8 md:h-10"></div>
+
+<!-- ===================== 9. お問い合わせ・ご予約フォーム ===================== -->
+<section id="contact-form" class="bg-primary-dark py-20 md:py-28 px-6">
+  <div class="max-w-3xl mx-auto">
+    <div class="flex items-end gap-5 mb-10">
+      <span class="vtext text-xl md:text-2xl font-bold text-gold/60 leading-none h-16 md:h-20">問</span>
+      <div>
+        <p class="tracking-[0.4em] text-gold text-xs md:text-sm mb-3">CONTACT / RESERVATION FORM</p>
+        <h2 class="text-2xl md:text-4xl font-bold">お問い合わせ・ご予約フォーム</h2>
+      </div>
+    </div>
+    <p class="text-white/60 text-sm md:text-base mb-10 leading-relaxed">下記フォームよりご希望の日時・ご人数などをご入力ください。内容確認後、担当より折り返しご連絡いたします。</p>
+
+    <!-- Formspreeの送信先URLは実際のフォームIDに差し替えてください（無料プランは月50件まで送信可能） -->
+    <form id="reservationForm" action="https://formspree.io/f/あなたのID" method="POST" class="bg-primary border border-gold/20 p-7 md:p-12" novalidate>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <label for="name" class="block text-sm text-white/70 mb-2 tracking-wide">お名前 <span class="text-gold">*</span></label>
+          <input type="text" id="name" name="name" class="w-full bg-primary-dark border border-white/20 focus:border-gold focus:outline-none px-4 py-3 text-white placeholder-white/30 transition text-sm md:text-base" placeholder="山田 太郎">
+          <p id="err-name" class="text-xs text-red-400 mt-1 hidden"></p>
+        </div>
+        <div>
+          <label for="phone" class="block text-sm text-white/70 mb-2 tracking-wide">電話番号 <span class="text-gold">*</span></label>
+          <input type="tel" id="phone" name="phone" class="w-full bg-primary-dark border border-white/20 focus:border-gold focus:outline-none px-4 py-3 text-white placeholder-white/30 transition text-sm md:text-base" placeholder="03-1234-5678">
+          <p id="err-phone" class="text-xs text-red-400 mt-1 hidden"></p>
+        </div>
+        <div class="md:col-span-2">
+          <label for="email" class="block text-sm text-white/70 mb-2 tracking-wide">メールアドレス <span class="text-gold">*</span></label>
+          <input type="email" id="email" name="email" class="w-full bg-primary-dark border border-white/20 focus:border-gold focus:outline-none px-4 py-3 text-white placeholder-white/30 transition text-sm md:text-base" placeholder="example@mail.com">
+          <p id="err-email" class="text-xs text-red-400 mt-1 hidden"></p>
+        </div>
+        <div>
+          <label for="date" class="block text-sm text-white/70 mb-2 tracking-wide">ご利用日 <span class="text-gold">*</span></label>
+          <input type="date" id="date" name="date" class="w-full bg-primary-dark border border-white/20 focus:border-gold focus:outline-none px-4 py-3 text-white transition text-sm md:text-base">
+          <p id="err-date" class="text-xs text-red-400 mt-1 hidden"></p>
+        </div>
+        <div>
+          <label for="time" class="block text-sm text-white/70 mb-2 tracking-wide">ご利用時間 <span class="text-gold">*</span></label>
+          <select id="time" name="time" class="w-full bg-primary-dark border border-white/20 focus:border-gold focus:outline-none px-4 py-3 text-white transition text-sm md:text-base">
+            <option value="">選択してください</option>
+            <option value="17:00">17:00</option>
+            <option value="17:30">17:30</option>
+            <option value="18:00">18:00</option>
+            <option value="18:30">18:30</option>
+            <option value="19:00">19:00</option>
+            <option value="19:30">19:30</option>
+            <option value="20:00">20:00</option>
+            <option value="20:30">20:30</option>
+            <option value="21:00">21:00</option>
+            <option value="21:30">21:30</option>
+            <option value="22:00">22:00</option>
+          </select>
+          <p id="err-time" class="text-xs text-red-400 mt-1 hidden"></p>
+        </div>
+        <div>
+          <label for="headcount" class="block text-sm text-white/70 mb-2 tracking-wide">ご利用人数 <span class="text-gold">*</span></label>
+          <select id="headcount" name="headcount" class="w-full bg-primary-dark border border-white/20 focus:border-gold focus:outline-none px-4 py-3 text-white transition text-sm md:text-base">
+            <option value="">選択してください</option>
+            <option value="1">1名</option>
+            <option value="2">2名</option>
+            <option value="3">3名</option>
+            <option value="4">4名</option>
+            <option value="5">5名</option>
+            <option value="6">6名</option>
+            <option value="7">7名</option>
+            <option value="8">8名</option>
+            <option value="9">9名</option>
+            <option value="10">10名</option>
+            <option value="11">11名</option>
+            <option value="12">12名</option>
+            <option value="13">13名</option>
+            <option value="14">14名</option>
+            <option value="15">15名</option>
+            <option value="16">16名</option>
+            <option value="17">17名</option>
+            <option value="18">18名</option>
+            <option value="19">19名</option>
+            <option value="20">20名</option>
+          </select>
+          <p id="err-headcount" class="text-xs text-red-400 mt-1 hidden"></p>
+        </div>
+        <div class="md:col-span-2">
+          <label for="purpose" class="block text-sm text-white/70 mb-2 tracking-wide">ご利用目的 <span class="text-gold">*</span></label>
+          <select id="purpose" name="purpose" class="w-full bg-primary-dark border border-white/20 focus:border-gold focus:outline-none px-4 py-3 text-white transition text-sm md:text-base">
+            <option value="">選択してください</option>
+            <option value="接待">接待</option>
+            <option value="記念日">記念日</option>
+            <option value="家族">家族</option>
+            <option value="その他">その他</option>
+          </select>
+          <p id="err-purpose" class="text-xs text-red-400 mt-1 hidden"></p>
+        </div>
+        <div class="md:col-span-2">
+          <label class="block text-sm text-white/70 mb-3 tracking-wide">個室希望 <span class="text-gold">*</span></label>
+          <div class="flex flex-wrap gap-6">
+            <label class="inline-flex items-center gap-2 text-sm text-white/80">
+              <input type="radio" name="room_preference" value="あり" class="accent-gold w-4 h-4"> あり
+            </label>
+            <label class="inline-flex items-center gap-2 text-sm text-white/80">
+              <input type="radio" name="room_preference" value="なし" class="accent-gold w-4 h-4"> なし
+            </label>
+            <label class="inline-flex items-center gap-2 text-sm text-white/80">
+              <input type="radio" name="room_preference" value="どちらでも" class="accent-gold w-4 h-4"> どちらでも
+            </label>
+          </div>
+          <p id="err-room_preference" class="text-xs text-red-400 mt-2 hidden"></p>
+        </div>
+        <div class="md:col-span-2">
+          <label for="allergy" class="block text-sm text-white/70 mb-2 tracking-wide">アレルギー・苦手な食材（任意）</label>
+          <textarea id="allergy" name="allergy" rows="3" class="w-full bg-primary-dark border border-white/20 focus:border-gold focus:outline-none px-4 py-3 text-white placeholder-white/30 transition text-sm md:text-base" placeholder="例：エビ、そばアレルギーがあります"></textarea>
+        </div>
+      </div>
+
+      <p id="formErrorGeneral" class="hidden text-sm text-red-400 mt-6 text-center">送信に失敗しました。お手数ですが、お電話にてご連絡ください。</p>
+
+      <button type="submit" id="submitBtn" class="w-full mt-8 inline-flex items-center justify-center gap-3 bg-gold hover:bg-gold-light gold-glow transition text-primary-dark px-10 py-4 text-base md:text-lg tracking-wide font-bold">
+        送信する
+      </button>
+    </form>
+
+    <!-- サンクスメッセージ -->
+    <div id="formSuccess" class="hidden bg-primary border border-gold/30 p-10 text-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-gold mx-auto mb-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      <h3 class="text-xl md:text-2xl font-bold mb-4">お問い合わせありがとうございます</h3>
+      <p class="text-white/70 leading-relaxed">内容を確認の上、担当より折り返しご連絡いたします。<br>お急ぎの場合はお電話にてお問い合わせください。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="bg-primary-dark text-white/60 py-10 px-6 text-center text-sm border-t border-gold/10">
+  <p class="mb-2 font-bold text-white tracking-widest">個室しゃぶしゃぶ 黒曜豚</p>
+  <p class="mb-4">東京都港区西麻布1-2-3 黒曜台ビル2F｜TEL：03-1234-5678｜営業時間 17:00〜23:00（日曜・祝日定休）</p>
+  <p>&copy; 2026 黒曜豚. All Rights Reserved.</p>
+</footer>
+
+<!-- スクロールトップボタン -->
+<button id="scrollTopBtn" class="hidden fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full bg-primary-dark/90 border border-gold/40 items-center justify-center text-gold hover:bg-gold hover:text-primary-dark transition" aria-label="トップへ戻る">
+  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+</button>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const closeMenuBtn = document.getElementById('closeMenuBtn');
+  const navOverlay = document.getElementById('navOverlay');
+
+  function openNav() {
+    navOverlay.classList.remove('hidden');
+    navOverlay.classList.add('flex');
+  }
+  function closeNav() {
+    navOverlay.classList.add('hidden');
+    navOverlay.classList.remove('flex');
+  }
+  menuBtn.addEventListener('click', openNav);
+  closeMenuBtn.addEventListener('click', closeNav);
+  navOverlay.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeNav);
+  });
+
+  const scrollTopBtn = document.getElementById('scrollTopBtn');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 500) {
+      scrollTopBtn.classList.remove('hidden');
+      scrollTopBtn.classList.add('flex');
+    } else {
+      scrollTopBtn.classList.add('hidden');
+      scrollTopBtn.classList.remove('flex');
+    }
+  });
+  scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+<!-- 予約フォーム：バリデーション＆Formspree送信 -->
+<script>
+  (function () {
+    const form = document.getElementById('reservationForm');
+    const formSuccess = document.getElementById('formSuccess');
+    const formErrorGeneral = document.getElementById('formErrorGeneral');
+    const submitBtn = document.getElementById('submitBtn');
+    const dateInput = document.getElementById('date');
+
+    function todayStr() {
+      const d = new Date();
+      const y = d.getFullYear();
+      const m = String(d.getMonth() + 1).padStart(2, '0');
+      const day = String(d.getDate()).padStart(2, '0');
+      return `${y}-${m}-${day}`;
+    }
+    dateInput.min = todayStr();
+
+    const requiredFields = ['name', 'phone', 'email', 'date', 'time', 'headcount', 'purpose'];
+
+    function setError(fieldId, message) {
+      const errEl = document.getElementById('err-' + fieldId);
+      const inputEl = document.getElementById(fieldId);
+      if (errEl) {
+        errEl.textContent = message;
+        errEl.classList.remove('hidden');
+      }
+      if (inputEl) {
+        inputEl.classList.add('border-red-400');
+      }
+    }
+
+    function clearError(fieldId) {
+      const errEl = document.getElementById('err-' + fieldId);
+      const inputEl = document.getElementById(fieldId);
+      if (errEl) {
+        errEl.textContent = '';
+        errEl.classList.add('hidden');
+      }
+      if (inputEl) {
+        inputEl.classList.remove('border-red-400');
+      }
+    }
+
+    function validate() {
+      let valid = true;
+      requiredFields.forEach(clearError);
+      clearError('room_preference');
+
+      const name = document.getElementById('name');
+      if (!name.value.trim()) {
+        setError('name', 'お名前を入力してください');
+        valid = false;
+      }
+
+      const phone = document.getElementById('phone');
+      const phoneDigits = phone.value.replace(/[^0-9]/g, '');
+      if (!phone.value.trim()) {
+        setError('phone', '電話番号を入力してください');
+        valid = false;
+      } else if (phoneDigits.length < 9 || phoneDigits.length > 11) {
+        setError('phone', '正しい電話番号を入力してください');
+        valid = false;
+      }
+
+      const email = document.getElementById('email');
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email.value.trim()) {
+        setError('email', 'メールアドレスを入力してください');
+        valid = false;
+      } else if (!emailPattern.test(email.value.trim())) {
+        setError('email', '正しいメールアドレスを入力してください');
+        valid = false;
+      }
+
+      if (!dateInput.value) {
+        setError('date', 'ご利用日を選択してください');
+        valid = false;
+      } else if (dateInput.value < todayStr()) {
+        setError('date', '本日以降の日付を選択してください');
+        valid = false;
+      }
+
+      const time = document.getElementById('time');
+      if (!time.value) {
+        setError('time', 'ご利用時間を選択してください');
+        valid = false;
+      }
+
+      const headcount = document.getElementById('headcount');
+      if (!headcount.value) {
+        setError('headcount', 'ご利用人数を選択してください');
+        valid = false;
+      }
+
+      const purpose = document.getElementById('purpose');
+      if (!purpose.value) {
+        setError('purpose', 'ご利用目的を選択してください');
+        valid = false;
+      }
+
+      const roomPreference = form.querySelector('input[name="room_preference"]:checked');
+      if (!roomPreference) {
+        setError('room_preference', '個室希望を選択してください');
+        valid = false;
+      }
+
+      return valid;
+    }
+
+    requiredFields.forEach((fieldId) => {
+      const el = document.getElementById(fieldId);
+      el.addEventListener('input', () => clearError(fieldId));
+      el.addEventListener('change', () => clearError(fieldId));
+    });
+    form.querySelectorAll('input[name="room_preference"]').forEach((el) => {
+      el.addEventListener('change', () => clearError('room_preference'));
+    });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!validate()) return;
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = '送信中...';
+      formErrorGeneral.classList.add('hidden');
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' },
+        });
+        if (response.ok) {
+          form.classList.add('hidden');
+          formSuccess.classList.remove('hidden');
+          formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          formErrorGeneral.classList.remove('hidden');
+          submitBtn.disabled = false;
+          submitBtn.textContent = '送信する';
+        }
+      } catch (err) {
+        formErrorGeneral.classList.remove('hidden');
+        submitBtn.disabled = false;
+        submitBtn.textContent = '送信する';
+      }
+    });
+  })();
+</script>
+</body>
+</html>
