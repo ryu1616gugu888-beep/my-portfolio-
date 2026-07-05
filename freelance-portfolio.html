@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+  // リロード時に前回のスクロール位置を復元させず、常にページ先頭（ヘッダー）に戻す
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+</script>
+<title>LP + Webシステム構築 | Web制作フリーランス ポートフォリオ</title>
+<meta name="description" content="スクロールアニメーション付きLP制作から、予約システム・料金シミュレーター・フォーム構築まで。英語版LP対応も可能なWeb制作フリーランスのポートフォリオ。">
+<link rel="icon" href="https://placehold.co/64x64/0a0a0f/6d8cff?text=LP">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          ink: {
+            DEFAULT: '#0a0a0f',
+            light: '#14141c',
+            lighter: '#1c1c26',
+          },
+          accent: {
+            DEFAULT: '#5b8cff',
+            light: '#8fb0ff',
+            dark: '#3a67e0',
+          },
+          violet: {
+            DEFAULT: '#a78bfa',
+          },
+        },
+        fontFamily: {
+          sans: ['Inter', '"Hiragino Kaku Gothic ProN"', '"Noto Sans JP"', 'sans-serif'],
+        },
+      },
+    },
+  }
+</script>
+
+<!-- AOS (Animate On Scroll) -->
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+<style>
+  html { scroll-padding-top: 84px; }
+  body { font-family: 'Inter', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif; }
+  /* セクションの区切りをなくし、ページ全体を1枚のグラデーションで貫く */
+  .bg-page-gradient {
+    background: linear-gradient(180deg,
+      #0a0a0f 0%,
+      #10101a 14%,
+      #17161f 28%,
+      #1b1826 42%,
+      #1a1620 56%,
+      #171620 68%,
+      #121218 82%,
+      #0a0a0f 100%);
+  }
+  .gradient-text {
+    background: linear-gradient(90deg, #8fb0ff, #a78bfa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .glow { box-shadow: 0 0 40px rgba(91,140,255,0.25); }
+  /* 背景の装飾（ブロブ・波）はページ全体に固定表示し、スクロールしても常に動き続ける */
+  .bg-fx { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+  .blob {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(80px);
+    opacity: 0.35;
+    animation: float 10s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(20px, -30px) scale(1.08); }
+  }
+  summary::-webkit-details-marker { display: none; }
+
+  /* 波打つ背景アニメーション：ヒーロー全体を途切れなくカバー */
+  .wave-bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+  .wave-bg::before, .wave-bg::after {
+    content: '';
+    position: absolute;
+    top: -20px; bottom: -20px; left: -420px; right: -420px;
+    background-repeat: repeat;
+  }
+  .wave-bg::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'%3E%3Cpath d='M0,30 C100,0 100,60 200,30 C300,0 300,60 400,30' fill='none' stroke='%235b8cff' stroke-width='2'/%3E%3Cpath d='M0,100 C100,70 100,130 200,100 C300,70 300,130 400,100' fill='none' stroke='%235b8cff' stroke-width='2'/%3E%3Cpath d='M0,170 C100,140 100,200 200,170 C300,140 300,200 400,170' fill='none' stroke='%235b8cff' stroke-width='2'/%3E%3C/svg%3E");
+    background-size: 400px 200px;
+    opacity: 0.16;
+    animation: waveShiftA 20s linear infinite;
+  }
+  .wave-bg::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 240'%3E%3Cpath d='M0,40 C125,0 125,80 250,40 C375,0 375,80 500,40' fill='none' stroke='%23a78bfa' stroke-width='2'/%3E%3Cpath d='M0,130 C125,90 125,170 250,130 C375,90 375,170 500,130' fill='none' stroke='%23a78bfa' stroke-width='2'/%3E%3Cpath d='M0,220 C125,180 125,260 250,220 C375,180 375,260 500,220' fill='none' stroke='%23a78bfa' stroke-width='2'/%3E%3C/svg%3E");
+    background-size: 500px 240px;
+    opacity: 0.13;
+    animation: waveShiftB 26s linear infinite;
+  }
+  @keyframes waveShiftA {
+    from { background-position: 0 0; }
+    to { background-position: -400px 0; }
+  }
+  @keyframes waveShiftB {
+    from { background-position: 0 0; }
+    to { background-position: 500px 0; }
+  }
+
+  /* クリック時のフェードインリップル */
+  .ripple-el { position: relative; overflow: hidden; }
+  .ripple-el .ripple {
+    position: absolute;
+    border-radius: 9999px;
+    background: rgba(255,255,255,0.45);
+    opacity: 0;
+    transform: scale(0);
+    pointer-events: none;
+    animation: rippleFade 700ms ease-out forwards;
+  }
+  @keyframes rippleFade {
+    0% { opacity: 0; transform: scale(0); }
+    30% { opacity: 0.55; }
+    100% { opacity: 0; transform: scale(3.2); }
+  }
+</style>
+</head>
+<body class="bg-page-gradient text-gray-200 antialiased">
+
+<!-- ヘッダー遷移用フェードオーバーレイ -->
+<div id="pageFade" class="fixed inset-0 z-[100] bg-ink opacity-100 transition-opacity duration-700 ease-in-out"></div>
+
+<!-- 背景アニメーション：ページ全体に固定表示（ヒーロー以外でも常時表示） -->
+<div class="bg-fx">
+  <div class="wave-bg"></div>
+  <div class="blob w-72 h-72 md:w-96 md:h-96 bg-accent top-10 -left-20"></div>
+  <div class="blob w-72 h-72 md:w-96 md:h-96 bg-violet bottom-0 right-0" style="animation-delay:3s;"></div>
+  <div class="blob w-64 h-64 md:w-80 md:h-80 bg-accent top-1/2 right-1/4" style="animation-delay:6s;"></div>
+</div>
+
+<!-- ===================== HEADER ===================== -->
+<header class="fixed top-0 left-0 w-full z-50 bg-ink/80 backdrop-blur-md border-b border-white/5">
+  <div class="max-w-6xl mx-auto px-6 md:px-8 flex items-center justify-between h-16 md:h-20">
+    <a href="#hero" class="flex items-center gap-2 text-white font-extrabold tracking-tight text-lg">
+      <span class="text-accent">&lt;/&gt;</span> LP <span class="text-white/30">+</span> System
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-sm text-gray-300 font-medium">
+      <a href="#about" class="hover:text-accent-light transition">About</a>
+      <a href="#skills" class="hover:text-accent-light transition">できること</a>
+      <a href="#works" class="hover:text-accent-light transition">制作実績</a>
+      <a href="#pricing" class="hover:text-accent-light transition">料金</a>
+      <a href="#flow" class="hover:text-accent-light transition">流れ</a>
+      <a href="#contact" class="hover:text-accent-light transition">お問い合わせ</a>
+    </nav>
+    <a href="#contact" class="hidden md:inline-flex items-center gap-2 bg-accent hover:bg-accent-dark transition text-white px-5 py-2.5 text-sm font-bold ripple-el">
+      無料相談
+    </a>
+    <button id="menuBtn" class="lg:hidden text-white" aria-label="menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+  <nav id="mobileMenu" class="hidden lg:hidden flex flex-col bg-ink text-center border-t border-white/5">
+    <a href="#about" class="py-3 border-b border-white/5">About</a>
+    <a href="#skills" class="py-3 border-b border-white/5">できること</a>
+    <a href="#works" class="py-3 border-b border-white/5">制作実績</a>
+    <a href="#pricing" class="py-3 border-b border-white/5">料金</a>
+    <a href="#flow" class="py-3 border-b border-white/5">流れ</a>
+    <a href="#contact" class="py-4 bg-accent text-white font-bold">お問い合わせ</a>
+  </nav>
+</header>
+
+<!-- ===================== 1. HERO ===================== -->
+<section id="hero" class="relative pt-16 md:pt-20 min-h-screen flex items-center overflow-hidden">
+  <div class="relative max-w-5xl mx-auto px-6 py-24 text-center">
+    <p class="inline-block border border-accent/40 text-accent-light text-xs md:text-sm font-bold px-4 py-2 tracking-widest mb-8" data-aos="fade-down" data-aos-duration="500">LP DESIGN × WEB SYSTEM</p>
+    <h1 class="text-3xl sm:text-4xl md:text-6xl font-extrabold leading-snug md:leading-tight mb-8 text-white" data-aos="fade-up" data-aos-duration="600" data-aos-delay="80">
+      <span class="gradient-text">アニメーション</span>、<span class="gradient-text">予約機能</span>付きのLPによって<br>
+      あなたのWebサイトを<br class="md:hidden">
+      一味違うものにしませんか？
+    </h1>
+    <p class="text-base md:text-xl text-gray-400 mb-4 tracking-wide" data-aos="fade-up" data-aos-duration="500" data-aos-delay="160">
+      「LPを作って終わり」ではなく、予約システムや料金シミュレーターまで。<br class="hidden md:block">
+      静的なページの先にある「動くWeb」を、ワンストップで構築します。
+    </p>
+    <p class="inline-flex items-center gap-2 border border-accent/30 text-accent-light text-xs md:text-sm font-bold px-4 py-2 tracking-wide mb-12" data-aos="fade-up" data-aos-duration="500" data-aos-delay="200">
+      🌐 英語版対応可能
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center" data-aos="fade-up" data-aos-duration="500" data-aos-delay="240">
+      <a href="#works" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-accent hover:bg-accent-dark glow transition text-white px-10 py-5 text-lg tracking-wide font-bold fade-nav-link">
+        制作実績を見る
+      </a>
+      <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center border-2 border-white/20 hover:border-accent hover:text-accent-light transition text-white px-10 py-5 text-lg tracking-wide font-bold ripple-el fade-nav-link">
+        無料で相談する
+      </a>
+    </div>
+  </div>
+
+</section>
+
+<!-- ===================== ABOUT / 自己紹介 ===================== -->
+<section id="about" class="bg-white/[0.03] py-20 md:py-28 px-6">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="500">
+      <p class="text-accent-light font-bold tracking-widest text-sm mb-3">ABOUT ME</p>
+      <h2 class="text-2xl md:text-4xl font-extrabold text-white">自己紹介</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-10 items-start">
+      <div class="md:col-span-1 flex flex-col items-center text-center" data-aos="fade-right" data-aos-duration="500">
+        <img src="profile-photo.png" alt="プロフィール写真" class="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-2 border-accent/30 mb-6">
+      </div>
+      <div class="md:col-span-2" data-aos="fade-left" data-aos-duration="500">
+        <p class="text-gray-300 leading-loose mb-8">
+          こんにちは！このポートフォリオをご覧いただき、ありがとうございます😊<br><br>
+          「アイディアはあるけどLP作成までは難しい」「デザインはできるけど予約機能などの導入方法はわからない、、」<br>
+          そんなお悩みを抱えてはいませんか？<br><br>
+          そんな時は、ぜひ私にお任せください！本ページに記載しているLP例のように、それぞれのテーマや雰囲気に合わせた「ぴったりのLP」づくりをお手伝いさせていただきます。<br><br>
+          また、5年間の海外在住経験を活かして、英語版でのLP作成も対応可能です。「ちょっと聞いてみたいな」くらいの気軽な気持ちで、お気軽にご相談くださいね！
+        </p>
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div class="border border-white/10 p-6">
+            <p class="text-xs text-gray-500 tracking-widest mb-2">EDUCATION</p>
+            <p class="text-white font-bold">一橋大学 社会学部 社会学科</p>
+          </div>
+          <div class="border border-white/10 p-6">
+            <p class="text-xs text-gray-500 tracking-widest mb-2">LANGUAGES</p>
+            <p class="text-white font-bold">R言語 / HTML</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 2. できること ===================== -->
+<section id="skills" class="bg-white/[0.015] py-20 md:py-28 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="500">
+      <p class="text-accent-light font-bold tracking-widest text-sm mb-3">WHAT I CAN DO</p>
+      <h2 class="text-2xl md:text-4xl font-extrabold text-white">できること</h2>
+    </div>
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div class="border border-white/10 hover:border-accent/50 transition p-8" data-aos="fade-up" data-aos-duration="450" data-aos-delay="0">
+        <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-accent-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 5h16M4 12h10M4 19h16"/></svg>
+        </div>
+        <h3 class="text-white font-bold text-lg mb-2">LP制作</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">business向けの静的LPを、業種・ターゲットに合わせて一からデザイン・実装します。</p>
+      </div>
+      <div class="border border-white/10 hover:border-accent/50 transition p-8" data-aos="fade-up" data-aos-duration="450" data-aos-delay="60">
+        <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-accent-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <h3 class="text-white font-bold text-lg mb-2">アニメーション付きLP制作</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">スクロール連動のフェードイン・カウントアップなど、印象に残る動きのあるLPを構築します。</p>
+      </div>
+      <div class="border border-white/10 hover:border-accent/50 transition p-8" data-aos="fade-up" data-aos-duration="450" data-aos-delay="120">
+        <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-accent-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5h18M3 5a2 2 0 002 2h14a2 2 0 002-2M3 5l2 14a2 2 0 002 2h10a2 2 0 002-2l2-14"/></svg>
+        </div>
+        <h3 class="text-white font-bold text-lg mb-2">英語でのLP制作</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">海外在住5年の経験を活かし、外国人観光客・海外顧客向けの英語版LPにも対応します。</p>
+      </div>
+      <div class="border border-white/10 hover:border-accent/50 transition p-8" data-aos="fade-up" data-aos-duration="450" data-aos-delay="180">
+        <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-accent-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        </div>
+        <h3 class="text-white font-bold text-lg mb-2">予約システム構築</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">Calendly連携やお問い合わせフォームなど、実際に予約・問い合わせが完結する仕組みを組み込みます。</p>
+      </div>
+      <div class="border border-white/10 hover:border-accent/50 transition p-8" data-aos="fade-up" data-aos-duration="450" data-aos-delay="240">
+        <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-accent-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 7h6m-6 4h6m-6 4h4M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z"/></svg>
+        </div>
+        <h3 class="text-white font-bold text-lg mb-2">料金シミュレーター</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">条件を選ぶとリアルタイムに料金が変わる、この下にあるようなシミュレーターも構築できます。</p>
+      </div>
+      <div class="border border-white/10 hover:border-accent/50 transition p-8" data-aos="fade-up" data-aos-duration="450" data-aos-delay="300">
+        <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-accent-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l9 6 9-6M5 5h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2z"/></svg>
+        </div>
+        <h3 class="text-white font-bold text-lg mb-2">フォーム構築</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">Formspree等を用いたバリデーション付きの問い合わせ・予約フォームを実装します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 3. 制作実績 ===================== -->
+<section id="works" class="bg-white/[0.03] py-20 md:py-28 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="500">
+      <p class="text-accent-light font-bold tracking-widest text-sm mb-3">WORKS</p>
+      <h2 class="text-2xl md:text-4xl font-extrabold text-white">制作実績</h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- 1. トレーニングジム -->
+      <a href="https://my-portfolio-seven-beta-34.vercel.app/gym.html" target="_blank" rel="noopener noreferrer" class="group block bg-ink border border-white/10 hover:border-accent/50 transition ripple-el fade-nav-link" data-aos="fade-up" data-aos-duration="500" data-aos-delay="0">
+        <div class="relative overflow-hidden">
+          <img src="https://placehold.co/700x420/001D3D/BC4749?text=Fitness+Gym+Builder+Max" alt="トレーニングジムLPサムネイル" class="w-full h-52 object-cover group-hover:scale-105 transition duration-500">
+          <span class="absolute top-4 right-4 bg-accent text-white text-xs font-bold px-3 py-1.5 tracking-wide">アニメーション機能付き</span>
+        </div>
+        <div class="p-7">
+          <h3 class="text-white font-bold text-lg mb-2">トレーニングジム LP</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">スクロール連動アニメーション・数字カウントアップ・Calendly予約連携を搭載した男性的で高級感のあるデザイン。</p>
+          <p class="text-accent-light text-sm font-bold mt-4 inline-flex items-center gap-1">サイトを見る <span class="group-hover:translate-x-1 transition">→</span></p>
+        </div>
+      </a>
+      <!-- 2. 高級レストラン -->
+      <a href="https://my-portfolio-seven-beta-34.vercel.app/restaurant.html" target="_blank" rel="noopener noreferrer" class="group block bg-ink border border-white/10 hover:border-accent/50 transition ripple-el fade-nav-link" data-aos="fade-up" data-aos-duration="500" data-aos-delay="80">
+        <div class="relative overflow-hidden">
+          <img src="https://placehold.co/700x420/1a1a1a/c9a84c?text=Shabu-Shabu+Kuroyoton" alt="高級レストランLPサムネイル" class="w-full h-52 object-cover group-hover:scale-105 transition duration-500">
+          <span class="absolute top-4 right-4 bg-accent text-white text-xs font-bold px-3 py-1.5 tracking-wide">予約フォーム機能付き</span>
+        </div>
+        <div class="p-7">
+          <h3 class="text-white font-bold text-lg mb-2">高級レストラン LP</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">非対称レイアウト×縦書き演出のエディトリアルデザインに、バリデーション付きFormspree予約フォームを実装。</p>
+          <p class="text-accent-light text-sm font-bold mt-4 inline-flex items-center gap-1">サイトを見る <span class="group-hover:translate-x-1 transition">→</span></p>
+        </div>
+      </a>
+      <!-- 3. 学生向けレンタカー -->
+      <a href="https://my-portfolio-seven-beta-34.vercel.app/rental-car.html" target="_blank" rel="noopener noreferrer" class="group block bg-ink border border-white/10 hover:border-accent/50 transition ripple-el fade-nav-link" data-aos="fade-up" data-aos-duration="500" data-aos-delay="160">
+        <div class="relative overflow-hidden">
+          <img src="https://placehold.co/700x420/ffffff/2d8a6e?text=Kimura+Rent-a-Car" alt="学生向けレンタカーLPサムネイル" class="w-full h-52 object-cover group-hover:scale-105 transition duration-500">
+          <span class="absolute top-4 right-4 bg-accent text-white text-xs font-bold px-3 py-1.5 tracking-wide">料金シミュレーター機能付き</span>
+        </div>
+        <div class="p-7">
+          <h3 class="text-white font-bold text-lg mb-2">学生向けレンタカー LP</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">条件を選ぶとリアルタイムに料金が変わる料金シミュレーターと、お問い合わせフォームを搭載した親しみやすいデザイン。</p>
+          <p class="text-accent-light text-sm font-bold mt-4 inline-flex items-center gap-1">サイトを見る <span class="group-hover:translate-x-1 transition">→</span></p>
+        </div>
+      </a>
+      <!-- 4. 居酒屋（英語版） -->
+      <a href="https://my-portfolio-seven-beta-34.vercel.app/izakaya-takumi.html" target="_blank" rel="noopener noreferrer" class="group block bg-ink border border-white/10 hover:border-accent/50 transition ripple-el fade-nav-link" data-aos="fade-up" data-aos-duration="500" data-aos-delay="240">
+        <div class="relative overflow-hidden">
+          <img src="https://placehold.co/700x420/bc002d/ffd400?text=Izakaya+Takumi" alt="居酒屋LP（英語版）サムネイル" class="w-full h-52 object-cover group-hover:scale-105 transition duration-500">
+          <span class="absolute top-4 right-4 bg-accent text-white text-xs font-bold px-3 py-1.5 tracking-wide">英語版・機能付き</span>
+        </div>
+        <div class="p-7">
+          <h3 class="text-white font-bold text-lg mb-2">居酒屋 LP（英語版）</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">訪日外国人向けの完全英語LP。クリックで開くメニューアコーディオンと予約フォームを実装。</p>
+          <p class="text-accent-light text-sm font-bold mt-4 inline-flex items-center gap-1">サイトを見る <span class="group-hover:translate-x-1 transition">→</span></p>
+        </div>
+      </a>
+      <!-- 5. 本ポートフォリオサイト -->
+      <a href="#hero" class="group block bg-ink border border-accent/40 hover:border-accent transition ripple-el fade-nav-link md:col-span-2" data-aos="fade-up" data-aos-duration="500" data-aos-delay="320">
+        <div class="grid md:grid-cols-2">
+          <div class="relative overflow-hidden">
+            <img src="https://placehold.co/700x420/0a0a0f/8fb0ff?text=This+Portfolio+Site" alt="本ポートフォリオサイトサムネイル" class="w-full h-52 object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute top-4 right-4 bg-accent text-white text-xs font-bold px-3 py-1.5 tracking-wide">ダイナミック背景・機能付き</span>
+          </div>
+          <div class="p-7 flex flex-col justify-center">
+            <h3 class="text-white font-bold text-lg mb-2">本ポートフォリオサイト</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">ここまでご覧いただいている、このサイト自体も制作実績の一つです。波打つ背景アニメーション・料金シミュレーター・クリック時のリップル演出などを実装しています。</p>
+            <p class="text-accent-light text-sm font-bold mt-4 inline-flex items-center gap-1">トップへ戻る <span class="group-hover:-translate-y-1 transition">↑</span></p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 4. 料金目安 + シミュレーター ===================== -->
+<section id="pricing" class="bg-white/[0.015] py-20 md:py-28 px-6">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-14" data-aos="fade-up" data-aos-duration="500">
+      <p class="text-accent-light font-bold tracking-widest text-sm mb-3">PRICING SIMULATOR</p>
+      <h2 class="text-2xl md:text-4xl font-extrabold mb-4 text-white">料金目安・シミュレーター</h2>
+      <p class="text-gray-400">プランを選ぶか、必要な機能にチェックを入れると、合計金額がリアルタイムに表示されます。</p>
+    </div>
+
+    <div class="bg-ink-light border border-white/10 p-7 md:p-10" data-aos="fade-up" data-aos-duration="500">
+      <!-- プリセット -->
+      <p class="font-bold text-white mb-4 text-sm tracking-wide">プリセットから選ぶ</p>
+      <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-10">
+        <button type="button" data-preset="basic" class="preset-btn border border-white/15 hover:border-accent text-gray-300 hover:text-white text-xs md:text-sm py-3 px-2 transition">LP基本</button>
+        <button type="button" data-preset="animation" class="preset-btn border border-white/15 hover:border-accent text-gray-300 hover:text-white text-xs md:text-sm py-3 px-2 transition">アニメーション付きLP</button>
+        <button type="button" data-preset="function" class="preset-btn border border-white/15 hover:border-accent text-gray-300 hover:text-white text-xs md:text-sm py-3 px-2 transition">LP+機能</button>
+        <button type="button" data-preset="full" class="preset-btn border border-white/15 hover:border-accent text-gray-300 hover:text-white text-xs md:text-sm py-3 px-2 transition">フルカスタム</button>
+        <button type="button" data-preset="english" class="preset-btn border border-white/15 hover:border-accent text-gray-300 hover:text-white text-xs md:text-sm py-3 px-2 transition">英語版</button>
+      </div>
+
+      <!-- オプション -->
+      <p class="font-bold text-white mb-4 text-sm tracking-wide">オプションを個別に選ぶ</p>
+      <div class="space-y-3 mb-10">
+        <label class="flex items-center justify-between gap-4 border border-white/10 p-4 cursor-pointer hover:border-accent/40 transition">
+          <span class="flex items-center gap-3 text-sm md:text-base">
+            <input type="checkbox" id="opt-animation" class="option-check accent-accent w-5 h-5 flex-shrink-0">
+            スクロールアニメーション
+          </span>
+          <span class="text-accent-light font-bold whitespace-nowrap">+¥5,900</span>
+        </label>
+        <label class="flex items-center justify-between gap-4 border border-white/10 p-4 cursor-pointer hover:border-accent/40 transition">
+          <span class="flex items-center gap-3 text-sm md:text-base">
+            <input type="checkbox" id="opt-reservation" class="option-check accent-accent w-5 h-5 flex-shrink-0">
+            予約システム構築
+          </span>
+          <span class="text-accent-light font-bold whitespace-nowrap">+¥6,900</span>
+        </label>
+        <label class="flex items-center justify-between gap-4 border border-white/10 p-4 cursor-pointer hover:border-accent/40 transition">
+          <span class="flex items-center gap-3 text-sm md:text-base">
+            <input type="checkbox" id="opt-simulator" class="option-check accent-accent w-5 h-5 flex-shrink-0">
+            料金シミュレーター
+          </span>
+          <span class="text-accent-light font-bold whitespace-nowrap">+¥4,900</span>
+        </label>
+        <label class="flex items-center justify-between gap-4 border border-white/10 p-4 cursor-pointer hover:border-accent/40 transition">
+          <span class="flex items-center gap-3 text-sm md:text-base">
+            <input type="checkbox" id="opt-rush" class="option-check accent-accent w-5 h-5 flex-shrink-0">
+            お急ぎ対応（24時間以内に納品）
+          </span>
+          <span class="text-accent-light font-bold whitespace-nowrap">+¥4,900</span>
+        </label>
+        <label class="flex items-center justify-between gap-4 border border-white/10 p-4 cursor-pointer hover:border-accent/40 transition">
+          <span class="flex items-center gap-3 text-sm md:text-base">
+            <input type="checkbox" id="opt-english" class="option-check accent-accent w-5 h-5 flex-shrink-0">
+            英語版制作
+          </span>
+          <span class="text-accent-light font-bold whitespace-nowrap">+¥10,000</span>
+        </label>
+      </div>
+
+      <!-- 結果 -->
+      <div class="bg-ink border-2 border-accent p-8 text-center">
+        <p class="text-sm text-gray-400 mb-2">LP基本料金：<span class="text-white font-bold">¥18,000</span>（受注後修正2回まで無料）</p>
+        <p class="text-sm text-gray-500 mb-6">お見積もり合計</p>
+        <p id="totalPrice" class="text-4xl md:text-5xl font-extrabold gradient-text">¥18,000</p>
+      </div>
+
+      <div class="text-center mt-8">
+        <a href="#contact" class="inline-flex items-center justify-center gap-3 bg-accent hover:bg-accent-dark glow transition text-white px-10 py-4 text-base md:text-lg tracking-wide font-bold ripple-el fade-nav-link">
+          この内容で相談する
+        </a>
+      </div>
+    </div>
+
+    <div class="mt-10 text-xs md:text-sm text-gray-500 leading-relaxed space-y-2" data-aos="fade-up" data-aos-duration="400">
+      <p>※納品前の追加修正（3回目〜）：3,000円/回｜納品後の修正：4,000円/回（納品から7日間、中間報告・最終確認と合わせて2回まで無料）</p>
+      <p>※全てHTMLファイルでの納品となります。サーバーの設置は、既にご用意されているものをクライアント様にてご使用いただく形になります。</p>
+      <p>※EC サイト構築・会員登録システム・クレジットカード決済機能の追加など対応範囲外のご要望はお受けできません。専門知識およびセキュリティ面のリスクを伴うため、納品後は各分野を専門とするエンジニアへのご依頼をお願いしております。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 5. 制作の流れ ===================== -->
+<section id="flow" class="bg-white/[0.03] py-20 md:py-28 px-6">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="500">
+      <p class="text-accent-light font-bold tracking-widest text-sm mb-3">FLOW</p>
+      <h2 class="text-2xl md:text-4xl font-extrabold text-white">制作の流れ</h2>
+    </div>
+    <div class="space-y-8">
+      <div class="flex items-start gap-6" data-aos="fade-right" data-aos-duration="450" data-aos-delay="0">
+        <div class="w-12 h-12 rounded-full bg-accent text-white flex items-center justify-center font-extrabold text-lg flex-shrink-0">1</div>
+        <div class="flex-1 border-b border-white/10 pb-8">
+          <h3 class="text-white font-bold text-lg mb-2">受注検討段階</h3>
+          <p class="text-gray-400 text-sm md:text-base leading-relaxed">ご要望をお伺いし、料金・納品期間のお見積もりを提示。内容にご納得いただけましたら正式に受注確定となります。</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-6" data-aos="fade-right" data-aos-duration="450" data-aos-delay="100">
+        <div class="w-12 h-12 rounded-full bg-accent text-white flex items-center justify-center font-extrabold text-lg flex-shrink-0">2</div>
+        <div class="flex-1 border-b border-white/10 pb-8">
+          <h3 class="text-white font-bold text-lg mb-2">受注後</h3>
+          <p class="text-gray-400 text-sm md:text-base leading-relaxed">ヒアリングを行い、デザイン・配色・フォントのご指定や使用画像をお預かりした後、制作を開始。制作 → 中間報告 → 最終確認（合わせて2回まで修正無料）を経て納品します。</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-6" data-aos="fade-right" data-aos-duration="450" data-aos-delay="200">
+        <div class="w-12 h-12 rounded-full bg-accent text-white flex items-center justify-center font-extrabold text-lg flex-shrink-0">3</div>
+        <div class="flex-1">
+          <h3 class="text-white font-bold text-lg mb-2">納品後</h3>
+          <p class="text-gray-400 text-sm md:text-base leading-relaxed">納品から7日間は修正対応を承っておりますので、お気軽にお申し付けください（中間報告・最終確認と合わせて2回まで修正無料）。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 6. お問い合わせ ===================== -->
+<section id="contact" class="bg-white/[0.015] py-20 md:py-28 px-6 text-center">
+  <div class="max-w-2xl mx-auto" data-aos="fade-up" data-aos-duration="500">
+    <p class="tracking-widest text-xs md:text-sm mb-4 text-accent-light font-bold">CONTACT</p>
+    <h2 class="text-2xl md:text-4xl font-extrabold mb-6 text-white">お問い合わせ</h2>
+    <p class="text-gray-400 mb-12 leading-relaxed">メール・ココナラのどちらからでもご相談いただけます。24時間以内にご返信いたします。</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="mailto:lulu.20173170@gmail.com" class="inline-flex items-center justify-center gap-3 bg-accent hover:bg-accent-dark glow transition text-white px-10 py-5 text-base md:text-lg tracking-wide font-bold ripple-el fade-nav-link">
+        ✉️ メールで相談する
+      </a>
+      <a href="https://coconala.com/users/6175085" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3 border-2 border-white/20 hover:border-accent hover:text-accent-light transition text-white px-10 py-5 text-base md:text-lg tracking-wide font-bold ripple-el fade-nav-link">
+        ココナラで見る
+      </a>
+    </div>
+    <p class="text-gray-600 text-sm mt-8">lulu.20173170@gmail.com</p>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="bg-ink-light text-gray-500 py-10 px-6 text-center text-sm border-t border-white/5">
+  <p class="mb-2 font-bold text-white tracking-widest">LP + System</p>
+  <p>&copy; 2026 Web Freelance Portfolio. All Rights Reserved.</p>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+  });
+</script>
+
+<!-- ページ読み込み時：常に先頭に戻してから徐々にフェードイン -->
+<script>
+  (function () {
+    const pageFade = document.getElementById('pageFade');
+    window.scrollTo(0, 0);
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        pageFade.classList.remove('opacity-100');
+        pageFade.classList.add('opacity-0', 'pointer-events-none');
+      });
+    });
+  })();
+</script>
+
+<!-- 全ボタン共通：フェードアウト→遷移（スクロール／別タブ／メール等）→フェードインの演出 -->
+<script>
+  (function () {
+    const pageFade = document.getElementById('pageFade');
+    const FADE_MS = 700;
+
+    document.querySelectorAll('header a[href^="#"], .fade-nav-link, .ripple-el').forEach((link) => {
+      if (link.dataset.fadeBound) return;
+      link.dataset.fadeBound = 'true';
+
+      link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href') || '';
+        if (!href) return;
+
+        e.preventDefault();
+
+        pageFade.classList.remove('opacity-0', 'pointer-events-none');
+        pageFade.classList.add('opacity-100');
+
+        setTimeout(() => {
+          if (href.startsWith('#')) {
+            const targetEl = document.querySelector(href);
+            if (targetEl) targetEl.scrollIntoView({ behavior: 'auto', block: 'start' });
+          } else if (link.target === '_blank') {
+            window.open(href, '_blank', 'noopener,noreferrer');
+          } else {
+            window.location.href = href;
+          }
+
+          setTimeout(() => {
+            pageFade.classList.remove('opacity-100');
+            pageFade.classList.add('opacity-0', 'pointer-events-none');
+          }, 60);
+        }, FADE_MS);
+      });
+    });
+  })();
+</script>
+
+<!-- 料金シミュレーター -->
+<script>
+  (function () {
+    const BASE = 18000;
+    const PRICES = {
+      animation: 5900,
+      reservation: 6900,
+      simulator: 4900,
+      rush: 4900,
+      english: 10000,
+    };
+
+    const checks = {
+      animation: document.getElementById('opt-animation'),
+      reservation: document.getElementById('opt-reservation'),
+      simulator: document.getElementById('opt-simulator'),
+      rush: document.getElementById('opt-rush'),
+      english: document.getElementById('opt-english'),
+    };
+    const totalEl = document.getElementById('totalPrice');
+
+    function calculate() {
+      let total = BASE;
+      Object.keys(checks).forEach((key) => {
+        if (checks[key].checked) total += PRICES[key];
+      });
+      totalEl.textContent = '¥' + total.toLocaleString('ja-JP');
+    }
+
+    Object.values(checks).forEach((el) => {
+      el.addEventListener('change', calculate);
+    });
+
+    const presets = {
+      basic: [],
+      animation: ['animation'],
+      function: ['reservation', 'simulator'],
+      full: ['animation', 'reservation', 'simulator', 'rush'],
+      english: ['english'],
+    };
+
+    document.querySelectorAll('.preset-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const preset = presets[btn.dataset.preset] || [];
+        Object.keys(checks).forEach((key) => {
+          checks[key].checked = preset.includes(key);
+        });
+        document.querySelectorAll('.preset-btn').forEach((b) => b.classList.remove('border-accent', 'text-white'));
+        btn.classList.add('border-accent', 'text-white');
+        calculate();
+      });
+    });
+
+    calculate();
+  })();
+</script>
+
+<!-- クリック時のフェードインリップル -->
+<script>
+  document.querySelectorAll('.ripple-el').forEach((el) => {
+    el.addEventListener('click', (e) => {
+      const rect = el.getBoundingClientRect();
+      const size = Math.max(rect.width, rect.height) * 1.2;
+      const ripple = document.createElement('span');
+      ripple.className = 'ripple';
+      ripple.style.width = ripple.style.height = size + 'px';
+      ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+      ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+      el.appendChild(ripple);
+      ripple.addEventListener('animationend', () => ripple.remove());
+    });
+  });
+</script>
+
+<!-- AOS (Animate On Scroll) -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 500,
+    easing: 'ease-out-cubic',
+    once: true,
+    offset: 60,
+  });
+</script>
+</body>
+</html>
