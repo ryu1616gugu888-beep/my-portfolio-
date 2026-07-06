@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7J00BZYX5R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-7J00BZYX5R');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0" />
+    <meta name="description" content="年商1億〜10億円の建設業者様必見！最適な保険を徹底比較でコスト削減。複雑な補償もまとめてお任せ。事故対応・保険見直しも無料対応。">
+    <meta name="keywords" content="労災,賠償,建物損害,保険,窓口">
+    <title>労災・賠償・建物損害など安心の保険の窓口｜保険の総合代理店ACCEL</title>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TPXFF9RN');
+    </script>
+    <!-- End Google Tag Manager -->
+    <link rel="icon" type="image/x-icon" href="common/images/img_logo01.svg" />
+    <link rel="stylesheet" type="text/css" href="common/css/common.css" media="all" />
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="common/js/common.js"></script>
+
+    <!-- ============================================================
+         改善追加分スタイル（既存 common.css のトーン: #C5372F→#84222C の
+         グラデーション、金バッジ #FFD54F、フォント "M PLUS 1" に合わせています）
+    ============================================================ -->
+    <style>
+        /* ---------- 保険会社バッジ ---------- */
+        .c-insurerBar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 1.2rem 2.4rem;
+            padding: 1.6rem 2rem;
+            background: #fff;
+        }
+        .c-insurerBar__label {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #84222C;
+            margin-right: 0.5rem;
+        }
+        .c-insurerBar__badge {
+            display: inline-block;
+            padding: 0.6rem 1.6rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #555;
+            border: solid 1.5px #ddd;
+            border-radius: 100rem;
+            background: #fafafa;
+            white-space: nowrap;
+        }
+
+        /* ---------- 実績スタッツバー（アイコン付き） ---------- */
+        .c-statBar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+        .c-statBar__item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.4rem 2.2rem;
+            background: #fff;
+            border-radius: 1.2rem;
+            box-shadow: 0 0.2rem 0.8rem rgba(0,0,0,0.08);
+            min-width: 22rem;
+        }
+        .c-statBar__icon {
+            flex-shrink: 0;
+            width: 4rem;
+            height: 4rem;
+            color: #84222C;
+        }
+        .c-statBar__icon svg { width: 100%; height: 100%; }
+        .c-statBar__num {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #84222C;
+            line-height: 1.2;
+        }
+        .c-statBar__label {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.3;
+        }
+
+        /* ---------- フォーム上の安心マイクロコピー ---------- */
+        .c-formReassure {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem 2.4rem;
+            margin-bottom: 1.6rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #84222C;
+        }
+        .c-formReassure span { display: inline-flex; align-items: center; gap: 0.5rem; }
+        .c-formReassure span:before {
+            content: "✓";
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.8rem;
+            height: 1.8rem;
+            border-radius: 50%;
+            background: #84222C;
+            color: #fff;
+            font-size: 1.1rem;
+        }
+
+        /* ---------- その他工事種類の自由入力欄 ---------- */
+        .c-otherWorkType { display: none; margin-top: 0.8rem; }
+        .c-otherWorkType.is-show { display: block; }
+
+        /* ---------- モバイル固定CTAバー ---------- */
+        .c-stickyCta {
+            display: none;
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 999;
+            box-shadow: 0 -0.2rem 1rem rgba(0,0,0,0.18);
+        }
+        .c-stickyCta__in {
+            display: flex;
+        }
+        .c-stickyCta a {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            padding: 1.3rem 0.5rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #fff;
+            text-align: center;
+        }
+        .c-stickyCta a.c-stickyCta__tel {
+            background: #444;
+        }
+        .c-stickyCta a.c-stickyCta__form {
+            background: linear-gradient(to right, #C5372F, #84222C);
+        }
+        .c-stickyCta svg { width: 1.8rem; height: 1.8rem; flex-shrink: 0; }
+        @media (max-width: 767px) {
+            .c-stickyCta { display: block; }
+            body { padding-bottom: 5.6rem; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TPXFF9RN"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!--////////////////////////////////////////  header  ////////////////////////////////////////-->
+    <header class="l-header">
+        <div class="l-header__top">
+            <div class="l-header__top__in">
+                <div class="l-header__logo">
+                    <a class="u-hover" href="index.php">
+                        <img class="u-imgHeaderLogo" src="common/images/img_logo01.svg" alt="保険の総合代理店ACCEL">
+                    </a>
+                </div>
+                <div class="l-header__catch">
+                    <h1>労災・賠償・建物損害など安心の保険の窓口｜保険の総合代理店ACCEL</h1>
+                </div>
+                <div class="l-header__btnTel">
+                    <a class="c-buttonTel" href="tel:045-319-6482">
+                        <span>受付時間：9:00〜18:00（平日）</span>
+                        <div class="c-buttonTel__in">045-319-6482</div>
+                    </a>
+                </div>
+                <div class="l-header__btnMail">
+                    <a class="c-button c-button--mail" href="#contact">
+                        WEBからのご相談・お見積り
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--////////////////////////////////////////  /header  ////////////////////////////////////////--><!--////////////////////////////////////////  contents  ////////////////////////////////////////-->
+<article class="l-contents">
+    <section class="l-section l-section--catch">
+        <div class="u-innerL u-innerGarterM u-vrM">
+            <h2 class="c-titleCatch u-vrS">
+                <span>
+                    <em>年商1億〜10億円の建設業者様必見！</em>
+                    最適な保険を
+                </span><br>
+                <span>徹底比較でコスト削減</span>
+            </h2>
+            <h3 class="c-titleCatchSmall">
+                <span>複雑な補償もまとめてお任せ。<br>事故対応・保険見直しも無料対応</span>
+            </h3>
+            <p class="c-titleCatchCaption u-vrS">
+                <span>弊社では、保険提案を通じて会社運営にかかる小さな業務から事業資金に</span><br>
+                <span>関するコンサルティングを多数行ってまいりました。</span><br>
+                <span>事故対応・保証抜け防止・保険一元管理まで、</span><br>
+                <span><em>神奈川県内の建設業者約500社</em>が選んだ実績があります。</span>
+            </p>
+            <div>
+                <a class="c-button c-button--large c-button--mail c-button--mail--large" href="#contact">
+                    【無料相談・見積もり】今すぐ依頼する
+                    <em>建設業の保険料、最大32%削減した事例も！</em>
+                </a>
+            </div>
+        </div>
+        <div class="l-section--catch__slide">
+            <ul id="slide_wrap">
+                <li class="slide_item">
+                    <img src="images/pic_slide01.jpg" alt="事故対応">
+                </li>
+                <li class="slide_item">
+                    <img src="images/pic_slide02.jpg" alt="コスト削減">
+                </li>
+                <li class="slide_item">
+                    <img src="images/pic_slide03.jpg" alt="お任せください｜建設保険のアクセル">
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- ===== 追加：取扱保険会社バッジ（本文中で既に触れている4社を可視化） ===== -->
+    <section class="l-section" style="padding: 1.6rem 0;">
+        <div class="c-insurerBar">
+            <span class="c-insurerBar__label">取扱保険会社：</span>
+            <span class="c-insurerBar__badge">AIG</span>
+            <span class="c-insurerBar__badge">損保ジャパン</span>
+            <span class="c-insurerBar__badge">Chubb保険</span>
+            <span class="c-insurerBar__badge">あいおいニッセイ同和損保</span>
+        </div>
+    </section>
+    <!-- ===== 追加：実績スタッツバー（既存の文言を数値+アイコンで視認性アップ） ===== -->
+    <section class="l-section" style="padding-bottom: 2rem;">
+        <div class="u-innerM u-innerGarterM">
+            <div class="c-statBar">
+                <div class="c-statBar__item">
+                    <span class="c-statBar__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>
+                    </span>
+                    <span><span class="c-statBar__num">500社以上</span><br><span class="c-statBar__label">導入企業数</span></span>
+                </div>
+                <div class="c-statBar__item">
+                    <span class="c-statBar__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6L9 17l-5-5"/></svg>
+                    </span>
+                    <span><span class="c-statBar__num">90%以上</span><br><span class="c-statBar__label">継続率</span></span>
+                </div>
+                <div class="c-statBar__item">
+                    <span class="c-statBar__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+                    </span>
+                    <span><span class="c-statBar__num">最短1営業日</span><br><span class="c-statBar__label">でご提案</span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="l-section l-section--bgPic01">
+        <div class="u-vrL">
+            <div class="u-innerM u-innerGarterM u-vrL">
+                <h2 class="c-title c-title--white">
+                    <span>＼ </span>
+                    保険について、<strong>こんなお悩み</strong>ありませんか?
+                    <span> ／</span>
+                </h2>
+                <div class="c-panel u-vrS u-taC">
+                    <p class="c-badgeCheck">費用を抑えて保険に加入したい、複数の保険を比べたい</p>
+                    <p class="c-badgeCheck">事故が起きたときの対応が不安、手続きがわからない</p>
+                    <p class="c-badgeCheck">必要な保険が分からず、前年同条件で継続している</p>
+                    <p class="c-badgeCheck">現場は増えているし時代も変化している。保険のアドバイスをしてほしい</p>
+                </div>
+            </div>
+            <div class="u-innerL u-innerGarterM u-vrL">
+                <h2 class="c-title c-title--white">
+                    もし、あなたがこのようなことで悩んでいるのなら、<br>
+                    <strong>弊社はあなたのお役に立てる可能性があります。</strong>
+                </h2>
+                <div class="c-tableView">
+                    <h3 class="c-tableView__title c-tableView__title--accent">＼ ご相談・お見積りはこちら ／</h3>
+                    <div>
+                        <ul class="l-grid l-grid--half l-grid--M">
+                            <li>
+                                <a class="c-buttonTel c-buttonTel--large" href="tel:045-319-6482">
+                                    <span>受付時間：9:00〜18:00（平日）</span>
+                                    <div class="c-buttonTel__in">045-319-6482</div>
+                                </a>
+                            </li>
+                            <li>
+                                <div class="u-taC">
+                                    <a class="c-button c-button--large c-button--mail c-button--mail--large" href="#contact">
+                                        WEBからのご相談・お見積り
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="l-section">
+        <div class="u-vrL">
+            <div class="u-innerM u-innerGarterM u-vrL">
+                <h2 class="c-title">
+                    <span>＼ </span>
+                    弊社が選ばれている<strong>3つの理由</strong>
+                    <span> ／</span><br>
+                    ACCELなら、保険の見直し・選定・管理まで一括対応！
+                </h2>
+                <div class="c-tableView">
+                    <h3 class="c-tableView__title">
+                        <span class="c-badge">Point 01</span>
+                        地域密着・顔が見えるサポート
+                    </h3>
+                    <div class="c-media">
+                        <div class="c-media__img">
+                            <img class="u-imgThumb" src="images/pic_point01.jpg" alt="地域密着・顔が見えるサポート">
+                        </div>
+                        <div class="c-media__body">
+                            <p>保険代理店の最大の特徴は、地域密着型のサービスを提供できるという点です。困った時はすぐに相談でき、より細かいサポートを受けられます。顔の見える営業・事故対応を心がけております。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="c-tableView">
+                    <h3 class="c-tableView__title">
+                        <span class="c-badge">Point 02</span>
+                        複数社の保険を比較
+                    </h3>
+                    <div class="c-media">
+                        <div class="c-media__img">
+                            <img class="u-imgThumb" src="images/pic_point02.jpg" alt="複数社の保険を比較">
+                        </div>
+                        <div class="c-media__body">
+                            <p>
+                                万が一に備える保険選びだからこそ、納得のいく比較が大切です。AIG、損保ジャパン、Chubb保険、あいおい保険といった信頼性の高い大手保険会社4社を一度に比較できるから、補償内容・保険料・サービス体制を客観的に見比べて、自分にぴったりの保険を選べます。<br>
+                                事故対応のスピード、サポートの充実度、ライフスタイルに合った補償範囲など、知っておきたい情報をわかりやすく整理。プロのサポートで、保険選びの不安を安心に変えましょう。もちろん、相談・見積もりは無料。勧誘もありません。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="c-tableView">
+                    <h3 class="c-tableView__title">
+                        <span class="c-badge">Point 03</span>
+                        保険を一元管理できる
+                    </h3>
+                    <div class="c-media">
+                        <div class="c-media__img">
+                            <img class="u-imgThumb" src="images/pic_point03.jpg" alt="保険を一元管理できる">
+                        </div>
+                        <div class="c-media__body">
+                            <p>
+                                保険代理店は、複数保険会社の保険商品を取り扱うことができます。生命保険から自動車保険、火災保険などの損害保険まで幅広く保険商品を扱っているところもあります。例えば、自動車事故による怪我で手術、入院した場合、自動車保険、医療保険、入院特約、手術特約、普通傷害保険など色々な保険が絡んできます。<br>
+                                それらの保険にたくさん加入している方で、一つの保険代理店に任せてあれば、事故後の保険の支払申請などの手続きがとても楽になります。保険の更新の手続きを一元管理出来るといったメリットもあります。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <p class="c-title"><em>導入企業500社以上｜継続率90%以上｜最短1営業日でご提案</em></p>
+            </div>
+        </div>
+    </section>
+    <section class="l-section l-section--accent">
+        <div class="u-vrL">
+            <div class="u-innerM u-innerGarterM u-vrL">
+                <h2 class="c-title">
+                    <span>＼ </span>
+                    成功事例・実績・お客様の声
+                    <span> ／</span>
+                </h2>
+                <ul class="l-grid l-grid--three">
+                    <li>
+                        <div class="c-tableView">
+                            <h3 class="c-tableView__title">プラント工事業A社</h3>
+                            <div class="c-fontSet">
+                                <h4>年間保険料が32%削減！内容もスリム化</h4>
+                                <h5>さらに自動車保険をまとめてお得に！</h5>
+                                <p>
+                                    保険を見直しただけで、年間保険料がなんと32％削減！ムダな補償を見直し、本当に必要な内容だけにスリム化。だからこそ、コストを抑えながらもしっかり安心が続きます。さらに、自動車保険も一緒にまとめることで、割引や特典が適用され、トータルでさらにお得に。窓口を一本化できるので、管理もラクラク。「節約」と「安心」を両立できる保険の見直し、今こそ始めてみませんか？
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="c-tableView">
+                            <h3 class="c-tableView__title">管工事業B社</h3>
+                            <div>
+                                <div class="c-fontSet">
+                                    <h4>現在の代理店の事故対応に不満があり切替</h4>
+                                    <h5>サポートが手厚くて安心・事故対応のアドバイスや書類作成をお手伝い</h5>
+                                    <p>
+                                        「事故のとき、何もしてくれなかった…」そんな声から、代理店を切り替える方が増えています。<br>
+                                        当社では、事故発生時の迅速なアドバイスはもちろん、書類作成や保険会社とのやりとりまでしっかりサポート。保険に詳しくなくても大丈夫。困ったときに「すぐに頼れる存在」として、あなたに寄り添いながら、丁寧に対応いたします。安心できるサポート体制で、万が一のときも落ち着いて対応できます。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="c-tableView">
+                            <h3 class="c-tableView__title">機械据付C社</h3>
+                            <div>
+                                <div class="c-fontSet">
+                                    <h4>補償漏れが判明即日ご提案でご契約</h4>
+                                    <h5>加入証明も迅速に発行</h5>
+                                    <p>
+                                        保険の見直しで判明した「補償の抜け」。そのままにしておくと、万が一の際に保障されないリスクがあります。当社では、補償漏れが見つかったその日に最適なプランをご提案。スピーディーにご契約まで対応し、加入証明書も即日発行いたします。<br>
+                                        「必要なときに、必要な補償がある」そんな安心を、迅速にお届けします。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <p class="c-title"><em>まずは相談だけでもOK！3分で完了！</em></p>
+            </div>
+        </div>
+    </section>
+    <section class="l-section l-section--bgPic01">
+        <div class="u-innerL u-innerGarterM u-vrL">
+            <div class="c-tableView">
+                <h3 class="c-tableView__title c-tableView__title--accent">＼ ご相談・お見積りはこちら ／</h3>
+                <div>
+                    <ul class="l-grid l-grid--half l-grid--M">
+                        <li>
+                            <a class="c-buttonTel c-buttonTel--large" href="tel:045-319-6482">
+                                <span>受付時間：9:00〜18:00（平日）</span>
+                                <div class="c-buttonTel__in">045-319-6482</div>
+                            </a>
+                        </li>
+                        <li>
+                            <div class="u-taC">
+                                <a class="c-button c-button--large c-button--mail c-button--mail--large" href="#contact">
+                                    WEBからのご相談・お見積り
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="l-section">
+        <div class="u-vrL">
+            <div class="u-innerM u-innerGarterM u-vrL">
+                <h2 class="c-title">
+                    <span>＼ </span>
+                    <strong>3大リスク+3</strong>に備える保険
+                    <span> ／</span>
+                </h2>
+                <ul class="l-grid l-grid--three">
+                    <li>
+                        <div class="c-tableView">
+                            <h3 class="c-tableView__title">労災上乗せ保険</h3>
+                            <div class="c-fontSet">
+                                <p>
+                                    従業員や下請負人が業務中にケガなどの災害に遭った場合、ご加入者が災害補償規程等に基づいて支払う補償金をカバーします。さらに、万が一労災訴訟が発生した際に、企業や役員が負担する損害賠償金や訴訟解決にかかる費用にも備える保険です。
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="c-tableView">
+                            <h3 class="c-tableView__title">賠償責任保険</h3>
+                            <div class="c-fontSet">
+                                <p>
+                                    請負工事や作業に伴って発生する予期せぬ事故、または施設の欠陥や管理上の不備により第三者の身体や生命に危害を与えたり、財物を損壊させたりした結果、法律上の損害賠償責任を負う場合に、請負業者が被る損害を補償するための保険です。
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="c-tableView">
+                            <h3 class="c-tableView__title">工事物損害保険</h3>
+                            <div class="c-fontSet">
+                                <p>
+                                    施工ミスによる建設中の建物の破損、トラックの衝突による損傷、工事用資材の盗難、強風によるひび割れなど、工事現場において建設中の建物に不測かつ突発的な事故が発生した場合、その復旧にかかる費用を補償する保険です。
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="c-tableView">
+                            <h3 class="c-tableView__title">動産総合保険</h3>
+                            <div class="c-fontSet">
+                                <p>
+                                    動産総合保険は、大切な建設機械を守るための保険です。万が一の際には新価で保険金が支払われるため、建設機械の再取得が可能です。また、特約を付帯することで、ブームの単独損害にも対応できます。
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="c-tableView">
+                            <h3 class="c-tableView__title">火災保険</h3>
+                            <div class="c-fontSet">
+                                <p>
+                                    本社や営業所など、複数の拠点をまとめて補償対象とする保険です。1物件、または複数物件を合算し、一定以上の保険金額となる場合には、より合理的な保険設計が可能です。地震などの天災による損害にも備えることができます。
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="c-tableView">
+                            <h3 class="c-tableView__title">自動車保険</h3>
+                            <div class="c-fontSet">
+                                <p>
+                                    フリート契約（10台以上のご契約）では、実態に即した保険設計が可能なため、保険料の最適化が図れます。また、建設現場で発生した自動車事故については、自動車保険にて対応いたします。
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="l-section l-section--accent">
+        <div class="u-innerM u-innerGarterM u-vrL">
+            <h2 class="c-title">
+                <span>＼ </span>
+                建設業の<strong>事故事例</strong>と<strong>保険支払い事例</strong>
+                <span> ／</span>
+            </h2>
+            <ul class="l-grid l-grid--half">
+                <li>
+                    <div class="c-tableView">
+                        <h3 class="c-tableView__title">高所作業中の転落事故</h3>
+                        <div class="c-fontSet">
+                            <img src="images/pic_works01.jpg" alt="高所作業中の転落事故">
+                            <h4>
+                                右足首を骨折。<br>
+                                全治2カ月、ギブス固定4週間。
+                            </h4>
+                            <h5>状況</h5>
+                            <p>30代のとび職人が足場板の上で作業中にバランスを崩して3メートル下に転落。右足首を骨折。全治2カ月、ギブス固定4週間。</p>
+                            <h5>補償内容</h5>
+                            <h6>労災保険</h6>
+                            <p>療養補償給付＋休業補償（平均賃金の8割）支払い</p>
+                            <h6>労災上乗せ保険（使用者責任型）</h6>
+                            <p>通院日数・休業日数に応じて約84万円を追加支払い</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="c-tableView">
+                        <h3 class="c-tableView__title">重機接触による第三者負傷</h3>
+                        <div class="c-fontSet">
+                            <img src="images/pic_works02.jpg" alt="重機接触による第三者負傷">
+                            <h4>
+                                不注意で同じ現場の<br>
+                                別業者に接触し打撲傷。
+                            </h4>
+                            <h5>状況</h5>
+                            <p>バックホー作業中、後退時に監視員の不注意で同じ現場の別業者に接触し打撲傷。</p>
+                            <h5>補償内容</h5>
+                            <h6>事業活動総合保険の施設賠償責任特約</h6>
+                            <p>治療費＋慰謝料 合計70万円を支払い</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="c-tableView">
+                        <h3 class="c-tableView__title">建設中の建物火災</h3>
+                        <div class="c-fontSet">
+                            <img src="images/pic_works03.jpg" alt="建設中の建物火災">
+                            <h4>
+                                躯体の一部と<br>
+                                隣接足場が焼損。
+                            </h4>
+                            <h5>状況</h5>
+                            <p>溶接中の火花が建材に引火し、躯体の一部と隣接足場が焼損。</p>
+                            <h5>補償内容</h5>
+                            <h6>工事保険（建設工事保険）</h6>
+                            <p>焼損建材の修復費、足場復旧費、消防出動費など総額約800万円を補償</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="c-tableView">
+                        <h3 class="c-tableView__title">熱中症による作業員死亡</h3>
+                        <div class="c-fontSet">
+                            <img src="images/pic_works04.jpg" alt="熱中症による作業員死亡">
+                            <h4>
+                                30代の作業員が倒れ、<br>
+                                救急搬送後に死亡。
+                            </h4>
+                            <h5>状況</h5>
+                            <p>真夏の屋根作業で30代の作業員が倒れ、救急搬送後に死亡。労災認定される。</p>
+                            <h5>補償内容</h5>
+                            <h6>労災保険</h6>
+                            <p>遺族補償給付（年金形式＋葬祭料）</p>
+                            <h6>労災保険</h6>
+                            <p>死亡保険金1500万円を支払い</p>
+                            <h6>使用者責任問われる</h6>
+                            <p>使用者賠償責任特約にて最大1億円の遺族賠償に対応</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="c-tableView">
+                <h3 class="c-tableView__title">＼ 工事保険が使えない代表的な事例 ／</h3>
+                <div class="u-vrS u-taC">
+                    <span class="c-badgeCross">地震、噴火、津波などの天災</span>
+                    <span class="c-badgeCross">土砂崩れや地盤沈下などの土地の軟弱化に対する損害</span>
+                    <span class="c-badgeCross">自動車事故（ナンバーのついている車は自動車保険の対象となるため、この保険の対象にはなりません）</span>
+                    <span class="c-badgeCross">請負った工事のみの損害</span>
+                    <span class="c-badgeCross">原状回復以上の修理費用</span>
+                    <span class="c-badgeCross">工事のやり直し費用</span>
+                    <span class="c-badgeCross">工事のために一時的にお預かりした動植物</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="l-section l-section--bgPic02">
+        <div class="u-vrL">
+            <div class="u-innerM u-innerGarterM u-vrL">
+                <h2 class="c-title c-title--white">
+                    <span>＼ </span>
+                    よくあるご質問
+                    <span> ／</span>
+                </h2>
+                <ul class="u-vrL">
+                    <li>
+                        <div class="c-tableView">
+                            <div class="c-fontSet">
+                                <h3 class="c-badgeQuestion">相談や見積りは無料ですか？</h3>
+                            </div>
+                            <div class="c-fontSet">
+                                <p class="c-badgeAnswer">
+                                    はい、すべて無料で承っておりますので、どうぞ安心してお問い合わせください。お見積もりは他社様との違いやご不明点も丁寧にご説明いたします。ぜひ他社のお見積もりと比較しながら、ご検討ください。
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="c-tableView">
+                            <div class="c-fontSet">
+                                <h3 class="c-badgeQuestion">見積りには何が必要ですか？</h3>
+                            </div>
+                            <div class="c-fontSet">
+                                <p class="c-badgeAnswer">
+                                    現在ご加入中の保険証券をご用意ください。その他にご準備いただく書類は、お見積りの内容により異なりますので、初回のお打ち合わせ時にご案内いたします。まずは、お問い合わせフォームまたはお電話にてお気軽にご連絡ください。
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="c-tableView">
+                            <div class="c-fontSet">
+                                <h3 class="c-badgeQuestion">保険会社によって料金に大きな差があるのはなぜですか？</h3>
+                            </div>
+                            <div class="c-fontSet">
+                                <p class="c-badgeAnswer">
+                                    保険会社によって該当する工事種別の分類や保険料が異なります。さらに各種割引制度も保険会社ごとに異なるため、補償内容に大きな差がなくても、料金は保険会社によって大きく変わることが珍しくありません。
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="c-tableView">
+                            <div class="c-fontSet">
+                                <h3 class="c-badgeQuestion">加入後、実際事故が起こったら対応してもらえますか？</h3>
+                            </div>
+                            <div class="c-fontSet">
+                                <p class="c-badgeAnswer">
+                                    ご加入後のご相談や事故対応にも力を入れておりますので、どうぞご安心ください。事故の解決まで親身にサポートいたします。
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="c-tableView">
+                            <div class="c-fontSet">
+                                <h3 class="c-badgeQuestion">見積り後のキャンセルは可能ですか？</h3>
+                            </div>
+                            <div class="c-fontSet">
+                                <p class="c-badgeAnswer">
+                                    はい、可能です。他社様のプランと比較しながらご検討いただけます。プランや料金で気になる点がございましたら、ぜひお気軽にご相談ください。必要な保険が漏れていないか、最適なプランかどうかをしっかり確認いたします。
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="c-tableView">
+                            <div class="c-fontSet">
+                                <h3 class="c-badgeQuestion">従業員数が多い会社や、複数の現場を掛け持ちしている場合でも対応できますか？</h3>
+                            </div>
+                            <div class="c-fontSet">
+                                <p class="c-badgeAnswer">
+                                    はい、対応可能です。年商規模の大きな建設業者様や、複数現場を同時に抱えるお客様ほど、保険の重複・抜け漏れが起こりやすいため、まずは現在ご加入中の保険内容を一覧に整理するところからサポートいたします。現場数や従業員数に応じた最適な補償設計をご提案します。
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="c-tableView">
+                            <div class="c-fontSet">
+                                <h3 class="c-badgeQuestion">現在加入している保険会社・代理店から切り替える場合、手間はかかりますか？</h3>
+                            </div>
+                            <div class="c-fontSet">
+                                <p class="c-badgeAnswer">
+                                    お手続きの多くは弊社が代行いたしますので、お客様のご負担は最小限です。現行の保険証券をお預かりし、補償内容を比較したうえで切り替えのタイミングやスケジュールもご相談しながら進めますので、業務に支障が出ないよう配慮いたします。
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="u-innerL u-innerGarterM u-vrL">
+                <div class="c-tableView">
+                    <h3 class="c-tableView__title c-tableView__title--accent">＼ ご相談・お見積りはこちら ／</h3>
+                    <div>
+                        <ul class="l-grid l-grid--half l-grid--M">
+                            <li>
+                                <a class="c-buttonTel c-buttonTel--large" href="tel:045-319-6482">
+                                    <span>受付時間：9:00〜18:00（平日）</span>
+                                    <div class="c-buttonTel__in">045-319-6482</div>
+                                </a>
+                            </li>
+                            <li>
+                                <div class="u-taC">
+                                    <a class="c-button c-button--large c-button--mail c-button--mail--large" href="#contact">
+                                        WEBからのご相談・お見積り
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="l-section" id="contact">
+        <div class="u-innerL u-innerGarterM u-vrL">
+            <div class="c-tableView">
+                <h2 class="c-tableView__title">Webなら24時間受付・簡単2分で完了！相談だけでもOK</h2>
+                <div class="c-tableView__title">
+                    <ul class="c-navBar">
+                        <li class="active"><span class="c-badge">Step 01</span>入力</li>
+                        <li><span class="c-badge">Step 02</span>確認</li>
+                        <li><span class="c-badge">Step 03</span>完了</li>
+                    </ul>
+                </div>
+                <div class="c-formReassure">
+                    <span>しつこい営業は一切ありません</span>
+                    <span>入力は最短1分</span>
+                    <span>相談・見積もり無料</span>
+                </div>
+                <form class="c-form u-vrL" action="check.php" method="post" id="js-contactForm">
+                    <table>
+                        <tr>
+                            <th>問い合わせ項目</th>
+                            <td>
+                                <label>
+                                    <input type="radio" name="問い合わせ項目" value="契約したい" data-required-level="full" checked>
+                                    契約したい
+                                </label>
+                                <label>
+                                    <input type="radio" name="問い合わせ項目" value="検討するための資料・見積もりが欲しい" data-required-level="full">
+                                    検討するための資料・見積もりが欲しい
+                                </label>
+                                <label>
+                                    <input type="radio" name="問い合わせ項目" value="詳しい話が聞きたい（指定日時をお問い合わせ内容欄にご記入下さい）" data-required-level="full">
+                                    詳しい話が聞きたい<br>
+                                    （指定日時をお問い合わせ内容欄にご記入下さい）
+                                </label>
+                                <label>
+                                    <input type="radio" name="問い合わせ項目" value="まずは資料だけ見てみたい（営業電話なし）" data-required-level="light">
+                                    まずは資料だけ見てみたい<br>
+                                    （営業電話なし・メールでご案内します）
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>法人名・団体名</th>
+                            <td>
+                                <input type="text" name="法人名・団体名" placeholder="例）株式会社〇〇〇〇">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>ご担当者名</th>
+                            <td>
+                                <input type="text" name="ご担当者名" placeholder="例）田中太郎" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>所在地</th>
+                            <td>
+                                <select name="所在地" required>
+                                    <option value="" selected>選択してください</option>
+                                    <option value="北海道">北海道</option>
+                                    <option value="青森県">青森県</option>
+                                    <option value="岩手県">岩手県</option>
+                                    <option value="宮城県">宮城県</option>
+                                    <option value="秋田県">秋田県</option>
+                                    <option value="山形県">山形県</option>
+                                    <option value="福島県">福島県</option>
+                                    <option value="茨城県">茨城県</option>
+                                    <option value="栃木県">栃木県</option>
+                                    <option value="群馬県">群馬県</option>
+                                    <option value="埼玉県">埼玉県</option>
+                                    <option value="千葉県">千葉県</option>
+                                    <option value="東京都">東京都</option>
+                                    <option value="神奈川県">神奈川県</option>
+                                    <option value="新潟県">新潟県</option>
+                                    <option value="富山県">富山県</option>
+                                    <option value="石川県">石川県</option>
+                                    <option value="福井県">福井県</option>
+                                    <option value="山梨県">山梨県</option>
+                                    <option value="長野県">長野県</option>
+                                    <option value="岐阜県">岐阜県</option>
+                                    <option value="静岡県">静岡県</option>
+                                    <option value="愛知県">愛知県</option>
+                                    <option value="三重県">三重県</option>
+                                    <option value="滋賀県">滋賀県</option>
+                                    <option value="京都府">京都府</option>
+                                    <option value="大阪府">大阪府</option>
+                                    <option value="兵庫県">兵庫県</option>
+                                    <option value="奈良県">奈良県</option>
+                                    <option value="和歌山県">和歌山県</option>
+                                    <option value="鳥取県">鳥取県</option>
+                                    <option value="島根県">島根県</option>
+                                    <option value="岡山県">岡山県</option>
+                                    <option value="広島県">広島県</option>
+                                    <option value="山口県">山口県</option>
+                                    <option value="徳島県">徳島県</option>
+                                    <option value="香川県">香川県</option>
+                                    <option value="愛媛県">愛媛県</option>
+                                    <option value="高知県">高知県</option>
+                                    <option value="福岡県">福岡県</option>
+                                    <option value="佐賀県">佐賀県</option>
+                                    <option value="長崎県">長崎県</option>
+                                    <option value="熊本県">熊本県</option>
+                                    <option value="大分県">大分県</option>
+                                    <option value="宮崎県">宮崎県</option>
+                                    <option value="鹿児島県">鹿児島県</option>
+                                    <option value="沖縄県">沖縄県</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>工事の種類</th>
+                            <td>
+                                <select name="工事の種類" id="js-workType" required>
+                                    <option value="" selected>選択してください</option>
+                                    <option value="総合工事業（建築・土木）">総合工事業（建築・土木）</option>
+                                    <option value="建築工事業">建築工事業</option>
+                                    <option value="土木工事業">土木工事業</option>
+                                    <option value="電気工事業">電気工事業</option>
+                                    <option value="管工事業">管工事業</option>
+                                    <option value="内装・仕上工事業">内装・仕上工事業</option>
+                                    <option value="とび・足場・鉄筋工事業">とび・足場・鉄筋工事業</option>
+                                    <option value="機械器具設置工事業">機械器具設置工事業</option>
+                                    <option value="その他">その他（下欄にご記入ください）</option>
+                                </select>
+                                <div class="c-otherWorkType" id="js-workTypeOther">
+                                    <input type="text" name="工事の種類_その他" placeholder="例）解体工事業">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>年間売上高</th>
+                            <td>
+                                <select name="年間売上高" required>
+                                    <option value="" selected>選択してください</option>
+                                    <option value="1億円未満">1億円未満</option>
+                                    <option value="1億円〜3億円未満">1億円〜3億円未満</option>
+                                    <option value="3億円〜10億円未満">3億円〜10億円未満</option>
+                                    <option value="10億円以上">10億円以上</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>メールアドレス</th>
+                            <td>
+                                <input type="text" name="メールアドレス" placeholder="例）xx@xxxx.co.jp" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>電話番号</th>
+                            <td>
+                                <input type="text" name="電話番号" placeholder="例）012-3456-7890" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>お問い合わせ内容</th>
+                            <td>
+                                <textarea name="お問い合わせ内容" placeholder="例）指定日時：◯月◯日（◯曜日）◯◯時頃" rows="5" required></textarea>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="u-taC">
+                        <button class="c-button c-button--large" type="submit">確認画面へ</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</article>
+<!--////////////////////////////////////////  /contents  ////////////////////////////////////////-->
+<!--////////////////////////////////////////  footer  ////////////////////////////////////////-->
+<footer class="l-footer u-vrS">
+    <div class="c-fontSet">
+        <p class="u-taC">
+            <a style="color: #000;" href="https://www.accel-hoken.biz/" target="_blank">
+                運営会社：株式会社ACCEL
+            </a>
+        </p>
+    </div>
+    <small>Copyright© 2025 ACCEL Co., Ltd. All Rights Reserved.</small>
+</footer>
+<!--////////////////////////////////////////  /footer  ////////////////////////////////////////-->
+
+<!-- ===== 追加：モバイル用固定CTAバー（スクロール中も常に電話・フォームに到達できるようにする） ===== -->
+<div class="c-stickyCta">
+    <div class="c-stickyCta__in">
+        <a class="c-stickyCta__tel" href="tel:045-319-6482">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1.1.4 2.2.7 3.2a2 2 0 0 1-.5 2.1L8 10.3a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c1 .4 2.1.6 3.2.7a2 2 0 0 1 1.7 2z"/></svg>
+            電話で相談
+        </a>
+        <a class="c-stickyCta__form" href="#contact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><path d="M2 6h20v12H2z"/></svg>
+            WEBで相談・見積り
+        </a>
+    </div>
+</div>
+
+<!-- ===== 追加：フォームの動的制御スクリプト ===== -->
+<script>
+(function () {
+    var form = document.getElementById('js-contactForm');
+    if (!form) return;
+
+    // 「その他」選択時のみ工事の種類の自由入力欄を表示
+    var workTypeSelect = document.getElementById('js-workType');
+    var workTypeOther = document.getElementById('js-workTypeOther');
+    if (workTypeSelect && workTypeOther) {
+        workTypeSelect.addEventListener('change', function () {
+            workTypeOther.classList.toggle('is-show', workTypeSelect.value === 'その他');
+        });
+    }
+
+    // 問い合わせ項目に応じて必須項目を調整
+    // 「まずは資料だけ見てみたい」を選んだ場合は、会社の詳細情報の入力負担を減らす
+    var lightFields = ['工事の種類', '年間売上高'];
+    var radios = form.querySelectorAll('input[name="問い合わせ項目"]');
+
+    function applyRequiredLevel() {
+        var checked = form.querySelector('input[name="問い合わせ項目"]:checked');
+        var level = checked ? checked.getAttribute('data-required-level') : 'full';
+        lightFields.forEach(function (fieldName) {
+            var el = form.querySelector('[name="' + fieldName + '"]');
+            if (!el) return;
+            if (level === 'light') {
+                el.removeAttribute('required');
+            } else {
+                el.setAttribute('required', 'required');
+            }
+        });
+    }
+
+    radios.forEach(function (r) {
+        r.addEventListener('change', applyRequiredLevel);
+    });
+    applyRequiredLevel();
+})();
+</script>
+</body>
+
+</html>
