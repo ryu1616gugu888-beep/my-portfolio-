@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>国際税務・移転価格特化 | 元国税局国際調査専門官による現場主義の防衛戦略</title>
+<meta name="description" content="元国税局国際調査専門官OBが、当局の審査ロジックを完全逆算。Big4のペーパー対策の死角を突き、御社の実態を守り抜く現場主義の国際税務・移転価格防衛戦略。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-black: #0a0a0c;
+    --bg-navy: #0c1420;
+    --bg-navy2: #16233770;
+    --ink: #f2f0ea;
+    --ink-dim: #b7b3aa;
+    --ink-dim2: #8a877e;
+    --gold: #b3924f;
+    --gold-light: #d9c393;
+    --gold-dark: #8a7038;
+    --taupe: #7a3f38;
+    --taupe-light: #9c5850;
+    --paper: #f3f1ec;
+    --paper-ink: #17150f;
+    --gray-section: #201f1d;
+    --font-serif: "Noto Serif JP", "Yu Mincho", "游明朝", serif;
+    --font-gothic: "Noto Sans JP", "Yu Gothic", "游ゴシック", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  html, body { overflow-x: hidden; }
+  body {
+    margin: 0;
+    background: var(--bg-black);
+    color: var(--ink);
+    font-family: var(--font-serif);
+    font-size: 16px;
+    line-height: 2;
+    letter-spacing: 0.03em;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+  .inner { max-width: 920px; margin: 0 auto; padding: 0 28px; }
+  .inner--wide { max-width: 1080px; }
+  section { position: relative; padding: 100px 0; overflow: hidden; }
+  .eyebrow {
+    font-family: var(--font-gothic);
+    font-size: 12px;
+    letter-spacing: 0.35em;
+    color: var(--gold);
+    margin-bottom: 22px;
+    display: block;
+  }
+  h2.section-title {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    font-size: clamp(24px, 3.4vw, 34px);
+    line-height: 1.7;
+    letter-spacing: 0.04em;
+    margin: 0 0 40px;
+  }
+  h3.sub-title {
+    font-family: var(--font-gothic);
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    color: var(--gold-light);
+    margin: 0 0 12px;
+  }
+  p { margin: 0 0 1.6em; }
+  p:last-child { margin-bottom: 0; }
+  .gold { color: var(--gold-light); }
+  .bold-mark {
+    font-weight: 700;
+    background: linear-gradient(transparent 62%, rgba(179,146,79,0.35) 62%);
+  }
+
+  /* ============ ヘッダー ============ */
+  .site-header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 28px;
+    background: linear-gradient(180deg, rgba(10,10,12,0.92), rgba(10,10,12,0));
+    font-family: var(--font-gothic);
+  }
+  .site-header__logo {
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    color: var(--ink);
+    font-weight: 700;
+  }
+  .site-header__logo small { display: block; font-size: 10px; color: var(--ink-dim2); letter-spacing: 0.1em; margin-top: 2px; font-weight: 400; }
+  .header-cta {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--gold);
+    color: var(--gold-light);
+    padding: 10px 20px;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+  }
+  .header-cta:hover { background: var(--gold); color: var(--bg-black); }
+
+  /* ============ 1. ファーストビュー ============ */
+  .hero {
+    padding: 160px 0 110px;
+    background:
+      radial-gradient(ellipse 900px 500px at 80% 10%, rgba(179,146,79,0.08), transparent 60%),
+      linear-gradient(160deg, var(--bg-navy) 0%, #070709 78%);
+    text-align: left;
+  }
+  .hero-network {
+    position: absolute; inset: 0;
+    opacity: 0.18;
+    background-image:
+      radial-gradient(1px 1px at 12% 22%, var(--gold) 100%, transparent),
+      radial-gradient(1px 1px at 26% 68%, var(--gold) 100%, transparent),
+      radial-gradient(1.5px 1.5px at 42% 34%, var(--gold) 100%, transparent),
+      radial-gradient(1px 1px at 58% 12%, var(--gold) 100%, transparent),
+      radial-gradient(1.5px 1.5px at 68% 58%, var(--gold) 100%, transparent),
+      radial-gradient(1px 1px at 81% 30%, var(--gold) 100%, transparent),
+      radial-gradient(1px 1px at 91% 74%, var(--gold) 100%, transparent),
+      radial-gradient(1.5px 1.5px at 15% 82%, var(--gold) 100%, transparent),
+      radial-gradient(1px 1px at 74% 88%, var(--gold) 100%, transparent);
+    pointer-events: none;
+  }
+  .hero-network svg { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.35; }
+  .eyecatch-badge {
+    display: inline-block;
+    font-family: var(--font-gothic);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    color: var(--gold-light);
+    border: 1px solid var(--gold-dark);
+    padding: 8px 16px;
+    margin-bottom: 36px;
+  }
+  h1.main-catch {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    font-size: clamp(28px, 4.6vw, 46px);
+    line-height: 1.75;
+    letter-spacing: 0.03em;
+    margin: 0 0 34px;
+  }
+  h1.main-catch .line2 { color: var(--gold-light); }
+  .sub-catch {
+    font-family: var(--font-gothic);
+    font-size: 15px;
+    line-height: 2.15;
+    color: var(--ink-dim);
+    max-width: 640px;
+    margin-bottom: 48px;
+    letter-spacing: 0.04em;
+  }
+  .target-badges { list-style: none; margin: 0 0 52px; padding: 0; display: flex; flex-direction: column; gap: 14px; max-width: 680px; }
+  .target-badges li {
+    font-family: var(--font-gothic);
+    font-size: 14px;
+    line-height: 1.9;
+    padding: 16px 22px;
+    border-left: 2px solid var(--gold);
+    background: rgba(255,255,255,0.02);
+    color: var(--ink-dim);
+  }
+  .target-badges .tag {
+    display: inline-block;
+    font-weight: 700;
+    color: var(--bg-black);
+    background: var(--gold);
+    font-size: 11px;
+    padding: 2px 9px;
+    margin-right: 10px;
+    letter-spacing: 0.05em;
+  }
+  .cta-block { text-align: center; }
+  .cta-btn {
+    display: inline-block;
+    font-family: var(--font-gothic);
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.06em;
+    color: var(--bg-black);
+    background: linear-gradient(120deg, var(--gold-light), var(--gold) 60%, var(--gold-dark));
+    padding: 24px 40px;
+    min-height: 44px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(179,146,79,0.25);
+  }
+  .cta-btn:hover { filter: brightness(1.08); }
+  .cta-btn .cta-sub { display: block; font-size: 11px; font-weight: 400; margin-top: 6px; letter-spacing: 0.08em; }
+  .cta-note { font-family: var(--font-gothic); font-size: 12px; color: var(--ink-dim2); margin-top: 18px; letter-spacing: 0.04em; }
+
+  /* ============ 2. 導入（白反転） ============ */
+  .section-flip {
+    background: var(--paper);
+    color: var(--paper-ink);
+  }
+  .section-flip h2.section-title { color: var(--paper-ink); }
+  .section-flip p { color: #3a382f; font-family: var(--font-gothic); font-size: 15px; line-height: 2.1; }
+  .section-flip .lede { font-family: var(--font-serif); font-size: clamp(20px, 2.6vw, 26px); font-weight: 700; line-height: 1.8; margin-bottom: 44px; }
+  .section-flip strong { color: var(--taupe); }
+
+  /* ============ 3. 生々しい危機 ============ */
+  .section-crisis { background: #0a0a0d; }
+  .search-box {
+    font-family: var(--font-gothic);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid #33322c;
+    background: #131210;
+    padding: 16px 20px;
+    margin-bottom: 14px;
+    color: var(--ink-dim);
+    font-size: 14px;
+    letter-spacing: 0.02em;
+  }
+  .search-box svg { flex-shrink: 0; width: 16px; height: 16px; color: var(--ink-dim2); }
+  .crisis-lead-p { font-family: var(--font-gothic); font-size: 14.5px; color: var(--ink-dim); margin: 40px 0; }
+  .crisis-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 34px; }
+  .crisis-list p { font-family: var(--font-gothic); font-size: 14.5px; color: var(--ink-dim); }
+
+  /* ============ 4 / 5. 核心 ============ */
+  .section-core4 {
+    background: var(--bg-black);
+  }
+  .ringi-svg { position: absolute; right: -60px; top: 50%; transform: translateY(-50%); width: 420px; opacity: 0.08; pointer-events: none; }
+  .section-core4 p { font-family: var(--font-gothic); font-size: 15px; color: var(--ink-dim); }
+
+  .section-core5 {
+    background: var(--bg-black);
+  }
+  .core5-photo-wrap {
+    position: relative;
+    margin-bottom: 48px;
+    border: 1px solid #2a2924;
+  }
+  .core5-photo-wrap img { width: 100%; height: auto; filter: grayscale(45%) brightness(0.55) contrast(1.05); }
+  .core5-photo-wrap::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(10,10,12,0.15), rgba(10,10,12,0.85));
+  }
+  .section-core5 p { font-family: var(--font-gothic); font-size: 15px; color: var(--ink-dim); }
+  .core5-emphasis {
+    font-family: var(--font-serif);
+    font-size: clamp(19px, 2.4vw, 23px);
+    font-weight: 700;
+    color: var(--gold-light);
+    line-height: 1.9;
+    margin-bottom: 30px;
+  }
+
+  /* ============ 6. 信頼のエビデンス ============ */
+  .section-profile { background: #0d0d10; }
+  .profile-grid { display: grid; grid-template-columns: 1fr; gap: 44px; align-items: start; }
+  .profile-photo {
+    width: 148px;
+    height: 148px;
+    border-radius: 50%;
+    border: 1px solid var(--gold-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #14131a;
+    margin: 0 auto 20px;
+  }
+  .profile-photo svg { width: 64px; height: 64px; color: var(--gold-dark); }
+  .profile-caption { text-align: center; font-family: var(--font-gothic); font-size: 11px; color: var(--ink-dim2); letter-spacing: 0.05em; }
+  .profile-body p { font-family: var(--font-gothic); font-size: 15px; color: var(--ink-dim); }
+  .credential-list { list-style: none; margin: 36px 0 0; padding: 0; display: flex; flex-direction: column; gap: 26px; }
+  .credential-list li { border-top: 1px solid #2a2924; padding-top: 22px; }
+  .credential-list h4 {
+    font-family: var(--font-gothic);
+    font-size: 15px;
+    color: var(--gold-light);
+    margin: 0 0 8px;
+    font-weight: 700;
+  }
+  .credential-list p { font-family: var(--font-gothic); font-size: 13.5px; color: var(--ink-dim2); margin: 0; }
+
+  /* ============ 7. 料金体系 ============ */
+  .section-pricing { background: var(--bg-black); }
+  .plan-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .plan-card {
+    border: 1px solid #2a2924;
+    background: #111013;
+    display: flex;
+    flex-direction: column;
+  }
+  .plan-card__head {
+    padding: 26px 24px;
+    border-bottom: 1px solid #2a2924;
+    background: linear-gradient(180deg, rgba(179,146,79,0.08), transparent);
+  }
+  .plan-card__num { font-family: var(--font-gothic); font-size: 11px; letter-spacing: 0.15em; color: var(--gold); }
+  .plan-card__name { font-family: var(--font-serif); font-weight: 700; font-size: 19px; margin: 10px 0 0; line-height: 1.6; }
+  .plan-card__body { padding: 24px; flex-grow: 1; display: flex; flex-direction: column; }
+  .plan-card__label { font-family: var(--font-gothic); font-size: 11px; color: var(--ink-dim2); letter-spacing: 0.08em; margin-bottom: 8px; }
+  .plan-card__target { font-family: var(--font-gothic); font-size: 13px; color: var(--ink-dim); line-height: 1.9; margin-bottom: 22px; }
+  .plan-card__desc { font-family: var(--font-gothic); font-size: 13px; color: var(--ink-dim); line-height: 1.9; flex-grow: 1; margin-bottom: 22px; }
+  .plan-card__price {
+    font-family: var(--font-gothic);
+    border-top: 1px solid #2a2924;
+    padding-top: 18px;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--gold-light);
+  }
+  .plan-card__price small { display: block; font-size: 11px; font-weight: 400; color: var(--ink-dim2); margin-top: 4px; }
+
+  /* ============ 8. 理念 ============ */
+  .section-philosophy { background: var(--gray-section); }
+  .section-philosophy .lede {
+    font-family: var(--font-serif);
+    font-size: clamp(20px, 2.6vw, 26px);
+    font-weight: 700;
+    line-height: 1.85;
+    color: var(--gold-light);
+    margin-bottom: 44px;
+  }
+  .section-philosophy p { font-family: var(--font-gothic); font-size: 14.5px; color: var(--ink-dim); line-height: 2.1; }
+
+  /* ============ 9. コンバージョン ============ */
+  .section-contact {
+    background: linear-gradient(160deg, var(--bg-navy) 0%, #07070a 85%);
+  }
+  .contact-frame {
+    border: 1.5px solid var(--gold);
+    box-shadow: 0 0 0 1px rgba(179,146,79,0.15), 0 30px 70px rgba(0,0,0,0.5);
+    padding: 52px 40px;
+    background: rgba(255,255,255,0.015);
+  }
+  .contact-frame h2.section-title { margin-bottom: 10px; text-align: center; }
+  .contact-tag { text-align: center; font-family: var(--font-gothic); font-size: 12px; letter-spacing: 0.15em; color: var(--gold-light); margin-bottom: 30px; }
+  .contact-desc { font-family: var(--font-gothic); font-size: 14px; color: var(--ink-dim); text-align: center; max-width: 620px; margin: 0 auto 44px; line-height: 2; }
+  .form-group { margin-bottom: 26px; }
+  .form-group label {
+    display: block;
+    font-family: var(--font-gothic);
+    font-size: 13px;
+    color: var(--ink-dim);
+    margin-bottom: 10px;
+    letter-spacing: 0.04em;
+  }
+  .form-group label .req { color: var(--taupe-light); font-size: 11px; margin-left: 6px; }
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="tel"],
+  .form-group textarea {
+    width: 100%;
+    background: #0d0c10;
+    border: 1px solid #34322b;
+    color: var(--ink);
+    padding: 15px 16px;
+    font-family: var(--font-gothic);
+    font-size: 14px;
+    min-height: 44px;
+  }
+  .form-group textarea { min-height: 120px; resize: vertical; }
+  .radio-options { display: flex; flex-direction: column; gap: 12px; }
+  .radio-options label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13.5px;
+    color: var(--ink-dim);
+    margin: 0;
+    cursor: pointer;
+  }
+  .radio-options input { margin-top: 4px; accent-color: var(--gold); flex-shrink: 0; }
+  .submit-btn {
+    width: 100%;
+    display: block;
+    font-family: var(--font-gothic);
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.06em;
+    color: var(--bg-black);
+    background: linear-gradient(120deg, var(--gold-light), var(--gold) 60%, var(--gold-dark));
+    padding: 20px;
+    min-height: 44px;
+    border: none;
+    cursor: pointer;
+    margin-top: 12px;
+  }
+  .submit-btn:hover { filter: brightness(1.08); }
+  .privacy-note {
+    font-family: var(--font-gothic);
+    font-size: 11.5px;
+    color: var(--ink-dim2);
+    line-height: 1.9;
+    margin-top: 28px;
+    border-top: 1px solid #2a2924;
+    padding-top: 22px;
+  }
+
+  /* ============ フッター ============ */
+  footer {
+    background: var(--bg-black);
+    padding: 40px 0;
+    text-align: center;
+    font-family: var(--font-gothic);
+    font-size: 11px;
+    color: var(--ink-dim2);
+    letter-spacing: 0.05em;
+  }
+
+  /* ============ レスポンシブ ============ */
+  @media (max-width: 860px) {
+    .plan-grid { grid-template-columns: 1fr; }
+    .profile-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    section { padding: 70px 0; }
+    .inner, .inner--wide { padding: 0 20px; }
+    h1.main-catch { font-size: 26px; line-height: 1.8; }
+    .hero { padding: 130px 0 80px; }
+    .contact-frame { padding: 36px 20px; }
+    .ringi-svg { display: none; }
+    .site-header { padding: 14px 16px; flex-wrap: wrap; row-gap: 10px; }
+    .site-header__logo { font-size: 11px; }
+    .site-header__logo small { font-size: 8px; }
+    .header-cta { font-size: 10.5px; padding: 9px 14px; white-space: normal; text-align: center; line-height: 1.5; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     ヘッダー
+     [PLACEHOLDER: 実際の事務所名・ロゴに差し替えてください]
+============================================================ -->
+<header class="site-header">
+  <div class="site-header__logo">
+    国際税務・移転価格 防衛戦略
+    <small>元国税局国際調査専門官 OB</small>
+  </div>
+  <a href="#contact" class="header-cta">極秘リスク診断はこちら</a>
+</header>
+
+<main>
+
+<!-- ============================================================
+     1. ファーストビュー
+============================================================ -->
+<section class="hero" id="hero">
+  <div class="hero-network" aria-hidden="true">
+    <svg viewBox="0 0 900 600" preserveAspectRatio="none">
+      <line x1="108" y1="132" x2="234" y2="408" stroke="#b3924f" stroke-width="0.6"/>
+      <line x1="234" y1="408" x2="378" y2="204" stroke="#b3924f" stroke-width="0.6"/>
+      <line x1="378" y1="204" x2="522" y2="72" stroke="#b3924f" stroke-width="0.6"/>
+      <line x1="522" y1="72" x2="612" y2="348" stroke="#b3924f" stroke-width="0.6"/>
+      <line x1="612" y1="348" x2="729" y2="180" stroke="#b3924f" stroke-width="0.6"/>
+      <line x1="729" y1="180" x2="819" y2="444" stroke="#b3924f" stroke-width="0.6"/>
+      <line x1="378" y1="204" x2="612" y2="348" stroke="#b3924f" stroke-width="0.4"/>
+      <line x1="135" y1="492" x2="378" y2="204" stroke="#b3924f" stroke-width="0.4"/>
+    </svg>
+  </div>
+  <div class="inner">
+    <span class="eyecatch-badge">元国税局国際調査専門官 / 税務署特別国税調査官（トクチョウ）OB 直接対応</span>
+    <h1 class="main-catch">
+      国際税務は「グレーゾーン」ではない。<br>
+      <span class="line2">単に「戸締まりをしていない家」が狙われているだけです。</span>
+    </h1>
+    <p class="sub-catch">
+      分厚いだけの書類で煙に巻けると思うのは、現場の審判を知らない机上の空論に過ぎない。<br><br>
+      元国税局国際調査専門官が、当局の「審査・決議ロジック」を完全逆算。<br>
+      Big4（大手）のペーパー対策の死角を突き、御社の実態を守り抜く「現場主義・完全防衛戦略」。
+    </p>
+    <ul class="target-badges">
+      <li><span class="tag">緊急</span>現在、国税局（調査課等）から海外取引の指摘・お尋ねを受けている企業様</li>
+      <li><span class="tag">予防</span>海外子会社との取引価格（独立企業間価格）の算定根拠がなく、税務調査に怯えている企業様</li>
+      <li><span class="tag">不満</span>大手ファームへ数百万円を支払ったが、現場の実態と乖離した「使えない書類」に不安がある企業様</li>
+    </ul>
+    <div class="cta-block">
+      <a href="#contact" class="cta-btn">
+        【全国対応・秘密厳守】元国際調査専門官による「極秘・戸締まりリスク診断」はこちら（初回無料）
+        <span class="cta-sub">※現在進行中の税務調査への緊急セカンドオピニオンもこちらから受付中</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     2. 導入（問題提起・共感の排他）
+============================================================ -->
+<section class="section-flip" id="intro">
+  <div class="inner">
+    <p class="lede">このような「間違った安心」で、会社の息の根を止められますか？</p>
+    <p>
+      多くの中堅企業、海外進出ベンチャーの経営者・財務責任者様が、国際税務（移転価格税制・タックスヘイブン対策税制）を「解釈の難しい、運悪く捕まるかどうかのグレーゾーン」だと誤解しています。そして、その不安を消すために大手ファーム（Big4等）へ膨大な費用を支払い、分厚い難解な書類を作ってもらい、安心を買おうとします。
+    </p>
+    <p>
+      しかし、<strong>元国税局の立場から言わせていただくと、そこには極めて重大な落とし穴があります。</strong>
+    </p>
+    <p>
+      税務当局の視点から言えば、国際税務はグレーなどではありません。単に「戸締まりをしていない家」と「戸締まりをしている家」がある、それだけの感覚でしかないのです。戸締まりのされていない勝手口を見つければ、調査官はそこから淡々と入るだけです。
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================
+     3. ユーザーの生々しい危機
+============================================================ -->
+<section class="section-crisis" id="crisis">
+  <div class="inner">
+    <span class="eyebrow">REAL FEAR</span>
+    <h2 class="section-title">夜な夜な検索する、生々しい恐怖の正体</h2>
+
+    <div class="search-box">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      海外子会社 寄附金 否認 納得いかない
+    </div>
+    <div class="search-box">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      移転価格 税務調査 同意してしまった 取消
+    </div>
+    <div class="search-box">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      税務調査 国税局 強い 税理士 調査課 OB
+    </div>
+
+    <p class="crisis-lead-p">
+      これらは、今この瞬間も、全国の経営者や財務責任者が「夜な夜な、オフィスや自宅で一人、藁をも掴む思いで検索窓に打ち込んでいる生々しいキーワード」です。<br>
+      なぜ彼らはそこまで追い詰められ、パニックになるのか。理由は明白です。
+    </p>
+
+    <ul class="crisis-list">
+      <li>
+        <h3 class="sub-title">一発で会社が黒字倒産しかねない、桁違いの課税額</h3>
+        <p>国内税務の一般的な指摘（交際費の否認など）であれば、追徴課税は数十万〜数百万円の範囲で収まることが大半です。しかし、移転価格税制やタックスヘイブン税制で否認された場合、過去数年分に遡って計算されるため、中堅・中小企業であっても数千万円、場合によっては数億円規模の追徴課税をいきなり突きつけられます。手元のキャッシュが一瞬で吹き飛ぶ金額であり、文字通り会社の存続危機に直結します。</p>
+      </li>
+      <li>
+        <h3 class="sub-title">頼みの「既存の顧問税理士」が全く戦力にならない絶望感</h3>
+        <p>通常、会社が最も信頼しているのは長年付き合いのある顧問税理士です。しかし、国税局（調査課など）の国際専門チームから「独立企業間価格」「基本免除要件の立証」といった専門用語で詰められた際、一般的な地元の税理士は「何を言われているのか、どう反論すればいいのかすら分からない」状態になります。味方であるはずの税理士が調査官の前で黙り込んだり、「これは当局の言う通りに払うしかありませんね…」と弱気な発言をしたりした瞬間、経営者は完全な孤独に突き落とされます。</p>
+      </li>
+      <li>
+        <h3 class="sub-title">誰にも相談できない極秘事項</h3>
+        <p>会社の税務トラブル、特に巨額の課税リスクは、周囲の経営者仲間や銀行には絶対に知られたくない事項です。そのため、誰にも相談できず、一人でパソコンに向かって夜な夜なネット検索を繰り返すことになるのです。</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     4. 核心1（敵を知る：国税局の本当のロジック）
+============================================================ -->
+<section class="section-core4" id="core1">
+  <svg class="ringi-svg" viewBox="0 0 400 500" aria-hidden="true">
+    <rect x="40" y="30" width="140" height="60" fill="none" stroke="#b3924f" stroke-width="1"/>
+    <rect x="220" y="30" width="140" height="60" fill="none" stroke="#b3924f" stroke-width="1"/>
+    <rect x="130" y="150" width="140" height="60" fill="none" stroke="#b3924f" stroke-width="1"/>
+    <rect x="40" y="270" width="140" height="60" fill="none" stroke="#b3924f" stroke-width="1"/>
+    <rect x="220" y="270" width="140" height="60" fill="none" stroke="#b3924f" stroke-width="1"/>
+    <rect x="130" y="390" width="140" height="60" fill="none" stroke="#b3924f" stroke-width="1"/>
+    <line x1="110" y1="90" x2="180" y2="150" stroke="#b3924f" stroke-width="1"/>
+    <line x1="290" y1="90" x2="220" y2="150" stroke="#b3924f" stroke-width="1"/>
+    <line x1="180" y1="210" x2="110" y2="270" stroke="#b3924f" stroke-width="1"/>
+    <line x1="220" y1="210" x2="290" y2="270" stroke="#b3924f" stroke-width="1"/>
+    <line x1="110" y1="330" x2="180" y2="390" stroke="#b3924f" stroke-width="1"/>
+    <line x1="290" y1="330" x2="220" y2="390" stroke="#b3924f" stroke-width="1"/>
+  </svg>
+  <div class="inner">
+    <span class="eyebrow">KNOW YOUR ENEMY</span>
+    <h2 class="section-title">なぜ、大手に大金を払って作った書類でも、<br>一撃で破られるのか？</h2>
+    <p>
+      移転価格課税やタックスヘイブン課税というのは、国税局の審査官たちが膨大な審査を重ね、組織として厳密な決議をした上で決定するものです。そこには、それぞれの会社の決算書、取引の実態、人の動き、物の動きを総合的に見た「実態判断」があります。
+    </p>
+    <p>
+      実際の裁判（国税不服審判所や訴訟）を意識する税務当局が構築しようとする課税根拠の論理は、実は「裁判官にも一発で伝わるように、極めて単純に、分かりやすく」作られています。
+    </p>
+    <p>
+      これに対して、現場を見ない大手が、専門用語を並べ立てた奇奇怪々で難解な書類（ローカルファイル等）を作ったとしても、「分かりにくい書類」というのは、実は裁判の場において最も跳ねられやすい（負けやすい）のです。
+    </p>
+    <p>
+      当局の「分かりやすい単純な論理」と、企業の「分かりにくい複雑な書類」が対峙したとき、最後は必ず分かりやすい論理の側へと勝負が傾きます。
+    </p>
+    <p>
+      「難解な書類を作っておけば国税を煙に巻ける」というのは、現場の審判を知らない机上の空論であり、全くの大きな間違いです。<br>
+      大手に高い金を払って作った書類が、実際の税務調査で現場の実態と矛盾し、自らを縛る罠になっている――。そんなケースを、私は国税局時代に多々目にしてきました。
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================
+     5. 核心2（解決策：現場主義のアプローチ）
+============================================================ -->
+<section class="section-core5" id="core2">
+  <div class="inner">
+    <span class="eyebrow">ON-SITE APPROACH</span>
+    <h2 class="section-title">私は、机上の空論を排します。</h2>
+    <div class="core5-photo-wrap">
+      <!-- [PLACEHOLDER: フリー素材の仮画像です。実際の現場写真・海外取引先の航空写真等に差し替えてください] -->
+      <img src="images/factory.jpg" alt="現場に足を運ぶ調査イメージ（イメージ写真・仮素材）" width="1400" height="788">
+    </div>
+    <p class="core5-emphasis">御社の海外工場まで、自ら足を運ぶ「徹底的な現場主義」。</p>
+    <p>
+      私は、冷暖房の効いたオフィスで送られてきたデータだけを叩くようなコンサルティングは行いません。
+    </p>
+    <p>
+      私をご契約いただいた場合、御社の国内の工場、あるいは場合によっては海外の現地工場まで、私自身が直接足を運ばせていただきます。工場の中でどのような配置図になっているのか、どのような人員配置が行われているのか、どのような製造・組み立てプロセスを経て製品ができているのか――。そこまで踏み込んだ現場の「実態分析」を泥臭く行わせていただきます。
+    </p>
+    <p>
+      国税局の審査官たちが最後に見るのは、書類上の数字ではなく、人と物の動きという「動かしようのない実態」です。国税局が調査で踏み込んでくるのと全く同じ目線で現場を洗い出し、当局に一切の付け入る隙を与えない、本物の防衛ライン（戸締まり）を構築します。
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================
+     6. 信頼のエビデンス（代表プロフィール・強み）
+============================================================ -->
+<section class="section-profile" id="profile">
+  <div class="inner">
+    <span class="eyebrow">EVIDENCE OF TRUST</span>
+    <h2 class="section-title">国税局の「手の内」をすべて知り尽くしたスペシャリスト</h2>
+    <div class="profile-grid">
+      <div>
+        <!-- [PLACEHOLDER: 実際の代表者の顔写真、または信頼感のあるロゴに差し替えてください] -->
+        <div class="profile-photo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>
+        </div>
+        <p class="profile-caption">[PLACEHOLDER: 代表者名・税理士登録番号]</p>
+      </div>
+      <div class="profile-body">
+        <p>
+          民間側の税理士には絶対に真似できない「調査官がどこを見て、どういう交渉なら妥協するか」という肌感覚（相場観）と、国税内部の厳格な決議プロセス（稟議の組み立て方）の知識。これらすべてを、私は御社の防衛のために注ぎ込みます。
+        </p>
+        <ul class="credential-list">
+          <li>
+            <h4>元・国税局 国際調査専門官 / 税務署 特別国税調査官（トクチョウ）OB</h4>
+            <p>現役時代、数多くの法人に対する国際税務調査、移転価格調査、タックスヘイブン課税の最前線で指揮を執る。</p>
+          </li>
+          <li>
+            <h4>税務大学校 国際租税セミナー 卒業生</h4>
+            <p>国税内部でも、厳しい選抜を勝ち抜いたエリートのみが修了できる国際租税の専門教育課程を修了。</p>
+          </li>
+          <li>
+            <h4>「タックスヘイブン対策税制」「移転価格税制」の調査課税経験多数</h4>
+            <p>当局がどのような証拠を揃え、どのようなロジックで課税を決定するのか、その「手の内」を完全に把握しています。</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     7. 提供サービス・料金体系
+============================================================ -->
+<section class="section-pricing" id="pricing">
+  <div class="inner inner--wide">
+    <span class="eyebrow">SERVICE &amp; FEE</span>
+    <h2 class="section-title">御社のリスクフェーズに合わせた3つの防衛策</h2>
+    <p style="font-family:var(--font-gothic); font-size:14px; color:var(--ink-dim); margin-bottom:44px;">当事務所では、御社のために泥臭く伴走いたします。</p>
+
+    <div class="plan-grid">
+      <div class="plan-card">
+        <div class="plan-card__head">
+          <span class="plan-card__num">01</span>
+          <h3 class="plan-card__name">現場密着型<br>ローカルファイル作成</h3>
+        </div>
+        <div class="plan-card__body">
+          <p class="plan-card__label">対象となる企業様</p>
+          <p class="plan-card__target">・海外取引の価格根拠がない<br>・大手の書類に不安がある</p>
+          <p class="plan-card__label">実務内容</p>
+          <p class="plan-card__desc">大手のテンプレートではない、御社の工場や現場の人員の動きと100%合致した、国税局が一歩も踏み込めないシンプルで強力な書類を構築します。</p>
+          <div class="plan-card__price">スポット：100万円〜<small>（規模・取引の複雑さによる）</small></div>
+        </div>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-card__head">
+          <span class="plan-card__num">02</span>
+          <h3 class="plan-card__name">進行中税務調査<br>【緊急】防衛対応</h3>
+        </div>
+        <div class="plan-card__body">
+          <p class="plan-card__label">対象となる企業様</p>
+          <p class="plan-card__target">・いま現在、国税局や税務署から海外取引の指摘を受けている</p>
+          <p class="plan-card__label">実務内容</p>
+          <p class="plan-card__desc">元当局の人間として、相手がどのような稟議を組み立てようとしているかを完全に見抜き、不適切な課税を阻止するための反論・答弁書を作成、現場交渉をバックアップします。</p>
+          <div class="plan-card__price">個別見積もり<small>（着手金＋成果報酬）</small></div>
+        </div>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-card__head">
+          <span class="plan-card__num">03</span>
+          <h3 class="plan-card__name">国際税務<br>セカンドオピニオン</h3>
+        </div>
+        <div class="plan-card__body">
+          <p class="plan-card__label">対象となる企業様</p>
+          <p class="plan-card__target">・既存の顧問税理士は変えたくない<br>・海外子会社管理のアドバイザーが欲しい</p>
+          <p class="plan-card__label">実務内容</p>
+          <p class="plan-card__desc">既存の税理士の先生を変更する必要はありません。海外取引に関する相談窓口として、月次またはスポットで財務部長・経営層をバックアップします。</p>
+          <div class="plan-card__price">月額：10万円〜<small></small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     8. 理念（結びのメッセージ）
+============================================================ -->
+<section class="section-philosophy" id="philosophy">
+  <div class="inner">
+    <span class="eyebrow">PHILOSOPHY</span>
+    <p class="lede">「信じていたのに、課税される」<br>そんな真面目な経営者の理不尽をなくしたい。</p>
+    <p>
+      事実を曲げようとして、故意に不適切な価格を作って利益を操作した（脱税した）のがバレたのであれば、それは課税されても仕方がありません。
+    </p>
+    <p>
+      しかし、私が国税局時代に見てきて、本当に胸が痛んだのは、事実を曲げるつもりなど毛頭なく、高額なコンサルティングをいくつも受けて「このやり方こそが絶対に正しい」と信じ込んでいた真面目な企業が、税務調査で一転して多額の課税を受けてしまうケースです。
+    </p>
+    <p>
+      そもそも、御社のビジネスと現場を誰よりも深く知っているのは、他ならぬ社長ご自身です。どのような背景があり、なぜその価格で取引しているのか、その正当性を算定できる根拠を一番持っているのは社長なのです。
+    </p>
+    <p>
+      最も大事なことは、小手先のテクニックではなく、「本当に正しい価格はいくらなのか」「本当に正しい取引は何なのか」という真実を、まずは社長自身が100%理解することです。
+    </p>
+    <p>
+      「事実の価格（実態）」というものを、国税局が内部の稟議でどのように組み立て、どのように評価するのか。その『当局の目線』を最初から経営の根幹に組み込み、堂々と打って出る。これこそが、私の考える「最高峰の経営戦略」です。
+    </p>
+    <p>
+      御社の中に眠る「真実の価値」を、私と一緒に掘り起こし、最強の盾に変えましょう。
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================
+     9. コンバージョンエリア（お問い合わせフォーム）
+============================================================ -->
+<section class="section-contact" id="contact">
+  <div class="inner">
+    <div class="contact-frame">
+      <span class="contact-tag">【全国対応・完全秘密厳守】</span>
+      <h2 class="section-title">元国際調査専門官による<br>「極秘・戸締まりリスク診断」</h2>
+      <p class="contact-desc">
+        現在抱えている海外取引の不安や、すでに税務署・国税局から来ている通知内容について、元専門官の視点から現状のリスクレベル（御社の戸締まり状況）を診断します。既存の顧問税理士の先生に知られることはありません。ご安心してお問い合わせください。
+      </p>
+
+      <!-- [PLACEHOLDER: 実際のフォーム送信先（サーバー側の受付エンドポイント）に action を差し替えてください] -->
+      <form action="#" method="post">
+        <div class="form-group">
+          <label for="company">会社名<span class="req">必須</span></label>
+          <input type="text" id="company" name="company" required>
+        </div>
+        <div class="form-group">
+          <label for="name">お名前<span class="req">必須</span></label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">メールアドレス<span class="req">必須</span></label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="tel">電話番号<span class="req">必須</span></label>
+          <input type="tel" id="tel" name="tel" required>
+        </div>
+        <div class="form-group">
+          <label>ご相談のフェーズ</label>
+          <div class="radio-options">
+            <label><input type="radio" name="phase" value="緊急" checked>すでに税務調査が入っている・お尋ねが届いている（緊急）</label>
+            <label><input type="radio" name="phase" value="予防">将来の税務調査に備えてリスクを診断したい（予防）</label>
+            <label><input type="radio" name="phase" value="セカンドオピニオン">大手の作った書類をレビューしてほしい（セカンドオピニオン）</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="detail">現在の状況</label>
+          <textarea id="detail" name="detail" placeholder="現在抱えている不安や、受け取った通知の内容などをご自由にご記入ください。"></textarea>
+        </div>
+        <button type="submit" class="submit-btn">この内容で極秘診断を依頼する</button>
+      </form>
+
+      <p class="privacy-note">
+        【プライバシーポリシー】ご入力いただいた情報は、お問い合わせに対する回答および当事務所からのサービス案内にのみ使用し、第三者への開示・提供は一切行いません。また、本フォームによる初回診断はリスクの方向性を提示するものであり、法的責任を伴う最終見解を保証するものではありません。
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================================================
+     フッター
+     [PLACEHOLDER: 事務所名・所在地・登録番号等を記載してください]
+============================================================ -->
+<footer>
+  <p>[PLACEHOLDER: 事務所名] ｜ 本サイトの内容は一般的な情報提供を目的としており、個別事案への法的助言を構成するものではありません。</p>
+</footer>
+
+</body>
+</html>
